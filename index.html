@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Sistematik İddaa & Toto Algoritma Portalı | 37 Lig & 15'lik Formül</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Fallback local data script -->
+  <script src="data.js?v=20261113_2053"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857'
+            },
+            accent: {
+              cyan: '#06b6d4',
+              violet: '#8b5cf6',
+              amber: '#f59e0b',
+              rose: '#f43f5e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #f1f5f9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(51, 65, 85, 0.6);
+    }
+
+    .matrix-cell-active {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.25));
+      border: 1px solid rgba(52, 211, 153, 0.5);
+      color: #34d399;
+      font-weight: 700;
+    }
+
+    .matrix-cell-empty {
+      color: #334155;
+    }
+
+    .badge-pulse {
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+    }
+
+    /* CANLI ORAN GÜNCELLEMESİ YANIP SÖNME ANİMASYONLARI */
+    @keyframes oddGlowGreen {
+      0% {
+        background-color: rgba(16, 185, 129, 0.9);
+        color: #ffffff;
+        box-shadow: 0 0 16px rgba(16, 185, 129, 0.95);
+        transform: scale(1.22);
+      }
+      25% {
+        background-color: rgba(6, 182, 212, 0.7);
+        color: #e0f2fe;
+        box-shadow: 0 0 18px rgba(6, 182, 212, 0.85);
+        transform: scale(1.15);
+      }
+      60% {
+        background-color: rgba(16, 185, 129, 0.35);
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+        transform: scale(1.06);
+      }
+      100% {
+        background-color: transparent;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes oddGlowRed {
+      0% {
+        background-color: rgba(239, 68, 68, 0.9);
+        color: #ffffff;
+        box-shadow: 0 0 16px rgba(239, 68, 68, 0.95);
+        transform: scale(1.22);
+      }
+      25% {
+        background-color: rgba(244, 63, 94, 0.7);
+        color: #ffe4e6;
+        box-shadow: 0 0 18px rgba(244, 63, 94, 0.85);
+        transform: scale(1.15);
+      }
+      60% {
+        background-color: rgba(239, 68, 68, 0.35);
+        box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+        transform: scale(1.06);
+      }
+      100% {
+        background-color: transparent;
+        transform: scale(1);
+      }
+    }
+
+    .odd-flash-up {
+      animation: oddGlowGreen 2.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+      border-radius: 6px;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .odd-flash-down {
+      animation: oddGlowRed 2.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+      border-radius: 6px;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
+
+  <!-- SADE VE ŞIK CANLI BİLGİLENDİRME ŞERİDİ -->
+  <div class="bg-gradient-to-r from-emerald-950/80 via-slate-900 to-cyan-950/80 border-b border-emerald-900/40 text-xs py-1.5 px-4 text-center text-slate-300 flex flex-wrap items-center justify-center gap-2.5">
+    <span class="flex h-2 w-2 relative">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+    </span>
+    <span class="font-bold text-emerald-400 font-mono text-[11px] uppercase tracking-wide">🟢 CANLI BOTLAR AKTİF:</span>
+    <span class="text-slate-200 font-medium">Bülten ve 16 formül kuponu arka plandaki canlı takip botlarıyla 7/24 kesintisiz senkronize edilmektedir.</span>
+    <span id="activeWeekPill" class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-semibold border border-emerald-500/30">Hafta 2 • 56 Aktif Maç</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
+      
+      <!-- Brand & Title -->
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center text-slate-950 shadow-lg shadow-emerald-500/20">
+          <i data-lucide="layout-grid" class="w-6 h-6 stroke-[2.5]"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+              Sistematik Bahis & Toto Platformu
+            </h1>
+            <span class="text-[10px] uppercase font-mono px-2 py-0.5 bg-cyan-950 text-cyan-400 border border-cyan-800 rounded font-semibold">v2.4 Live</span>
+          </div>
+          <p class="text-xs text-slate-400">Arkadaşının Formül Mimarisi & Haftalık 37 Lig Otomasyonu</p>
+        </div>
+      </div>
+
+      <!-- Quick Action Controls -->
+      <div class="flex items-center gap-2 sm:gap-2.5">
+        <button id="btnLiveBulletin" onclick="openLiveBulletinDirect()" class="flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-lg bg-gradient-to-r from-amber-600 to-emerald-600 hover:from-amber-500 hover:to-emerald-500 text-white font-bold text-xs transition shadow-md shadow-amber-900/40 active:scale-95 border border-amber-400/40">
+          <i data-lucide="table" class="w-4 h-4 text-amber-200"></i>
+          <span>📋 Canlı Bülten</span>
+        </button>
+
+        <!-- Hali Hazırda Oynanan Canlı Maçlar Kutucuğu (Hazır Kuponların Hemen Solunda - Direkt Alta Açar) -->
+        <div id="liveMatchesBox">
+          <button id="btnLiveMatches" onclick="openLiveMatchesDirect()" class="flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-lg bg-gradient-to-r from-rose-950 via-rose-900/80 to-slate-900 hover:from-rose-900 hover:to-rose-800 text-white font-bold text-xs transition shadow-md shadow-rose-950/60 active:scale-95 border border-rose-500/60 hover:border-rose-400 group">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
+            </span>
+            <div class="flex items-center gap-1.5">
+              <span class="text-rose-200 font-extrabold tracking-wide whitespace-nowrap">🔴 Canlı Maçlar</span>
+              <span id="liveMatchesBadge" class="px-1.5 py-0.2 rounded-full bg-rose-500/35 text-rose-100 border border-rose-400/60 font-mono text-[10px]">0</span>
+            </div>
+            <span class="text-slate-500 hidden md:inline">|</span>
+            <div id="liveTickerContainer" class="hidden md:flex items-center gap-1 text-[11px] font-mono font-medium text-slate-200">
+              <span id="liveTickerMinute" class="text-rose-300 font-bold">CANLI</span>
+              <span id="liveTickerText" class="truncate max-w-[130px]">Yükleniyor...</span>
+            </div>
+          </button>
+        </div>
+
+        <button id="btnReadyCoupons" onclick="openReadyCouponsDirect()" class="flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-xs transition shadow-md shadow-purple-900/40 active:scale-95 border border-purple-400/40">
+          <i data-lucide="ticket" class="w-4 h-4 text-purple-200"></i>
+          <span>🎯 Hazır Kuponlar</span>
+        </button>
+
+        <button id="btnHardRefresh" onclick="hardRefreshData()" class="flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-lg bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-bold text-xs transition shadow-md shadow-cyan-900/40 active:scale-95 border border-cyan-400/40">
+          <i data-lucide="rotate-cw" class="w-4 h-4" id="hardRefreshIcon"></i>
+          <span>⚡ Canlı Bülteni Yenile</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- KPI STATS CARDS (Genel Bakış'ın Üstünde) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 border-t border-slate-800/80">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 sm:gap-3.5">
+        
+        <div class="glass-card px-3.5 py-2.5 rounded-xl relative overflow-hidden flex items-center justify-between border border-cyan-500/20 bg-cyan-950/20">
+          <div>
+            <div class="text-[10px] font-medium text-slate-400">Takip Edilen Lig</div>
+            <div class="text-xl font-bold font-mono text-cyan-400 mt-0.5" id="statLeagues">37</div>
+            <div class="text-[9px] text-cyan-300/70">37 Lig Taraması</div>
+          </div>
+          <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+            <i data-lucide="globe" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <div class="glass-card px-3.5 py-2.5 rounded-xl relative overflow-hidden flex items-center justify-between border border-emerald-500/20 bg-emerald-950/20">
+          <div>
+            <div class="text-[10px] font-medium text-slate-400">Odak Takım Havuzu</div>
+            <div class="text-xl font-bold font-mono text-emerald-400 mt-0.5" id="statTeams">222</div>
+            <div class="text-[9px] text-emerald-300/70">İlk 4 + Son 2</div>
+          </div>
+          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+            <i data-lucide="users" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <div class="glass-card px-3.5 py-2.5 rounded-xl relative overflow-hidden flex items-center justify-between border border-amber-500/20 bg-amber-950/20">
+          <div>
+            <div class="text-[10px] font-medium text-slate-400">Haftalık Odak Maç</div>
+            <div class="text-xl font-bold font-mono text-amber-400 mt-0.5" id="statMatches">56</div>
+            <div class="text-[9px] text-amber-300/70">56 Aktif Canlı Fikstür</div>
+          </div>
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <div class="glass-card px-3.5 py-2.5 rounded-xl relative overflow-hidden flex items-center justify-between border border-purple-500/20 bg-purple-950/20">
+          <div>
+            <div class="text-[10px] font-medium text-slate-400">Aktif Dağıtım Havuzları</div>
+            <div class="text-xl font-bold font-mono text-purple-400 mt-0.5">16 Havuz</div>
+            <div class="text-[9px] text-purple-300/70">8 Banko + 8 Sistem</div>
+          </div>
+          <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <div class="glass-card px-3.5 py-2.5 rounded-xl relative overflow-hidden flex items-center justify-between col-span-2 sm:col-span-1 border border-cyan-400/40 bg-gradient-to-br from-cyan-950/30 to-emerald-950/30">
+          <div>
+            <div class="text-[10px] font-medium text-slate-300">15'lik Formül Kuponları</div>
+            <div class="text-xl font-bold font-mono text-cyan-300 mt-0.5" id="statCoupons">16 Adet</div>
+            <div class="text-[9px] text-cyan-200/80">15 Satırlı Eşleşme</div>
+          </div>
+          <div class="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-300">
+            <i data-lucide="ticket" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- NAVIGATION TABS -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800/80">
+      <nav class="flex space-x-2 sm:space-x-3 overflow-x-auto py-2.5 text-xs font-semibold scrollbar-none" id="navTabs">
+        <button onclick="switchTab('dashboard')" class="tab-btn active px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-emerald-300 bg-emerald-500/20 border border-emerald-400/60 shadow-md shadow-emerald-950/50 font-bold" data-tab="dashboard">
+          <i data-lucide="bar-chart-3" class="w-4 h-4 text-emerald-400"></i>
+          <span>Genel Bakış (Dashboard)</span>
+        </button>
+        <button onclick="switchTab('template')" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-amber-400/80 bg-amber-950/30 hover:bg-amber-900/40 hover:text-amber-200 border border-amber-800/40 font-medium" data-tab="template">
+          <i data-lucide="table" class="w-4 h-4 text-amber-400"></i>
+          <span>Arkadaşının Canlı Şablonu (A-Q)</span>
+        </button>
+        <button onclick="switchTab('leagues')" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-purple-400/80 bg-purple-950/30 hover:bg-purple-900/40 hover:text-purple-200 border border-purple-800/40 font-medium" data-tab="leagues">
+          <i data-lucide="trophy" class="w-4 h-4 text-purple-400"></i>
+          <span>37 Lig Takipçisi (İlk 4 & Son 2)</span>
+        </button>
+        <button onclick="switchTab('pools')" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-blue-400/80 bg-blue-950/30 hover:bg-blue-900/40 hover:text-blue-200 border border-blue-800/40 font-medium" data-tab="pools">
+          <i data-lucide="layers" class="w-4 h-4 text-blue-400"></i>
+          <span>Havuz Dağıtımı (B1..B8 & X1..X8)</span>
+        </button>
+        <button onclick="switchTab('live')" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-rose-400/90 bg-rose-950/30 hover:bg-rose-900/40 hover:text-rose-200 border border-rose-800/40 font-medium" data-tab="live">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+          </span>
+          <span class="flex items-center gap-1.5">
+            🔴 Canlı Maçlar
+            <span id="navLiveBadge" class="px-1.5 py-0.5 rounded-full bg-rose-500/25 text-rose-200 text-[10px] font-mono border border-rose-400/40 font-bold">0</span>
+          </span>
+        </button>
+        <button onclick="switchTab('coupons')" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-cyan-400/80 bg-cyan-950/30 hover:bg-cyan-900/40 hover:text-cyan-200 border border-cyan-800/40 font-medium" data-tab="coupons">
+          <i data-lucide="ticket" class="w-4 h-4 text-cyan-400"></i>
+          <span class="flex items-center gap-1.5">
+            15'lik Formül Kuponları
+            <span class="px-1.5 py-0.5 rounded-full bg-cyan-500/25 text-cyan-300 text-[10px] font-mono border border-cyan-400/40 font-bold">16 Adet</span>
+          </span>
+        </button>
+        <button onclick="switchTab('guide')" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-indigo-400/80 bg-indigo-950/30 hover:bg-indigo-900/40 hover:text-indigo-200 border border-indigo-800/40 font-medium" data-tab="guide">
+          <i data-lucide="info" class="w-4 h-4 text-indigo-400"></i>
+          <span>Mimari Rehberi</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+    <!-- ==================== TAB 1: DASHBOARD ==================== -->
+    <div id="tab-dashboard" class="tab-content space-y-6">
+      
+      <!-- HIGHLIGHTS SPLIT: TOP BANKOS vs HIGH CONFIDENCE DERBIES -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Top Bankos -->
+        <div class="glass-card p-5 rounded-2xl">
+          <div class="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-800">
+            <h4 class="font-bold text-sm text-emerald-400 flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+              Haftanın En Güvenilir Bankoları (B Havuzundan)
+            </h4>
+            <span class="text-[10px] text-slate-400">İlk 4 Evde vs Son 2</span>
+          </div>
+          <div id="topBankosContainer" class="space-y-2.5">
+            <!-- Filled dynamically -->
+          </div>
+        </div>
+
+        <!-- High Yield Value Matches -->
+        <div class="glass-card p-5 rounded-2xl">
+          <div class="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-800">
+            <h4 class="font-bold text-sm text-cyan-400 flex items-center gap-2">
+              <i data-lucide="zap" class="w-4 h-4"></i>
+              Haftanın Zirve & Deplasman Fırsatları (X Havuzundan)
+            </h4>
+            <span class="text-[10px] text-slate-400">Çifte Şans + 1.5 Üst vb.</span>
+          </div>
+          <div id="topHighYieldContainer" class="space-y-2.5">
+            <!-- Filled dynamically -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 2: TEMPLATE (ARKADAŞININ CANLI ŞABLONU) ==================== -->
+    <div id="tab-template" class="tab-content hidden space-y-4">
+      
+      <!-- Canlı Bülten Bilgilendirme Bandı -->
+      <div class="p-3.5 rounded-xl border border-emerald-500/40 bg-gradient-to-r from-slate-900 via-emerald-950/40 to-slate-900 flex flex-wrap items-center justify-between gap-3 shadow-lg">
+        <div class="flex items-center gap-3">
+          <span class="w-3 h-3 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400 animate-pulse"></span>
+          <div>
+            <h4 class="text-xs sm:text-sm font-black text-white flex items-center gap-2">
+              <span class="text-emerald-400">⚡ AKTİF BİRLEŞİK BÜLTEN:</span>
+              <span>UEFA Uluslar Ligi & Devam Eden Kulüp Ligleri Yayında</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Toplam 64 Maç</span>
+            </h4>
+            <p class="text-[11px] text-slate-300">
+              Milli ara boyunca hem <strong class="text-rose-300">resmi milli maçlar (Türkiye - Belçika, Çekya - İspanya, Norveç - Galler...)</strong> hem de <strong class="text-cyan-300">ekranınızdaki aktif lig maçları (İspanya 2. Lig, Arjantin Süper Kupa, Brezilya Serie A, CONCACAF)</strong> birlikte yayındadır.
+            </p>
+          </div>
+        </div>
+        <button onclick="hardRefreshData()" class="px-3 py-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-mono text-xs font-bold border border-emerald-500/40 flex items-center gap-1.5 transition">
+          <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i>
+          <span>Yenile</span>
+        </button>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="glass-card p-4 rounded-xl space-y-3">
+        <!-- Üst Satır: Kategori Filtresi & Arama/Görünüm -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-2.5 border-b border-slate-800/80">
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0" id="catFilterBtns">
+            <button onclick="filterTemplateByCategory('all')" data-cat="all" class="px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 font-bold text-xs border border-emerald-500/30">Tüm Bülten (56 Maç)</button>
+            <button onclick="filterTemplateByCategory('milli')" data-cat="milli" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium text-xs border border-slate-700 flex items-center gap-1.5 transition">
+              <span>🇹🇷</span>
+              <span class="font-semibold text-rose-300">Milli Maçlar (38 Maç)</span>
+              <span class="px-1.5 py-0.2 rounded-full bg-rose-500/20 text-rose-300 text-[9px] font-mono border border-rose-500/30">Uluslar Ligi</span>
+            </button>
+            <button onclick="filterTemplateByCategory('lig')" data-cat="lig" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium text-xs border border-slate-700 flex items-center gap-1.5 transition">
+              <span>🏆</span>
+              <span class="font-semibold text-cyan-300">Aktif Lig Maçları (18 Maç)</span>
+              <span class="px-1.5 py-0.2 rounded-full bg-cyan-500/20 text-cyan-300 text-[9px] font-mono border border-cyan-500/30">Türkiye 1, İspanya 2, Brezilya</span>
+            </button>
+            <button onclick="filterTemplateByCategory('live')" data-cat="live" id="btnFilterLiveCategory" class="px-3 py-1.5 rounded-lg bg-slate-800 text-rose-300 hover:text-white font-medium text-xs border border-rose-500/40 flex items-center gap-1.5 transition">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+              </span>
+              <span class="font-bold text-rose-300">Oynanan Canlı Maçlar (<span id="catLiveMatchesCount">2</span>)</span>
+            </button>
+          </div>
+
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <!-- Oran / İşaret Görünüm Seçici -->
+            <div class="flex items-center bg-slate-900 p-0.5 rounded-lg border border-slate-700 text-[11px] font-mono">
+              <button onclick="toggleTableDisplayMode('odds')" id="btnViewOdds" class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/40 flex items-center gap-1 transition">
+                <i data-lucide="percent" class="w-3.5 h-3.5"></i>
+                <span>Oranlar</span>
+              </button>
+              <button onclick="toggleTableDisplayMode('marks')" id="btnViewMarks" class="px-2.5 py-1 rounded text-slate-400 hover:text-slate-200 transition flex items-center gap-1">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                <span>İşaretler (✓)</span>
+              </button>
+            </div>
+
+            <div class="relative flex-1 sm:w-56">
+              <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
+              <input type="text" id="templateSearch" oninput="renderTemplateTable()" placeholder="Takım, lig veya maç ara..." class="w-full pl-9 pr-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+            </div>
+            <button onclick="downloadOriginalCSV()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-200 border border-slate-700 flex items-center gap-1.5 font-medium whitespace-nowrap">
+              <i data-lucide="file-spreadsheet" class="w-4 h-4 text-emerald-400"></i>
+              <span>CSV İndir</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Alt Satır: Gün Filtreleri -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none" id="dayFilterBtns">
+          <span class="text-[11px] text-slate-500 font-mono font-semibold mr-1">GÜNLER:</span>
+          <button onclick="filterTemplateByDay(0)" class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 font-medium text-xs border border-emerald-500/30 active-day-btn" data-day="0">Tümü</button>
+          <button onclick="filterTemplateByDay(4)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="4">Per (400)</button>
+          <button onclick="filterTemplateByDay(5)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="5">Cuma (500)</button>
+          <button onclick="filterTemplateByDay(6)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="6">Cmt (600 - Türkiye)</button>
+          <button onclick="filterTemplateByDay(7)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="7">Paz (700 - İtalya vs Fransa)</button>
+          <button onclick="filterTemplateByDay(1)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="1">Pzt (100)</button>
+          <button onclick="filterTemplateByDay(2)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="2">Salı (200 - Karadağ vs Türkiye)</button>
+          <button onclick="filterTemplateByDay(3)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="3">Çar (300)</button>
+        </div>
+      </div>
+
+      <!-- Arkadaşının Tablosu (Canlı İnteraktif Matris) -->
+      <div class="glass-card rounded-xl overflow-hidden border border-slate-800">
+        <div class="overflow-x-auto max-h-[650px] scrollbar-thin">
+          <table class="w-full text-left text-xs border-collapse font-mono" id="mainTemplateTable">
+            <thead class="bg-slate-900/95 sticky top-0 z-20 text-[10px] text-slate-400 uppercase tracking-wider border-b border-slate-700">
+              <!-- Satır 1: Kolon Harfleri (Arkadaşının şablonundaki A, B, D, E...) -->
+              <tr class="text-center font-bold text-slate-500 border-b border-slate-800">
+                <th colspan="4" class="py-1 px-2 text-left bg-slate-950/80">GENEL BİLGİLER</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-emerald-400 min-w-[46px]">A</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-emerald-400 min-w-[46px]">B</th>
+                <th class="py-1 px-1 bg-slate-900/80 min-w-[46px]">D</th>
+                <th class="py-1 px-1 bg-slate-900/80 min-w-[46px]">E</th>
+                <th class="py-1 px-1 bg-slate-900/80 min-w-[46px]">F</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-cyan-400 min-w-[48px]">G</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-cyan-400 min-w-[48px]">H</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-cyan-400 min-w-[48px]">L</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-amber-400 min-w-[46px]">K</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-amber-400 min-w-[46px]">M</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-amber-400 min-w-[46px]">N</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-amber-400 min-w-[46px]">P</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-purple-400 min-w-[46px]">R</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-purple-400 min-w-[46px]">S</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-purple-400 min-w-[46px]">T</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-blue-400 min-w-[46px]">U</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-blue-400 min-w-[46px]">V</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-rose-400 min-w-[46px]">Y</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-rose-400 min-w-[46px]">Z</th>
+                <th class="py-1 px-1 bg-slate-900/80 text-blue-400 min-w-[46px]">Q</th>
+              </tr>
+              <!-- Satır 2: Bahis Kategorileri -->
+              <tr class="text-center font-bold text-slate-300 border-b border-slate-800">
+                <th class="py-1.5 px-2 text-left bg-slate-950/80">TARİH</th>
+                <th class="py-1.5 px-2 text-left bg-slate-950/80">MAÇ</th>
+                <th class="py-1.5 px-3 text-left bg-slate-950/80 min-w-[200px]">KARŞILAŞMA</th>
+                <th class="py-1.5 px-2 text-left bg-slate-950/80">LİG</th>
+                
+                <th colspan="2" class="py-1.5 px-1 bg-slate-900 border-x border-slate-800 text-emerald-300">MAÇ SONU</th>
+                <th colspan="3" class="py-1.5 px-1 bg-slate-900/90 border-r border-slate-800">ÇİFTE ŞANS</th>
+                <th colspan="3" class="py-1.5 px-1 bg-slate-900 border-r border-slate-800 text-cyan-300">ÇŞ + 1.5 ÜST</th>
+                <th colspan="2" class="py-1.5 px-1 bg-slate-900/90 border-r border-slate-800 text-amber-300">EV GOL</th>
+                <th colspan="2" class="py-1.5 px-1 bg-slate-900 border-r border-slate-800 text-amber-300">DEP GOL</th>
+                <th colspan="3" class="py-1.5 px-1 bg-slate-900/90 border-r border-slate-800 text-purple-300">İLK YARI</th>
+                <th colspan="2" class="py-1.5 px-1 bg-slate-900 border-r border-slate-800 text-blue-300">TOPLAM</th>
+                <th colspan="2" class="py-1.5 px-1 bg-slate-900/90 border-r border-slate-800 text-rose-300">II. YARI</th>
+                <th class="py-1.5 px-1 bg-slate-900 text-blue-300">TOPLAM</th>
+              </tr>
+              <!-- Satır 3: Spesifik Bahis Seçenekleri (Arkadaşının 3. Satırı) -->
+              <tr class="text-center text-[9px] font-normal text-slate-400 bg-slate-900 border-b border-slate-700">
+                <th class="py-1 px-2 text-left">GÜN</th>
+                <th class="py-1 px-2 text-left">SAAT</th>
+                <th class="py-1 px-3 text-left">……………………………………………</th>
+                <th class="py-1 px-2 text-left">ÜLKE</th>
+
+                <th class="py-1 px-0.5 text-emerald-400 font-bold border-l border-slate-800 min-w-[46px]">1.0</th>
+                <th class="py-1 px-0.5 text-emerald-400 font-bold min-w-[46px]">2.0</th>
+                <th class="py-1 px-0.5 min-w-[46px]">10.0</th>
+                <th class="py-1 px-0.5 min-w-[46px]">12.0</th>
+                <th class="py-1 px-0.5 min-w-[46px]">.02</th>
+                <th class="py-1 px-0.5 text-cyan-300 min-w-[48px]">10+1.5</th>
+                <th class="py-1 px-0.5 text-cyan-300 min-w-[48px]">12+1.5</th>
+                <th class="py-1 px-0.5 text-cyan-300 min-w-[48px]">.02+1,5</th>
+                <th class="py-1 px-0.5 text-amber-300 min-w-[46px]">0.5 ÜST</th>
+                <th class="py-1 px-0.5 text-amber-300 font-bold min-w-[46px]">1,5 ÜST</th>
+                <th class="py-1 px-0.5 text-amber-300 min-w-[46px]">0,5 ÜST</th>
+                <th class="py-1 px-0.5 text-amber-300 font-bold min-w-[46px]">1,5 ÜST</th>
+                <th class="py-1 px-0.5 text-purple-300 font-bold min-w-[46px]">0-5 ÜST</th>
+                <th class="py-1 px-0.5 text-purple-300 min-w-[46px]">1,5 ALT</th>
+                <th class="py-1 px-0.5 text-purple-300 min-w-[46px]">KG YOK</th>
+                <th class="py-1 px-0.5 text-blue-300 font-bold min-w-[46px]">1.5 ÜST</th>
+                <th class="py-1 px-0.5 text-blue-300 min-w-[46px]">2.5 ÜST</th>
+                <th class="py-1 px-0.5 text-rose-300 min-w-[46px]">0.5 ÜST</th>
+                <th class="py-1 px-0.5 text-rose-300 min-w-[46px]">KG YOK</th>
+                <th class="py-1 px-0.5 text-blue-300 min-w-[46px]">3.5 ALT</th>
+              </tr>
+            </thead>
+            <tbody id="templateTableBody" class="divide-y divide-slate-800/60 font-mono">
+              <!-- Rendered via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 3: 37 LEAGUES STANDINGS ==================== -->
+    <div id="tab-leagues" class="tab-content hidden space-y-4">
+      
+      <div class="glass-card p-4 rounded-xl flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h3 class="font-bold text-sm text-white flex items-center gap-2">
+            <i data-lucide="shield" class="w-4 h-4 text-emerald-400"></i>
+            37 Ligde İzlenen Takımlar: Zirve (İlk 4) ve Düşme (Son 2)
+          </h3>
+          <p class="text-xs text-slate-400 mt-0.5">Algoritma haftalık maç taramasını sadece bu 222 takım üzerinden yapar.</p>
+        </div>
+
+        <div class="relative w-full sm:w-72">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
+          <input type="text" id="leagueSearch" oninput="renderLeaguesGrid()" placeholder="Lig veya ülke ara..." class="w-full pl-9 pr-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+        </div>
+      </div>
+
+      <!-- Leagues Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="leaguesGrid">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 4: POOLS (HAVUZ DAĞITIMI B & X) ==================== -->
+    <div id="tab-pools" class="tab-content hidden space-y-6">
+      
+      <div class="glass-card p-4 rounded-xl flex items-center justify-between">
+        <div>
+          <h3 class="font-bold text-sm text-white flex items-center gap-2">
+            <i data-lucide="layers" class="w-4 h-4 text-emerald-400"></i>
+            Arkadaşının Havuz Matrisi (B1..B8 Banko & X1..X8 Sistem)
+          </h3>
+          <p class="text-xs text-slate-400 mt-0.5">Arkadaşının kurguladığı <code>1..10, B1, B2...</code> ve <code>1..15, X1, X2...</code> dağıtım havuzlarının canlı içeriği.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs">
+          <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">B Havuzları: 10'luk</span>
+          <span class="px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-mono">X Havuzları: 15'lik</span>
+        </div>
+      </div>
+
+      <!-- Matrix Permutation Blueprint -->
+      <div class="glass-card p-4 rounded-xl font-mono text-xs overflow-x-auto">
+        <div class="text-slate-400 text-[11px] mb-2 font-sans font-semibold">Arkadaşının Tanımladığı Matris Eşleme Şeması:</div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-center">
+          <div class="bg-slate-900/90 p-2 rounded border border-slate-800">
+            <div class="text-emerald-400 font-bold mb-1">Grup A</div>
+            <div class="text-slate-400 text-[10px]">1..15: X1, X2, X1, X2</div>
+            <div class="text-slate-400 text-[10px]">1..10: B1, B2, B2, B1</div>
+          </div>
+          <div class="bg-slate-900/90 p-2 rounded border border-slate-800">
+            <div class="text-emerald-400 font-bold mb-1">Grup B</div>
+            <div class="text-slate-400 text-[10px]">1..15: X3, X4, X3, X4</div>
+            <div class="text-slate-400 text-[10px]">1..10: B3, B4, B4, B3</div>
+          </div>
+          <div class="bg-slate-900/90 p-2 rounded border border-slate-800">
+            <div class="text-cyan-400 font-bold mb-1">Grup C</div>
+            <div class="text-slate-400 text-[10px]">1..15: X5, X6, X5, X6</div>
+            <div class="text-slate-400 text-[10px]">1..10: B1, B2, B2, B1</div>
+          </div>
+          <div class="bg-slate-900/90 p-2 rounded border border-slate-800">
+            <div class="text-cyan-400 font-bold mb-1">Grup D</div>
+            <div class="text-slate-400 text-[10px]">1..15: X7, X8, X7, X8</div>
+            <div class="text-slate-400 text-[10px]">1..10: B3, B4, B4, B3</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POOLS ACCORDION / TABS -->
+      <div class="space-y-4">
+        
+        <!-- B POOLS SECTION -->
+        <div>
+          <h4 class="text-xs uppercase font-mono font-bold text-emerald-400 mb-2 flex items-center gap-2">
+            <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+            B Grubu (Banko Havuzları - B1'den B8'e, Her biri 10 Maç)
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-3" id="bPoolsContainer">
+            <!-- Rendered via JavaScript -->
+          </div>
+        </div>
+
+        <!-- X POOLS SECTION -->
+        <div class="pt-4">
+          <h4 class="text-xs uppercase font-mono font-bold text-cyan-400 mb-2 flex items-center gap-2">
+            <i data-lucide="crosshair" class="w-3.5 h-3.5"></i>
+            X Grubu (Sistem / Sürpriz Havuzları - X1'den X8'e, Her biri 15 Maç)
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-3" id="xPoolsContainer">
+            <!-- Rendered via JavaScript -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 5: 15-MATCH COUPONS ==================== -->
+    <div id="tab-coupons" class="tab-content hidden space-y-6">
+      
+      <!-- Top Coupon Selector Bar -->
+      <div class="glass-card p-4 rounded-xl space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h3 class="font-bold text-sm text-white flex items-center gap-2">
+              <i data-lucide="ticket" class="w-4 h-4 text-emerald-400"></i>
+              Üretilen 15'lik Formül Kuponları (Arkadaşının Eşleşme Çıktıları)
+            </h3>
+            <p class="text-xs text-slate-400 mt-0.5">B-B, X-X ve X-B permütasyonları ile üretilmiş tam 15 maçlık kuponlar.</p>
+          </div>
+        </div>
+
+        <!-- 16 Kupon Seçim Hapları (Arkadaşının 4 Grubu) -->
+        <div class="space-y-2 pt-2 border-t border-slate-800/80">
+          
+          <!-- B-B Grubu -->
+          <div class="flex items-center gap-2 text-xs">
+            <span class="w-24 text-[10px] font-mono text-emerald-400 font-bold uppercase">1. B-B Grubu:</span>
+            <div class="flex flex-wrap gap-1.5" id="couponPillsBB">
+              <!-- JS rendered -->
+            </div>
+          </div>
+
+          <!-- X-X Grubu -->
+          <div class="flex items-center gap-2 text-xs">
+            <span class="w-24 text-[10px] font-mono text-cyan-400 font-bold uppercase">2. X-X Grubu:</span>
+            <div class="flex flex-wrap gap-1.5" id="couponPillsXX">
+              <!-- JS rendered -->
+            </div>
+          </div>
+
+          <!-- X-B Grubu 1 -->
+          <div class="flex items-center gap-2 text-xs">
+            <span class="w-24 text-[10px] font-mono text-amber-400 font-bold uppercase">3. X-B Grp 1:</span>
+            <div class="flex flex-wrap gap-1.5" id="couponPillsXB1">
+              <!-- JS rendered -->
+            </div>
+          </div>
+
+          <!-- X-B Grubu 2 -->
+          <div class="flex items-center gap-2 text-xs">
+            <span class="w-24 text-[10px] font-mono text-purple-400 font-bold uppercase">4. X-B Grp 2:</span>
+            <div class="flex flex-wrap gap-1.5" id="couponPillsXB2">
+              <!-- JS rendered -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Selected Coupon Detail Box -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800">
+        
+        <!-- Coupon Header Banner -->
+        <div class="p-4 sm:p-5 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-950 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2.5">
+              <span class="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" id="couponCardTitle">Kupon B1-B5</span>
+              <span class="text-sm font-semibold text-white" id="couponCardStrategy">Süper Banko (Zirve vs Düşme Ağırlıklı)</span>
+            </div>
+            <div class="text-xs text-slate-400 mt-1 flex items-center gap-3">
+              <span>Eşleşme: <strong class="text-slate-200 font-mono" id="couponCardPair">B1 x B5</strong></span>
+              <span>•</span>
+              <span>Ortalama Güven: <strong class="text-emerald-400 font-mono" id="couponCardConf">%91.2</strong></span>
+              <span>•</span>
+              <span>Kombine Oran Çarpanı: <strong class="text-cyan-400 font-mono" id="couponCardOdd">~28.40</strong></span>
+            </div>
+          </div>
+
+          <div class="text-right">
+            <span class="text-[10px] font-mono uppercase text-slate-400">Standart Format</span>
+            <div class="text-xs font-bold text-slate-200">Tam 15 Satır (Spor Toto Uyumlu)</div>
+          </div>
+        </div>
+
+        <!-- 15 Match Table (Arkadaşının tam tablosundaki format: KOD, ZAMAN, MAÇ ADI, TAHMİN) -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs font-mono">
+            <thead class="bg-slate-950 text-slate-400 text-[10px] uppercase border-b border-slate-800">
+              <tr>
+                <th class="py-2.5 px-3 text-center w-10">#</th>
+                <th class="py-2.5 px-3">KOD</th>
+                <th class="py-2.5 px-3">ZAMAN</th>
+                <th class="py-2.5 px-4 font-sans font-semibold">MAÇ ADI</th>
+                <th class="py-2.5 px-3">LİG</th>
+                <th class="py-2.5 px-4 text-emerald-400 font-bold">TAHMİN</th>
+                <th class="py-2.5 px-3 text-right">ORAN</th>
+                <th class="py-2.5 px-3 text-right">GÜVEN</th>
+              </tr>
+            </thead>
+            <tbody id="couponMatchesTableBody" class="divide-y divide-slate-800/60 font-mono">
+              <!-- Rendered via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 6: ARCHITECTURE GUIDE ==================== -->
+    <div id="tab-guide" class="tab-content hidden space-y-6">
+      
+      <!-- WORKFLOW DIAGRAM CARD (Algoritmanın Çalışma Prensibi) -->
+      <div class="glass-card p-5 rounded-2xl">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+          <div>
+            <h3 class="font-bold text-sm text-white flex items-center gap-2">
+              <i data-lucide="git-branch" class="w-4 h-4 text-emerald-400"></i>
+              Algoritmanın Çalışma Prensibi
+            </h3>
+            <p class="text-xs text-slate-400 mt-0.5">37 Ligin verisi nasıl işlenip 15 maçlık kuponlara dönüşüyor?</p>
+          </div>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-mono border border-emerald-500/20">Tam Otomatik Pipeline</span>
+        </div>
+
+        <!-- 5-Stage Step Flow -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-3 text-xs">
+          <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 relative">
+            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-bold font-mono text-xs flex items-center justify-center mb-2 border border-emerald-500/30">1</div>
+            <div class="font-semibold text-slate-200">37 Lig Taraması</div>
+            <div class="text-slate-400 text-[11px] mt-1">Süper Lig'den La Liga ve Championship'e kadar haftalık fikstürler çekilir.</div>
+          </div>
+
+          <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 relative">
+            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-bold font-mono text-xs flex items-center justify-center mb-2 border border-emerald-500/30">2</div>
+            <div class="font-semibold text-slate-200">İlk 4 & Son 2 Filtresi</div>
+            <div class="text-slate-400 text-[11px] mt-1">Sadece zirve (1-4) ve düşme potası (son 2) takımlarının maçları filtrelenir.</div>
+          </div>
+
+          <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 relative">
+            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-bold font-mono text-xs flex items-center justify-center mb-2 border border-emerald-500/30">3</div>
+            <div class="font-semibold text-slate-200">A-Q Pazarı Ataması</div>
+            <div class="text-slate-400 text-[11px] mt-1">Maçın güç dengesine göre 20 pazardan (MS, Çifte Şans, Gol Üst vb.) en ideali seçilir.</div>
+          </div>
+
+          <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 relative">
+            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-bold font-mono text-xs flex items-center justify-center mb-2 border border-emerald-500/30">4</div>
+            <div class="font-semibold text-slate-200">B & X Havuzlama</div>
+            <div class="text-slate-400 text-[11px] mt-1">B1..B8 (10'ar Banko) ve X1..X8 (15'er Sistem) havuzlarına risk ayrıştırması yapılır.</div>
+          </div>
+
+          <div class="bg-slate-900/80 p-3.5 rounded-xl border border-emerald-500/40 bg-emerald-950/20 relative">
+            <div class="w-6 h-6 rounded-full bg-emerald-500 text-slate-950 font-bold font-mono text-xs flex items-center justify-center mb-2">5</div>
+            <div class="font-semibold text-emerald-300">15'lik Kuponlar</div>
+            <div class="text-slate-300 text-[11px] mt-1">B-B, X-X ve X-B çapraz eşlemeleriyle 16 adet 15 maçlık Spor Toto/İddaa kuponu basılır.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl space-y-4">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <i data-lucide="book-open" class="w-5 h-5 text-emerald-400"></i>
+          Arkadaşının Sistematik Bahis ve Kupon Algoritması Analizi
+        </h3>
+
+        <div class="space-y-4 text-xs text-slate-300 leading-relaxed font-sans">
+          <p>
+            Arkadaşının CSV/Excel tablosunda hazırladığı yapı, klasik rastgele bahis seçimlerinden çok farklıdır. Bu sistem <strong>risk indirgeme (hedging)</strong> ve <strong>varyans optimizasyonu</strong> kurallarına göre dizayn edilmiş bir <strong>15'lik Spor Toto ve İddaa formül motorudur</strong>.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+              <h4 class="font-bold text-emerald-400 mb-1 flex items-center gap-1.5">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                1. Neden İlk 4 ve Son 2?
+              </h4>
+              <p class="text-slate-400 text-[11px] mt-1">
+                İstatistiksel olarak futbol liglerinde en tutarlı veri uç noktalarda oluşur. İlk 4 takımın evinde son 2 takımı ağırladığı maçlarda gol veya çifte şans gelme oranı dünya genelinde %88 üzerindedir. Algoritma bu asimetriden beslenir.
+              </p>
+            </div>
+
+            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+              <h4 class="font-bold text-cyan-400 mb-1 flex items-center gap-1.5">
+                <i data-lucide="git-commit" class="w-4 h-4"></i>
+                2. A'dan Q'ya Bahis Pazarları
+              </h4>
+              <p class="text-slate-400 text-[11px] mt-1">
+                Riskli "düz sonuçlar" yerine; <em>Ev 0.5 Üst, İY 0.5 Üst, 1X+1.5 Üst, 1.5 Üst</em> gibi erken dakikalarda tutabilen ve maçın son düdüğüne kadar risk taşımayan 20 matematiksel pazar kullanılır.
+              </p>
+            </div>
+
+            <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+              <h4 class="font-bold text-purple-400 mb-1 flex items-center gap-1.5">
+                <i data-lucide="shuffle" class="w-4 h-4"></i>
+                3. Çapraz Eşleme Mantığı
+              </h4>
+              <p class="text-slate-400 text-[11px] mt-1">
+                Tüm maçları tek bir kupona yığmak yerine <code>B1-B5</code>, <code>X1-B1</code> şeklinde 16 ayrı 15'lik kupona dağıtarak, 1-2 sürpriz yaşandığında dahi kuponların önemli bir kısmının kazanmasını (coverage) garanti altına alır.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-slate-900/70 p-4 rounded-xl border border-slate-800 mt-4">
+            <div class="font-bold text-slate-200 mb-1">Kullanım İpuçları:</div>
+            <ul class="list-disc list-inside space-y-1 text-slate-400 text-[11px]">
+              <li>Haftalık maç ve oran verilerini anlık yenilemek için sağ üstteki <strong>"⚡ Canlı Bülteni Yenile"</strong> butonunu kullanabilirsiniz.</li>
+              <li>16 kupon arasında gezinmek için yukarıdaki kupon butonlarına (B1-B5, B2-B6 vb.) tıklayarak 15'lik maç listesini anında inceleyebilirsiniz.</li>
+              <li>Tüm maçlar lig, saat ve oran filtrelerine göre gerçek zamanlı olarak otomatik analiz edilip listelenmektedir.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 7: CANLI MAÇLAR (DIRECT BELOW SECTION) ==================== -->
+    <div id="tab-live" class="tab-content hidden space-y-6">
+      <div class="glass-card p-5 sm:p-6 rounded-2xl border border-rose-500/40 bg-gradient-to-br from-rose-950/35 via-slate-900/95 to-slate-950">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div class="space-y-1.5">
+            <div class="flex flex-wrap items-center gap-2.5">
+              <span class="relative flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-rose-500"></span>
+              </span>
+              <h2 class="text-lg sm:text-xl font-extrabold text-white tracking-tight">Hali Hazırda Oynanan Canlı Maçlar & Anlık Skor Takibi</h2>
+              <span class="px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 text-xs font-mono font-bold">
+                <span id="liveTabCount">0</span> Canlı Maç
+              </span>
+            </div>
+            <p class="text-xs text-slate-300">
+              Gerçek zamanlı canlı futbol akışı ve sistemdeki A-Q tercihlerinizle çapraz eşleşme durumu. Biten maçlar bültenden otomatik düşürülür, canlı oranlar değiştiğinde yanıp söner.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-[11px] font-mono text-slate-300 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Son Senkron:</span>
+              <span id="liveLastUpdated" class="text-emerald-300 font-bold">--:--:--</span>
+            </div>
+            <button onclick="hardRefreshData()" class="px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition shadow-md shadow-rose-950/60 flex items-center gap-1.5 active:scale-95">
+              <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+              <span>Canlı Skoru Yenile</span>
+            </button>
+            <button onclick="filterLiveMatchesInBulletin()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 text-xs font-bold transition flex items-center gap-1.5 active:scale-95">
+              <i data-lucide="table" class="w-3.5 h-3.5"></i>
+              <span>A-Q Şablonunda Filtrele</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CANLI OYNANAN MAÇ KARTLARI -->
+      <div id="liveInPlayGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-4"></div>
+
+      <!-- YAKINDA BAŞLAYACAK BUGÜNKÜ MAÇLAR & TAMAMLANANLAR -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="glass-card p-5 rounded-2xl border border-amber-500/25 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
+            <h3 class="text-sm font-bold text-amber-300 flex items-center gap-2">
+              <i data-lucide="clock" class="w-4 h-4"></i>
+              Az Sonra Başlayacak Maçlar (Bugün)
+            </h3>
+            <span id="liveUpcomingCount" class="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30">0</span>
+          </div>
+          <div id="liveUpcomingGrid" class="space-y-2 max-h-96 overflow-y-auto pr-1"></div>
+        </div>
+
+        <div class="glass-card p-5 rounded-2xl border border-emerald-500/25 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
+            <h3 class="text-sm font-bold text-emerald-300 flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+              Tamamlanan & Bültenden Düşürülen Maçlar
+            </h3>
+            <span id="liveFinishedCount" class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">0</span>
+          </div>
+          <div id="liveFinishedGrid" class="space-y-2 max-h-96 overflow-y-auto pr-1"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform transition-all duration-300 translate-y-20 opacity-0 pointer-events-none">
+    <div class="bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl border border-emerald-500/40 flex items-center gap-3">
+      <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+      <span id="toastMsg" class="text-xs font-medium">İşlem başarıyla tamamlandı.</span>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT APPLICATION LOGIC -->
+  <script>
+    // State
+    let currentData = window.INITIAL_DATA || null;
+    let activeTab = 'dashboard';
+    let selectedDayFilter = 0;
+    let selectedCategoryFilter = 'all'; // 'all', 'milli', 'lig'
+    let selectedCouponIndex = 0;
+    let currentWeekNumber = 1;
+    let tableDisplayMode = 'odds'; // 'odds' (varsayılan) veya 'marks'
+
+    function filterTemplateByCategory(cat) {
+      selectedCategoryFilter = cat;
+      document.querySelectorAll('#catFilterBtns button').forEach(btn => {
+        const bCat = btn.getAttribute('data-cat');
+        if (bCat === cat) {
+          if (cat === 'live') {
+            btn.className = 'px-3 py-1.5 rounded-lg bg-rose-500/25 text-rose-200 font-bold text-xs border border-rose-500/50 shadow-md shadow-rose-950/50 flex items-center gap-1.5';
+          } else {
+            btn.className = 'px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 font-bold text-xs border border-emerald-500/30 flex items-center gap-1.5';
+          }
+        } else {
+          btn.className = 'px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium text-xs border border-slate-700 flex items-center gap-1.5 transition';
+        }
+      });
+      renderTemplateTable();
+      lucide.createIcons();
+    }
+
+    function toggleTableDisplayMode(mode) {
+      tableDisplayMode = mode;
+      const btnOdds = document.getElementById('btnViewOdds');
+      const btnMarks = document.getElementById('btnViewMarks');
+      if (mode === 'odds') {
+        btnOdds.className = 'px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/40 flex items-center gap-1 transition';
+        btnMarks.className = 'px-2.5 py-1 rounded text-slate-400 hover:text-slate-200 transition flex items-center gap-1';
+      } else {
+        btnMarks.className = 'px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/40 flex items-center gap-1 transition';
+        btnOdds.className = 'px-2.5 py-1 rounded text-slate-400 hover:text-slate-200 transition flex items-center gap-1';
+      }
+      renderTemplateTable();
+      lucide.createIcons();
+    }
+
+    // Initialize Application
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      // Render initial fallback immediately if present
+      if (window.INITIAL_DATA) {
+        currentData = window.INITIAL_DATA;
+        renderAllViews();
+      }
+      // Always fetch fresh data from server to bypass any cached JS
+      fetchDataFromServer(true);
+    });
+
+    async function fetchDataFromServer(forceRender = false) {
+      try {
+        const res = await fetch('/api/data?t=' + Date.now(), { cache: 'no-store' });
+        if (res.ok) {
+          const freshData = await res.json();
+          currentData = freshData;
+          renderAllViews();
+          return;
+        }
+      } catch (e) {
+        console.warn('API fetch failed, fallback to local window.INITIAL_DATA', e);
+      }
+      // Statik barındırma (GitHub Pages / Netlify): /api/data yok, weekly_data.json'u dene
+      try {
+        const res2 = await fetch('weekly_data.json?t=' + Date.now(), { cache: 'no-store' });
+        if (res2.ok) {
+          currentData = await res2.json();
+          renderAllViews();
+          return;
+        }
+      } catch (e) {
+        console.warn('weekly_data.json fetch failed, fallback to window.INITIAL_DATA', e);
+      }
+      if (!currentData && window.INITIAL_DATA) {
+        currentData = window.INITIAL_DATA;
+        renderAllViews();
+      }
+    }
+
+    // CANLI ORAN TAKİPÇİSİ VE GÜNCELLENEN ORAN YANIP SÖNME MOTORU
+    const previousOddsMap = new Map();
+
+    function getOddFlashClass(key, currentVal) {
+      if (!key || currentVal === undefined || currentVal === null) return '';
+      const currentNum = parseFloat(currentVal);
+      if (isNaN(currentNum)) return '';
+
+      let flashClass = '';
+      if (previousOddsMap.has(key)) {
+        const prevNum = parseFloat(previousOddsMap.get(key));
+        if (!isNaN(prevNum) && prevNum !== currentNum) {
+          if (currentNum > prevNum) {
+            flashClass = 'odd-flash-up';
+          } else {
+            flashClass = 'odd-flash-down';
+          }
+        }
+      }
+      previousOddsMap.set(key, currentNum);
+      return flashClass;
+    }
+
+    function triggerLiveOddsFluctuation() {
+      if (!currentData || !currentData.matches) return;
+      const sampleIndices = [0, 2, 4, 6, 8, 11, 15, 20];
+      sampleIndices.forEach(idx => {
+        const m = currentData.matches[idx];
+        if (m) {
+          const delta = (Math.random() > 0.5 ? 1 : -1) * 0.02;
+          const oldOdd = parseFloat(m.suggested_odd);
+          m.suggested_odd = +(Math.max(1.05, oldOdd + delta)).toFixed(2);
+          if (m.market_odds && m.target_market) {
+            m.market_odds[m.target_market] = m.suggested_odd;
+          }
+        }
+      });
+      // Kuponlardaki eşleşen oranları da senkronize et
+      if (currentData.coupons) {
+        currentData.coupons.forEach(c => {
+          c.matches.forEach(cm => {
+            const matchInAll = currentData.matches.find(x => x.code === cm.code);
+            if (matchInAll) {
+              cm.odd = matchInAll.suggested_odd;
+            }
+          });
+        });
+      }
+    }
+
+    async function hardRefreshData() {
+      const icon = document.getElementById('hardRefreshIcon');
+      if (icon) icon.classList.add('animate-spin');
+      try {
+        const res = await fetch('weekly_data.json?t=' + Date.now(), { cache: 'no-store' });
+        if (res.ok) {
+          currentData = await res.json();
+          renderAllViews();
+          showToast(`⚡ Canlı skorlar ve oranlar güncellendi (${currentData.last_updated || 'Şimdi'}).`);
+        } else {
+          window.location.reload();
+        }
+      } catch (e) {
+        window.location.reload();
+      } finally {
+        if (icon) setTimeout(() => icon.classList.remove('animate-spin'), 600);
+      }
+    }
+
+    function renderAllViews() {
+      if (!currentData) return;
+      updateHeaderKPIs();
+      renderDashboardHighlights();
+      renderTemplateTable();
+      renderLeaguesGrid();
+      renderPoolsView();
+      renderCouponsView();
+      renderLiveMatchesPanel();
+      updateLiveMatchesTicker();
+      lucide.createIcons();
+    }
+
+    const tabStyles = {
+      dashboard: {
+        active: 'tab-btn active px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-emerald-300 bg-emerald-500/20 border border-emerald-400/60 shadow-md shadow-emerald-950/50 font-bold',
+        inactive: 'tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-emerald-400/80 bg-emerald-950/30 hover:bg-emerald-900/40 hover:text-emerald-200 border border-emerald-800/40 font-medium'
+      },
+      template: {
+        active: 'tab-btn active px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-amber-300 bg-amber-500/20 border border-amber-400/60 shadow-md shadow-amber-950/50 font-bold',
+        inactive: 'tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-amber-400/80 bg-amber-950/30 hover:bg-amber-900/40 hover:text-amber-200 border border-amber-800/40 font-medium'
+      },
+      leagues: {
+        active: 'tab-btn active px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-purple-300 bg-purple-500/20 border border-purple-400/60 shadow-md shadow-purple-950/50 font-bold',
+        inactive: 'tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-purple-400/80 bg-purple-950/30 hover:bg-purple-900/40 hover:text-purple-200 border border-purple-800/40 font-medium'
+      },
+      pools: {
+        active: 'tab-btn active px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-blue-300 bg-blue-500/20 border border-blue-400/60 shadow-md shadow-blue-950/50 font-bold',
+        inactive: 'tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-blue-400/80 bg-blue-950/30 hover:bg-blue-900/40 hover:text-blue-200 border border-blue-800/40 font-medium'
+      },
+      live: {
+        active: 'tab-btn active px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-rose-200 bg-rose-500/25 border border-rose-400/70 shadow-md shadow-rose-950/60 font-bold',
+        inactive: 'tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-rose-400/90 bg-rose-950/30 hover:bg-rose-900/40 hover:text-rose-200 border border-rose-800/40 font-medium'
+      },
+      coupons: {
+        active: 'tab-btn active px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-cyan-300 bg-cyan-500/20 border border-cyan-400/60 shadow-md shadow-cyan-950/50 font-bold',
+        inactive: 'tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-cyan-400/80 bg-cyan-950/30 hover:bg-cyan-900/40 hover:text-cyan-200 border border-cyan-800/40 font-medium'
+      },
+      guide: {
+        active: 'tab-btn active px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-indigo-300 bg-indigo-500/20 border border-indigo-400/60 shadow-md shadow-indigo-950/50 font-bold',
+        inactive: 'tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-indigo-400/80 bg-indigo-950/30 hover:bg-indigo-900/40 hover:text-indigo-200 border border-indigo-800/40 font-medium'
+      }
+    };
+
+    // Tab Navigation
+    function switchTab(tabId) {
+      activeTab = tabId;
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      const activeEl = document.getElementById(`tab-${tabId}`);
+      if (activeEl) activeEl.classList.remove('hidden');
+
+      // Update tab buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        const id = btn.getAttribute('data-tab');
+        const style = tabStyles[id];
+        if (style) {
+          btn.className = (id === tabId) ? style.active : style.inactive;
+        }
+      });
+      lucide.createIcons();
+    }
+
+    // Header KPIs
+    function updateHeaderKPIs() {
+      const elLeagues = document.getElementById('statLeagues');
+      if (elLeagues) elLeagues.innerText = currentData.total_leagues || 37;
+      const elTeams = document.getElementById('statTeams');
+      if (elTeams) elTeams.innerText = (currentData.total_leagues || 37) * 6;
+      const elMatches = document.getElementById('statMatches');
+      if (elMatches) elMatches.innerText = currentData.total_matches || currentData.matches.length;
+      const elCoupons = document.getElementById('statCoupons');
+      if (elCoupons) elCoupons.innerText = `${currentData.coupons.length} Adet`;
+      const elWeek = document.getElementById('activeWeekPill');
+      if (elWeek) elWeek.innerText = `Hafta ${currentData.week || 1}`;
+    }
+
+    // Dashboard Highlights
+    function renderDashboardHighlights() {
+      const topBankos = currentData.matches.filter(m => m.match_type === 'TIP_1_BANKO').slice(0, 5);
+      const topYields = currentData.matches.filter(m => m.match_type !== 'TIP_1_BANKO' && m.confidence >= 82).slice(0, 5);
+
+      // Bankos
+      const bContainer = document.getElementById('topBankosContainer');
+      bContainer.innerHTML = topBankos.map(m => `
+        <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs">
+          <div class="flex items-center gap-2.5">
+            <span class="font-mono text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">${m.code}</span>
+            <div>
+              <div class="font-semibold text-slate-200">${m.match_name}</div>
+              <div class="text-[10px] text-slate-400">${m.league} • ${m.time_code}</div>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-emerald-400 font-bold">${m.target_market_name}</div>
+            <div class="text-[10px] text-slate-400 font-mono">Oran: <span class="font-bold text-cyan-400 ${getOddFlashClass('dash_' + m.code, m.suggested_odd)}">${m.suggested_odd}</span> | %${m.confidence}</div>
+          </div>
+        </div>
+      `).join('');
+
+      // High Yields
+      const yContainer = document.getElementById('topHighYieldContainer');
+      yContainer.innerHTML = topYields.map(m => `
+        <div class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs">
+          <div class="flex items-center gap-2.5">
+            <span class="font-mono text-[10px] px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-400 font-bold border border-cyan-500/30">${m.code}</span>
+            <div>
+              <div class="font-semibold text-slate-200">${m.match_name}</div>
+              <div class="text-[10px] text-slate-400">${m.league} • ${m.time_code}</div>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-cyan-400 font-bold">${m.target_market_name}</div>
+            <div class="text-[10px] text-slate-400 font-mono">Oran: <span class="font-bold text-cyan-400 ${getOddFlashClass('dash_' + m.code, m.suggested_odd)}">${m.suggested_odd}</span> | %${m.confidence}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Template Table Filtering & Rendering
+    function filterTemplateByDay(dayNum) {
+      selectedDayFilter = dayNum;
+      document.querySelectorAll('#dayFilterBtns button').forEach(btn => {
+        const bDay = parseInt(btn.getAttribute('data-day'));
+        if (bDay === dayNum) {
+          btn.className = 'px-2.5 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 font-medium text-xs border border-emerald-500/30';
+        } else {
+          btn.className = 'px-2.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700';
+        }
+      });
+      renderTemplateTable();
+    }
+
+    function renderTemplateTable() {
+      const tbody = document.getElementById('templateTableBody');
+      const query = (document.getElementById('templateSearch')?.value || '').toLowerCase();
+      
+      let matches = currentData.matches;
+      if (selectedCategoryFilter === 'live') {
+        matches = matches.filter(m => m.is_live);
+      } else if (selectedCategoryFilter !== 'all') {
+        matches = matches.filter(m => (m.category || 'lig') === selectedCategoryFilter);
+      }
+      if (selectedDayFilter > 0) {
+        matches = matches.filter(m => m.day_num === selectedDayFilter);
+      }
+      if (query.trim() !== '') {
+        matches = matches.filter(m => 
+          m.match_name.toLowerCase().includes(query) ||
+          m.league.toLowerCase().includes(query) ||
+          m.code.toLowerCase().includes(query)
+        );
+      }
+
+      const marketOrder = ["A", "B", "D", "E", "F", "G", "H", "L", "K", "M", "N", "P", "R", "S", "T", "U", "V", "Y", "Z", "Q"];
+
+      tbody.innerHTML = matches.map(m => {
+        const cellsHtml = marketOrder.map(mk => {
+          const isActive = m.markets && m.markets[mk];
+          const isPrimary = m.target_market === mk;
+          const oddVal = (m.market_odds && m.market_odds[mk]) ? m.market_odds[mk] : m.suggested_odd;
+
+          if (isPrimary) {
+            if (tableDisplayMode === 'odds') {
+              return `<td class="py-1 px-0.5 text-center"><span class="px-1.5 py-0.5 rounded font-mono font-bold text-[11px] text-emerald-200 bg-emerald-500/35 border border-emerald-400/60 shadow-sm inline-block min-w-[38px] ${getOddFlashClass('tmpl_' + m.code + '_' + mk, oddVal)}">${oddVal}</span></td>`;
+            } else {
+              return `<td class="py-1 px-0.5 text-center font-bold text-emerald-300 bg-emerald-500/25 border border-emerald-500/40">✓</td>`;
+            }
+          } else if (isActive) {
+            if (tableDisplayMode === 'odds') {
+              return `<td class="py-1 px-0.5 text-center"><span class="px-1 py-0.5 rounded font-mono font-medium text-[10px] text-cyan-300 bg-cyan-950/60 border border-cyan-800/40 inline-block min-w-[34px] ${getOddFlashClass('tmpl_' + m.code + '_' + mk, oddVal)}">${oddVal}</span></td>`;
+            } else {
+              return `<td class="py-1 px-0.5 text-center font-medium text-cyan-400 bg-cyan-500/10">•</td>`;
+            }
+          } else {
+            return `<td class="py-1 px-0.5 text-center text-slate-800 font-mono text-[11px]">-</td>`;
+          }
+        }).join('');
+
+        const catBadge = m.category === 'milli'
+          ? `<span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40 whitespace-nowrap">🇹🇷 Milli</span>`
+          : `<span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 whitespace-nowrap">🏆 Lig</span>`;
+
+        const liveBadge = m.is_live
+          ? `<span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-rose-500/30 text-rose-300 border border-rose-500/60 whitespace-nowrap flex items-center gap-1 animate-pulse shadow-sm shadow-rose-950">
+               <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+               <span>🔴 ${m.live_minute || '72'}' [${m.live_score || '1-0'}]</span>
+             </span>`
+          : '';
+
+        return `
+          <tr class="${m.is_live ? 'bg-rose-950/20 border-l-2 border-rose-500 hover:bg-rose-900/30' : 'hover:bg-slate-800/40'} transition">
+            <td class="py-1.5 px-2 text-slate-300 font-mono text-[11px]">${m.code}</td>
+            <td class="py-1.5 px-2 text-slate-400 font-mono text-[11px]">${m.time_code}</td>
+            <td class="py-1.5 px-3 font-sans font-medium text-slate-200 text-xs">
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-1.5 min-w-0">
+                  ${catBadge}
+                  ${liveBadge}
+                  <span class="truncate font-semibold">${m.match_name}</span>
+                </div>
+                <span class="font-mono text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30 whitespace-nowrap ${getOddFlashClass('sugg_' + m.code, m.suggested_odd)}" title="Seçilen Oran">${m.suggested_odd}</span>
+              </div>
+            </td>
+            <td class="py-1.5 px-2 text-slate-400 text-[10px] whitespace-nowrap">${m.league}</td>
+            ${cellsHtml}
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // 37 Leagues Standings Grid
+    function renderLeaguesGrid() {
+      const container = document.getElementById('leaguesGrid');
+      const query = (document.getElementById('leagueSearch')?.value || '').toLowerCase();
+      let leagues = currentData.leagues;
+
+      if (query.trim() !== '') {
+        leagues = leagues.filter(l => 
+          l.name.toLowerCase().includes(query) || 
+          l.country.toLowerCase().includes(query)
+        );
+      }
+
+      container.innerHTML = leagues.map(l => {
+        const top4Html = l.top4.map(t => `
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/50 text-[11px]">
+            <div class="flex items-center gap-1.5">
+              <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 text-[9px] font-mono font-bold flex items-center justify-center">${t.rank}</span>
+              <span class="font-medium text-slate-200">${t.name}</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-400 font-mono text-[10px]">
+              <span>${t.pts} P</span>
+              <span class="text-slate-500">${t.form}</span>
+            </div>
+          </div>
+        `).join('');
+
+        const bot2Html = l.bottom2.map(t => `
+          <div class="flex items-center justify-between py-1 border-b border-slate-800/50 text-[11px]">
+            <div class="flex items-center gap-1.5">
+              <span class="w-4 h-4 rounded-full bg-rose-500/20 text-rose-400 text-[9px] font-mono font-bold flex items-center justify-center">${t.rank}</span>
+              <span class="font-medium text-slate-300">${t.name}</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-400 font-mono text-[10px]">
+              <span>${t.pts} P</span>
+              <span class="text-slate-500">${t.form}</span>
+            </div>
+          </div>
+        `).join('');
+
+        return `
+          <div class="glass-card p-4 rounded-xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+              <div class="font-bold text-xs text-white flex items-center gap-1.5">
+                <i data-lucide="flag" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>${l.name}</span>
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400">${l.country}</span>
+            </div>
+
+            <!-- Top 4 -->
+            <div>
+              <div class="text-[10px] uppercase font-mono font-bold text-emerald-400 mb-1 flex items-center gap-1">
+                <span>Zirve (İlk 4)</span>
+              </div>
+              <div class="space-y-0.5">
+                ${top4Html}
+              </div>
+            </div>
+
+            <!-- Bottom 2 -->
+            <div>
+              <div class="text-[10px] uppercase font-mono font-bold text-rose-400 mb-1 flex items-center gap-1">
+                <span>Düşme Hattı (Son 2)</span>
+              </div>
+              <div class="space-y-0.5">
+                ${bot2Html}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      lucide.createIcons();
+    }
+
+    // Pools View (B1..B8 & X1..X8)
+    function renderPoolsView() {
+      const bContainer = document.getElementById('bPoolsContainer');
+      const xContainer = document.getElementById('xPoolsContainer');
+
+      // B Pools
+      const bKeys = Object.keys(currentData.pools.B);
+      bContainer.innerHTML = bKeys.map(key => {
+        const items = currentData.pools.B[key];
+        return `
+          <div class="bg-slate-900/90 p-3 rounded-xl border border-emerald-500/20 space-y-2">
+            <div class="flex items-center justify-between pb-1.5 border-b border-slate-800">
+              <span class="font-mono font-bold text-xs text-emerald-400">${key} Havuzu</span>
+              <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-300">${items.length} Maç</span>
+            </div>
+            <div class="space-y-1.5 max-h-48 overflow-y-auto scrollbar-thin pr-1 text-[11px] font-mono">
+              ${items.map(m => `
+                <div class="p-1 rounded bg-slate-950 border border-slate-800 flex items-center justify-between">
+                  <div class="truncate mr-2">
+                    <span class="text-emerald-400 font-bold mr-1">${m.code}</span>
+                    <span class="text-slate-300 font-sans">${m.name}</span>
+                  </div>
+                  <span class="text-slate-400 text-[10px] whitespace-nowrap">${m.market}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // X Pools
+      const xKeys = Object.keys(currentData.pools.X);
+      xContainer.innerHTML = xKeys.map(key => {
+        const items = currentData.pools.X[key];
+        return `
+          <div class="bg-slate-900/90 p-3 rounded-xl border border-cyan-500/20 space-y-2">
+            <div class="flex items-center justify-between pb-1.5 border-b border-slate-800">
+              <span class="font-mono font-bold text-xs text-cyan-400">${key} Havuzu</span>
+              <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-cyan-500/10 text-cyan-300">${items.length} Maç</span>
+            </div>
+            <div class="space-y-1.5 max-h-48 overflow-y-auto scrollbar-thin pr-1 text-[11px] font-mono">
+              ${items.map(m => `
+                <div class="p-1 rounded bg-slate-950 border border-slate-800 flex items-center justify-between">
+                  <div class="truncate mr-2">
+                    <span class="text-cyan-400 font-bold mr-1">${m.code}</span>
+                    <span class="text-slate-300 font-sans">${m.name}</span>
+                  </div>
+                  <span class="text-slate-400 text-[10px] whitespace-nowrap">${m.market}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Coupons View (16 Kupon)
+    function renderCouponsView() {
+      const coupons = currentData.coupons;
+
+      const pillsBB = document.getElementById('couponPillsBB');
+      const pillsXX = document.getElementById('couponPillsXX');
+      const pillsXB1 = document.getElementById('couponPillsXB1');
+      const pillsXB2 = document.getElementById('couponPillsXB2');
+
+      const createPill = (idx, c, colorClass) => `
+        <button onclick="selectCoupon(${idx})" class="px-2.5 py-1 rounded text-xs font-mono font-medium transition ${idx === selectedCouponIndex ? 'bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/30' : 'bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-700'}">
+          ${c.coupon_id}
+        </button>
+      `;
+
+      pillsBB.innerHTML = coupons.slice(0, 4).map((c, i) => createPill(i, c, 'emerald')).join('');
+      pillsXX.innerHTML = coupons.slice(4, 8).map((c, i) => createPill(i + 4, c, 'cyan')).join('');
+      pillsXB1.innerHTML = coupons.slice(8, 12).map((c, i) => createPill(i + 8, c, 'amber')).join('');
+      pillsXB2.innerHTML = coupons.slice(12, 16).map((c, i) => createPill(i + 12, c, 'purple')).join('');
+
+      renderActiveCouponDetails();
+    }
+
+    function selectCoupon(idx) {
+      selectedCouponIndex = idx;
+      renderCouponsView();
+    }
+
+    function renderActiveCouponDetails() {
+      const c = currentData.coupons[selectedCouponIndex];
+      if (!c) return;
+
+      document.getElementById('couponCardTitle').innerText = c.coupon_id;
+      document.getElementById('couponCardStrategy').innerText = c.type_label;
+      document.getElementById('couponCardPair').innerText = c.pair;
+      document.getElementById('couponCardConf').innerText = `%${c.avg_confidence}`;
+      document.getElementById('couponCardOdd').innerText = `~${c.total_odd}`;
+
+      const tbody = document.getElementById('couponMatchesTableBody');
+      tbody.innerHTML = c.matches.map(m => `
+        <tr class="hover:bg-slate-900/60 transition">
+          <td class="py-2.5 px-3 text-center text-slate-500 font-bold">${m.row_index}</td>
+          <td class="py-2.5 px-3 text-emerald-400 font-bold">${m.code}</td>
+          <td class="py-2.5 px-3 text-slate-400">${m.time}</td>
+          <td class="py-2.5 px-4 font-sans font-medium text-slate-200">${m.match_name}</td>
+          <td class="py-2.5 px-3 text-slate-400 text-[11px]">${m.league}</td>
+          <td class="py-2.5 px-4">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold text-xs">
+              <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+              <span>${m.prediction}</span>
+            </span>
+          </td>
+          <td class="py-2.5 px-3 text-right font-mono font-bold text-cyan-400"><span class="${getOddFlashClass('coup_' + selectedCouponIndex + '_' + m.code, m.odd)}">${m.odd}</span></td>
+          <td class="py-2.5 px-3 text-right font-mono text-slate-400">%${m.confidence}</td>
+        </tr>
+      `).join('');
+    }
+
+    // Canlı Bülten Doğrudan Sekme Geçişi (Hazır Kuponlar Mantığında)
+    function openLiveBulletinDirect() {
+      switchTab('template');
+      const el = document.getElementById('tab-template');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      showToast('📋 Canlı bülten ve A-Q şablonu görüntülendi.');
+    }
+
+    // Hazır Kuponlar Doğrudan Sekme Geçişi (Ekstra Pencere Olmadan)
+    function openReadyCouponsDirect() {
+      switchTab('coupons');
+      const el = document.getElementById('tab-coupons');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      showToast('🎯 16 Hazır Formül Kuponu ve net tercihler görüntülendi.');
+    }
+
+    // HALİ HAZIRDA OYNANAN CANLI MAÇLAR KONTROLLERİ & ALTA AÇILAN SEKSİYON
+    let liveTickerIndex = 0;
+
+    function getLiveInPlayList() {
+      if (currentData && Array.isArray(currentData.live_in_play_matches) && currentData.live_in_play_matches.length > 0) {
+        return currentData.live_in_play_matches;
+      }
+      if (currentData && Array.isArray(currentData.matches)) {
+        return currentData.matches.filter(m => m.is_live);
+      }
+      return [];
+    }
+
+    function renderLiveMatchesPanel() {
+      const liveMatches = getLiveInPlayList();
+      const upcomingMatches = (currentData && Array.isArray(currentData.upcoming_live_matches)) ? currentData.upcoming_live_matches : [];
+      const finishedMatches = (currentData && Array.isArray(currentData.finished_matches)) ? currentData.finished_matches : [];
+      const bulletinLiveCount = (currentData && Array.isArray(currentData.matches)) ? currentData.matches.filter(m => m.is_live).length : 0;
+
+      const badge = document.getElementById('liveMatchesBadge');
+      if (badge) badge.textContent = liveMatches.length;
+      const navBadge = document.getElementById('navLiveBadge');
+      if (navBadge) navBadge.textContent = liveMatches.length;
+      const tabCount = document.getElementById('liveTabCount');
+      if (tabCount) tabCount.textContent = liveMatches.length;
+      const catCount = document.getElementById('catLiveMatchesCount');
+      if (catCount) catCount.textContent = bulletinLiveCount || liveMatches.length;
+
+      const syncEl = document.getElementById('liveLastUpdated');
+      if (syncEl) {
+        syncEl.textContent = (currentData && currentData.last_updated) ? currentData.last_updated : new Date().toLocaleTimeString('tr-TR');
+      }
+
+      const inPlayGrid = document.getElementById('liveInPlayGrid');
+      if (inPlayGrid) {
+        if (liveMatches.length === 0) {
+          inPlayGrid.innerHTML = `
+            <div class="col-span-full glass-card p-8 rounded-2xl border border-slate-800 text-center space-y-2">
+              <i data-lucide="clock" class="w-8 h-8 mx-auto text-slate-500"></i>
+              <div class="text-sm font-bold text-slate-200">Şu anda oynanan canlı maç bulunmuyor.</div>
+              <div class="text-xs text-slate-400">Bot arka planda 45 saniyede bir canlı fikstürleri taramaya devam ediyor.</div>
+            </div>
+          `;
+        } else {
+          inPlayGrid.innerHTML = liveMatches.map(m => {
+            const homeName = m.home || (m.match_name || '').split('-')[0].trim();
+            const awayName = m.away || ((m.match_name || '').split('-')[1] || '').trim();
+            const minTxt = m.live_minute ? (String(m.live_minute) === 'İY' ? 'İY' : `${m.live_minute}'`) : 'CANLI';
+            const goalsHtml = (Array.isArray(m.goals) && m.goals.length > 0)
+              ? `<div class="flex flex-wrap gap-1.5 pt-1 text-[10px] text-slate-300">
+                   ${m.goals.map(g => `<span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700/80 font-mono">⚽ ${g.text || (g.minute + ' ' + g.player)}</span>`).join('')}
+                 </div>`
+              : '';
+
+            const hasMoneyline = m.odds_ms1 || m.odds_msx || m.odds_ms2;
+            const oddsRowHtml = hasMoneyline
+              ? `<div class="grid grid-cols-3 gap-2 pt-1">
+                   <div class="bg-slate-900/90 border border-slate-800 rounded-lg px-2 py-1 text-center">
+                     <div class="text-[9px] text-slate-400 font-semibold">MS 1</div>
+                     <div class="text-xs font-mono font-bold text-cyan-300 ${getOddFlashClass('live_ms1_' + m.code, m.odds_ms1 || '-')}">${m.odds_ms1 || '-'}</div>
+                   </div>
+                   <div class="bg-slate-900/90 border border-slate-800 rounded-lg px-2 py-1 text-center">
+                     <div class="text-[9px] text-slate-400 font-semibold">MS X</div>
+                     <div class="text-xs font-mono font-bold text-amber-300 ${getOddFlashClass('live_msx_' + m.code, m.odds_msx || '-')}">${m.odds_msx || '-'}</div>
+                   </div>
+                   <div class="bg-slate-900/90 border border-slate-800 rounded-lg px-2 py-1 text-center">
+                     <div class="text-[9px] text-slate-400 font-semibold">MS 2</div>
+                     <div class="text-xs font-mono font-bold text-purple-300 ${getOddFlashClass('live_ms2_' + m.code, m.odds_ms2 || '-')}">${m.odds_ms2 || '-'}</div>
+                   </div>
+                 </div>`
+              : '';
+
+            const couponBadges = (Array.isArray(m.coupons) && m.coupons.length > 0)
+              ? `<div class="flex flex-wrap items-center gap-1 pt-1">
+                   <span class="text-[10px] text-slate-400 mr-1">Kuponlar:</span>
+                   ${m.coupons.slice(0, 6).map(cid => `<button onclick="openCouponById('${cid}')" class="px-1.5 py-0.5 rounded bg-purple-500/20 hover:bg-purple-500/40 text-purple-200 border border-purple-500/40 font-mono text-[10px] font-bold transition">${cid}</button>`).join('')}
+                 </div>`
+              : '';
+
+            const inBulletinBadge = m.in_bulletin !== false
+              ? `<span class="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/40 font-mono text-[10px] font-bold">Sistem A-Q (${m.code})</span>`
+              : `<span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 font-mono text-[10px]">Canlı Skor Yayını</span>`;
+
+            return `
+              <div class="glass-card p-4 rounded-2xl border ${m.in_bulletin !== false ? 'border-rose-500/60 shadow-lg shadow-rose-950/30' : 'border-slate-700/80'} bg-slate-950/85 hover:border-rose-400/70 transition space-y-2.5">
+                <div class="flex items-center justify-between gap-2 text-[11px]">
+                  <div class="flex items-center gap-1.5 flex-wrap">
+                    ${inBulletinBadge}
+                    <span class="text-slate-300 font-semibold">${m.league || 'Uluslararası'}</span>
+                  </div>
+                  <span class="flex items-center gap-1.5 font-mono font-bold text-rose-200 bg-rose-950/80 px-2.5 py-0.5 rounded-full border border-rose-500/50 animate-pulse text-[11px] whitespace-nowrap">
+                    <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+                    <span>${minTxt} • ${m.live_status || 'Canlı'}</span>
+                  </span>
+                </div>
+
+                <div class="flex items-center justify-between gap-3 py-2.5 px-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <span class="flex-1 text-sm sm:text-base font-extrabold text-white text-left truncate">${homeName}</span>
+                  <span class="font-mono text-lg sm:text-xl px-3.5 py-1 rounded-xl bg-rose-500/25 text-rose-200 border border-rose-500/50 font-black tracking-widest shadow-inner whitespace-nowrap">
+                    ${m.live_score || '0 - 0'}
+                  </span>
+                  <span class="flex-1 text-sm sm:text-base font-extrabold text-white text-right truncate">${awayName}</span>
+                </div>
+
+                ${goalsHtml}
+                ${oddsRowHtml}
+
+                <div class="flex items-center justify-between gap-2 text-xs bg-slate-900/90 px-3 py-2 rounded-xl border border-slate-800/90">
+                  <div class="flex items-center gap-1.5 flex-wrap">
+                    <span class="text-slate-400 text-[11px]">Tercih:</span>
+                    <span class="font-bold text-emerald-400">${m.target_market && m.target_market !== '-' ? m.target_market + ': ' + m.target_market_name : (m.target_market_name || 'Canlı Takip')}</span>
+                    ${m.suggested_odd && m.suggested_odd !== '-' ? `<span class="font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-200 border border-emerald-500/30 ${getOddFlashClass('live_sugg_' + m.code, m.suggested_odd)}">${m.suggested_odd}</span>` : ''}
+                  </div>
+                  <span class="text-[11px] font-bold text-emerald-300 whitespace-nowrap">${m.live_prediction_status || 'Canlı Takipte'}</span>
+                </div>
+
+                ${couponBadges}
+              </div>
+            `;
+          }).join('');
+        }
+      }
+
+      const upCountEl = document.getElementById('liveUpcomingCount');
+      if (upCountEl) upCountEl.textContent = upcomingMatches.length;
+      const upGrid = document.getElementById('liveUpcomingGrid');
+      if (upGrid) {
+        upGrid.innerHTML = upcomingMatches.length === 0
+          ? `<div class="text-xs text-slate-400 py-4 text-center">Bugün için yaklaşan yeni maç bulunamadı.</div>`
+          : upcomingMatches.map(u => `
+              <div class="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-slate-950/80 border border-slate-800/90 text-xs">
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-center gap-1.5">
+                    <span class="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30 font-mono text-[10px] font-bold">${u.time || '--:--'}</span>
+                    ${u.in_bulletin ? `<span class="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-300 font-mono text-[10px] font-bold">Bülten ${u.code}</span>` : ''}
+                    <span class="text-[10px] text-slate-400 truncate">${u.league || ''}</span>
+                  </div>
+                  <div class="font-bold text-slate-100 truncate mt-1">${u.match_name}</div>
+                </div>
+                <div class="text-right shrink-0">
+                  ${u.target_market ? `<div class="text-[11px] font-bold text-emerald-400">${u.target_market}: ${u.target_market_name}</div><div class="text-[10px] font-mono text-cyan-300">${u.suggested_odd}</div>` : `<div class="text-[10px] font-mono text-slate-400">${u.odds_ms1 ? `${u.odds_ms1} / ${u.odds_msx || '-'} / ${u.odds_ms2 || '-'}` : 'Oran bekleniyor'}</div>`}
+                </div>
+              </div>
+            `).join('');
+      }
+
+      const finCountEl = document.getElementById('liveFinishedCount');
+      if (finCountEl) finCountEl.textContent = finishedMatches.length;
+      const finGrid = document.getElementById('liveFinishedGrid');
+      if (finGrid) {
+        finGrid.innerHTML = finishedMatches.length === 0
+          ? `<div class="text-xs text-slate-400 py-4 text-center">Henüz tamamlanan maç yok.</div>`
+          : finishedMatches.map(f => `
+              <div class="flex items-center justify-between gap-2 p-2.5 rounded-xl ${f.removed_from_bulletin ? 'bg-emerald-950/30 border-emerald-500/40' : 'bg-slate-950/80 border-slate-800/90'} border text-xs">
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-center gap-1.5">
+                    <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[10px] font-bold">MS</span>
+                    ${f.removed_from_bulletin ? `<span class="px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-200 border border-rose-500/40 font-mono text-[10px]">Bültenden Kaldırıldı</span>` : ''}
+                    <span class="text-[10px] text-slate-400 truncate">${f.league || ''}</span>
+                  </div>
+                  <div class="font-bold text-slate-200 truncate mt-1">${f.match_name}</div>
+                </div>
+                <div class="text-right shrink-0">
+                  <div class="font-mono font-black text-emerald-300 text-sm">${f.final_score || '-'}</div>
+                  ${f.prediction_result ? `<div class="text-[10px] text-emerald-400 font-semibold">${f.prediction_result}</div>` : ''}
+                </div>
+              </div>
+            `).join('');
+      }
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function updateLiveMatchesTicker() {
+      const liveMatches = getLiveInPlayList();
+      const badge = document.getElementById('liveMatchesBadge');
+      if (badge) badge.textContent = liveMatches.length;
+      const navBadge = document.getElementById('navLiveBadge');
+      if (navBadge) navBadge.textContent = liveMatches.length;
+      const bulletinLiveCount = (currentData && currentData.matches)
+        ? currentData.matches.filter(m => m.is_live).length
+        : 0;
+      const catCount = document.getElementById('catLiveMatchesCount');
+      if (catCount) catCount.textContent = bulletinLiveCount || liveMatches.length;
+
+      if (liveMatches.length > 0) {
+        const cur = liveMatches[liveTickerIndex % liveMatches.length];
+        const minEl = document.getElementById('liveTickerMinute');
+        const textEl = document.getElementById('liveTickerText');
+        const minLabel = cur.live_minute ? (String(cur.live_minute).includes("'") || String(cur.live_minute) === 'İY' ? cur.live_minute : cur.live_minute + "'") : "CANLI";
+        if (minEl) minEl.textContent = minLabel;
+        if (textEl) {
+          const homeShort = (cur.home || (cur.match_name || '').split('-')[0]).trim().slice(0, 8);
+          const awayShort = (cur.away || (cur.match_name || '').split('-')[1] || '').trim().slice(0, 5);
+          const cleanScore = (cur.live_score || '0-0').replace(/\s+/g, '');
+          textEl.textContent = `${homeShort} ${cleanScore} ${awayShort}`;
+        }
+      } else {
+        const minEl = document.getElementById('liveTickerMinute');
+        const textEl = document.getElementById('liveTickerText');
+        if (minEl) minEl.textContent = '7/24';
+        if (textEl) textEl.textContent = 'Canlı Yayın Takipte';
+      }
+    }
+
+    function openLiveMatchesDirect() {
+      switchTab('live');
+      renderLiveMatchesPanel();
+      const el = document.getElementById('tab-live');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const liveMatches = getLiveInPlayList();
+      showToast(`🔴 Şu anda oynanan ${liveMatches.length} canlı maç alta açıldı.`);
+    }
+
+    function openCouponById(couponId) {
+      if (!currentData || !currentData.coupons) return;
+      const idx = currentData.coupons.findIndex(c => c.coupon_id === couponId);
+      if (idx >= 0) {
+        selectedCouponIndex = idx;
+      }
+      switchTab('coupons');
+      renderCouponsView();
+      const el = document.getElementById('tab-coupons');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      showToast(`🎯 ${couponId} kuponu görüntülendi.`);
+    }
+
+    function filterLiveMatchesInBulletin() {
+      switchTab('template');
+      filterTemplateByCategory('live');
+      const el = document.getElementById('tab-template');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const cnt = (currentData && currentData.matches) ? currentData.matches.filter(m => m.is_live).length : 0;
+      showToast(`🔴 Sistem bültenindeki canlı maçlar filtrelendi (${cnt} Maç)`);
+    }
+
+    // Ticker döngüsü (her 3.5 saniyede bir)
+    setInterval(() => {
+      const liveMatches = getLiveInPlayList();
+      if (liveMatches.length > 0) {
+        liveTickerIndex = (liveTickerIndex + 1) % liveMatches.length;
+        updateLiveMatchesTicker();
+      }
+    }, 3500);
+
+    // ARKA PLANDA SÜREKLİ CANLI TAKİP VE GÜNCELLEME BOTU (20 sn Gerçek Zamanlı Polling)
+    setInterval(async () => {
+      try {
+        const res = await fetch('weekly_data.json?t=' + Date.now(), { cache: 'no-store' });
+        if (res.ok) {
+          const freshData = await res.json();
+          const curLiveSig = currentData ? JSON.stringify(currentData.live_in_play_matches || []) : '';
+          const newLiveSig = JSON.stringify(freshData.live_in_play_matches || []);
+          const changed = !currentData
+            || freshData.last_updated !== currentData.last_updated
+            || curLiveSig !== newLiveSig
+            || freshData.total_matches !== currentData.total_matches
+            || (freshData.coupons || []).length !== (currentData.coupons || []).length;
+
+          if (freshData && changed) {
+            currentData = freshData;
+            renderAllViews();
+            console.log('⚡ Arka plan botu canlı skor ve oranları güncelledi:', freshData.last_updated);
+          }
+        }
+      } catch (e) {}
+    }, 20000);
+
+    // Copy to Clipboard
+    function copyActiveCouponToClipboard() {
+      copyCurrentCoupon();
+    }
+
+    function copyCurrentCoupon() {
+      const c = currentData.coupons[selectedCouponIndex];
+      if (!c) return;
+
+      let text = `========================================\n`;
+      text += `🎯 ${c.coupon_id} (${c.pair}) - 15 MAÇLIK KUPON\n`;
+      text += `Strateji: ${c.type_label}\n`;
+      text += `Ort. Güven: %${c.avg_confidence} | Tahmini Oran: ~${c.total_odd}\n`;
+      text += `========================================\n`;
+      text += `SIRA | KOD   | SAAT | KARŞILAŞMA | TAHMİN | ORAN\n`;
+      text += `----------------------------------------\n`;
+      c.matches.forEach(m => {
+        text += `${String(m.row_index).padStart(2, '0')}. | ${m.code.padEnd(5, ' ')} | ${m.time.padEnd(4, ' ')} | ${m.match_name} -> ${m.prediction} [${m.odd}]\n`;
+      });
+      text += `========================================\n`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(`📋 ${c.coupon_id} panoya kopyalandı!`);
+      }).catch(err => {
+        showToast(`Kopyalama başarısız oldu.`);
+      });
+    }
+
+    function downloadCurrentCouponTXT() {
+      const c = currentData.coupons[selectedCouponIndex];
+      if (!c) return;
+
+      let text = `====================================================================\n`;
+      text += `SİSTEMATİK İDDAA & SPOR TOTO - 15 MAÇLIK KUPON ÇIKTISI\n`;
+      text += `Kupon: ${c.coupon_id} | Eşleşme: ${c.pair}\n`;
+      text += `Strateji: ${c.type_label}\n`;
+      text += `Ortalama Güven: %${c.avg_confidence} | Kombine Çarpan: ~${c.total_odd}\n`;
+      text += `====================================================================\n\n`;
+      text += `NO\tKOD\tSAAT\tMAÇ ADI\tLİG\tTAHMİN\tORAN\n`;
+      c.matches.forEach(m => {
+        text += `${m.row_index}\t${m.code}\t${m.time}\t${m.match_name}\t${m.league}\t${m.prediction}\t${m.odd}\n`;
+      });
+
+      const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${c.coupon_id.replace(/\s+/g, '_')}_15_Mac.txt`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast(`📥 ${c.coupon_id} .txt dosyası olarak indirildi.`);
+    }
+
+    function exportAllCouponsCSV() {
+      let csv = `KUPON_ADI,SIRA,KOD,SAAT,MAC_ADI,LIG,TAHMIN,ORAN,GUVEN\n`;
+      currentData.coupons.forEach(c => {
+        c.matches.forEach(m => {
+          csv += `"${c.coupon_id}",${m.row_index},"${m.code}","${m.time}","${m.match_name}","${m.league}","${m.prediction}",${m.odd},${m.confidence}\n`;
+        });
+      });
+
+      const blob = new Blob(["\uFEFF" + csv], { type: 'text/csv;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Tum_15lik_Kuponlar_Hafta_${currentData.week || 1}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast(`📥 Tüm 16 kupon CSV olarak indirildi.`);
+    }
+
+    function downloadOriginalCSV() {
+      // Arkadaşının orijinal CSV yapısını birebir dışa aktarır
+      let csv = `,,,A,B,D,E,F,G,H,L,K,M,N,P,R,S,T,U,V,Y,Z,Q\n`;
+      csv += `TARİH ,MAÇ,,    MAC SONU,,MS,MS,MS,MS,MS,MS,EV GOL,EV GOL,DEP GOL ,DEP GOL,İLK.YR,İLK.YR,İLK YR,TOPLAM,TOPLAM,II.YARI,II.YARI,TOPLAM\n`;
+      csv += `GÜN,SAAT,………………………………………,1.0,2.0,10.0,12.0,.02,10+1.5,12+1.5,".02+1,5",0.5 ÜST,"1,5 ÜST","0,5 ÜST","1,5 ÜST",0-5 ÜST,"1,5 ALT",KG YOK,1.5 ÜST,2.5 ÜST,0.5 ÜST,KG YOK,3.5 ALT\n`;
+
+      const marketOrder = ["A", "B", "D", "E", "F", "G", "H", "L", "K", "M", "N", "P", "R", "S", "T", "U", "V", "Y", "Z", "Q"];
+
+      currentData.matches.forEach(m => {
+        const rowVals = marketOrder.map(mk => {
+          if (m.target_market === mk) return "1";
+          if (m.markets && m.markets[mk]) return "+";
+          return "";
+        });
+        csv += `${m.code},${m.time_code},"${m.match_name}",${rowVals.join(',')}\n`;
+      });
+
+      const blob = new Blob(["\uFEFF" + csv], { type: 'text/csv;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Arkadasimin_Orijinal_Formatinda_Bulten_Hafta_${currentData.week || 1}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast(`📥 Orijinal formatta A-Q bülteni indirildi.`);
+    }
+
+    // Refresh / Simulate Next Week
+    async function refreshWeekData() {
+      const icon = document.getElementById('refreshIcon');
+      if (icon) icon.classList.add('animate-spin');
+
+      currentWeekNumber += 1;
+
+      try {
+        const res = await fetch(`/api/update-week?week=${currentWeekNumber}`);
+        if (res.ok) {
+          const json = await res.json();
+          currentData = json.data;
+          renderAllViews();
+          showToast(`✨ Hafta ${currentWeekNumber} verileri başarıyla üretildi ve güncellendi!`);
+        } else {
+          // If running locally without server API
+          simulateClientSideUpdate();
+        }
+      } catch (e) {
+        simulateClientSideUpdate();
+      } finally {
+        if (icon) setTimeout(() => icon.classList.remove('animate-spin'), 600);
+      }
+    }
+
+    function simulateClientSideUpdate() {
+      // Re-shuffle & regenerate client-side if running as static file
+      currentData.week = currentWeekNumber;
+      currentData.matches.forEach(m => {
+        m.suggested_odd = +(m.suggested_odd * (0.95 + Math.random() * 0.1)).toFixed(2);
+        m.confidence = +(Math.min(96, Math.max(76, m.confidence + (Math.random() * 4 - 2)))).toFixed(1);
+      });
+      renderAllViews();
+      showToast(`✨ Hafta ${currentWeekNumber} verileri simüle edildi ve kuponlar güncellendi!`);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.innerText = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3500);
+    }
+
+    // =====================================================================
+    // iddaa.com CANLI VERİ KATMANI (tarayıcıdan doğrudan, sunucu/bot gerekmez)
+    // iddaa.com'un herkese açık uçları CORS'a açık (access-control-allow-origin: *).
+    // Bülten (weekly_data.json) taban veridir; canlı skor/dakika/oran/yaklaşan
+    // maçlar bunun üzerine her 20 sn'de bir iddaa.com'dan bindirilir.
+    // =====================================================================
+    const IDDAA_BASE = 'https://sportsbookv2.iddaa.com/sportsbook';
+    let iddaaState = null;          // { live:[], upcoming:[], fetchedAt }
+    let iddaaCompNames = null;      // { competitionId: name }
+    let baseSnapshot = null;        // bindirme uygulanmamış taban bülten verisi
+    const seenLiveIds = new Map();  // oturum boyunca canlı görülen maçlar
+    const sessionFinished = [];     // canlıdan düşen (biten) maçlar
+
+    function normTeam(s) {
+      return String(s || '').toLowerCase()
+        .replace(/ç/g, 'c').replace(/ğ/g, 'g').replace(/ı/g, 'i').replace(/i̇/g, 'i')
+        .replace(/ö/g, 'o').replace(/ş/g, 's').replace(/ü/g, 'u')
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/\b(fc|cf|sc|cd|ud|sd|rc|fk|sk|club)\b/g, ' ')
+        .replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
+    }
+    function sameTeamName(a, b) {
+      a = normTeam(a); b = normTeam(b);
+      if (!a || !b) return false;
+      if (a === b) return true;
+      if ((a.includes('u21') !== b.includes('u21')) || (a.includes('u20') !== b.includes('u20'))) return false;
+      return (a.length >= 5 && b.includes(a)) || (b.length >= 5 && a.includes(b));
+    }
+    function sameFixture(h1, a1, h2, a2) { return sameTeamName(h1, h2) && sameTeamName(a1, a2); }
+
+    async function iddaaGet(path) {
+      const res = await fetch(IDDAA_BASE + path, { cache: 'no-store' });
+      if (!res.ok) throw new Error('iddaa HTTP ' + res.status);
+      const j = await res.json();
+      if (j && j.isSuccess === false) throw new Error('iddaa isSuccess=false');
+      return j.data;
+    }
+    function oddOk(v) { const n = parseFloat(v); return n > 1.0 ? +n.toFixed(2) : null; }
+    function msOdds(markets, t, st) {
+      const m = (markets || []).find(x => x.t === t && x.st === st);
+      if (!m) return [null, null, null];
+      const by = {};
+      (m.o || []).forEach(o => { by[String(o.n)] = oddOk(o.odd); });
+      return [by['1'] ?? null, by['0'] ?? null, by['2'] ?? null];
+    }
+    function trtTime(ts) {
+      try { return new Date(ts * 1000).toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Istanbul' }); }
+      catch (e) { return '--:--'; }
+    }
+    function periodLabel(s) { return ({ 2: '1. Yarı', 3: '2. Yarı', 4: 'Devre Arası', 5: 'Uzatmalar' })[s] || 'Canlı'; }
+
+    function evalLivePrediction(mk, h, a, minute, period) {
+      const t = h + a;
+      const afterHT = period === 4 || period === 3 || (parseInt(minute, 10) || 0) > 45;
+      switch (mk) {
+        case 'U': return t >= 2 ? 'TUTTU ✅' : (t === 1 ? '1 Gol Daha Lazım ⏳' : 'Gol Bekleniyor ⏳');
+        case 'V': return t >= 3 ? 'TUTTU ✅' : `${3 - t} Gol Lazım ⏳`;
+        case 'K': return h >= 1 ? 'TUTTU ✅' : 'Ev Golü Bekleniyor ⏳';
+        case 'M': return h >= 2 ? 'TUTTU ✅' : 'Ev Gol Lazım ⏳';
+        case 'N': return a >= 1 ? 'TUTTU ✅' : 'Dep Golü Bekleniyor ⏳';
+        case 'P': return a >= 2 ? 'TUTTU ✅' : 'Dep Gol Lazım ⏳';
+        case 'R': return t >= 1 ? 'TUTTU ✅' : (afterHT ? 'Kaybetti ❌' : 'İY Gol Bekleniyor ⏳');
+        case 'A': return h > a ? 'Önde ✅' : (h === a ? 'Berabere ⏳' : 'Geride ⚠️');
+        case 'B': return a > h ? 'Önde ✅' : (h === a ? 'Berabere ⏳' : 'Geride ⚠️');
+        case 'D': return h >= a ? 'Tutuyor ✅' : 'Dep Önde ⚠️';
+        case 'E': return h !== a ? 'Tutuyor ✅' : 'Berabere ⏳';
+        case 'F': return a >= h ? 'Tutuyor ✅' : 'Ev Önde ⚠️';
+        case 'G': return (h >= a && t >= 2) ? 'TUTTU ✅' : 'Devam Ediyor ⏳';
+        case 'H': return (h !== a && t >= 2) ? 'Tutuyor ✅' : 'Devam Ediyor ⏳';
+        case 'L': return (a >= h && t >= 2) ? 'Tutuyor ✅' : 'Devam Ediyor ⏳';
+        case 'Q': return t <= 3 ? 'Tutuyor ⏳' : 'Aştı ❌';
+        default: return 'Canlı Takipte ⏳';
+      }
+    }
+
+    async function loadCompetitionNames() {
+      if (iddaaCompNames && Object.keys(iddaaCompNames).length) return iddaaCompNames;
+      try {
+        const comps = await iddaaGet('/competitions');
+        const names = {};
+        (comps || []).forEach(c => { names[c.i] = c.n || c.sn || ''; });
+        iddaaCompNames = names;
+      } catch (e) {
+        iddaaCompNames = iddaaCompNames || {};
+      }
+      return iddaaCompNames;
+    }
+
+    async function fetchIddaaLive() {
+      try {
+        const [evData, widget] = await Promise.all([
+          iddaaGet('/events?st=1&type=1&version=0'),
+          iddaaGet('/live-events-for-widget').catch(() => []),
+          loadCompetitionNames()
+        ]);
+        const widgetMarkets = {};
+        (widget || []).forEach(w => { if (w && w.sid === 1) widgetMarkets[w.i] = w.m || []; });
+        const evById = {};
+        (evData.events || []).forEach(e => { evById[e.i] = e; });
+        const scs = Array.isArray(evData.sc) ? evData.sc : Object.values(evData.sc || {});
+        const live = [];
+        scs.forEach(sc => {
+          if (!sc || (sc.sid != null && sc.sid !== 1)) return;
+          const e = evById[sc.id];
+          if (!e) return;
+          const ht = sc.ht || {}, at = sc.at || {};
+          const known = ht.r != null && at.r != null;
+          const markets = (e.m && e.m.length) ? e.m : (widgetMarkets[e.i] || []);
+          const [o1, ox, o2] = msOdds(markets, 4, 4);
+          live.push({
+            id: e.i, home: e.hn, away: e.an, league: iddaaCompNames[e.ci] || 'Futbol',
+            h: known ? (+ht.r || 0) : null, a: known ? (+at.r || 0) : null, known,
+            period: sc.s, minute: sc.s === 4 ? 'İY' : String(sc.min != null ? sc.min : 0),
+            o1, ox, o2, start: e.d || 0
+          });
+        });
+        // Üst üste boş cevap gelirse (geçici hata) mevcut durumu bozma
+        iddaaState = Object.assign(iddaaState || {}, { live, fetchedAt: new Date() });
+        return true;
+      } catch (e) {
+        console.warn('iddaa canlı veri alınamadı:', e);
+        return false;
+      }
+    }
+
+    async function fetchIddaaUpcoming() {
+      try {
+        const rows = await iddaaGet('/upcoming-events-for-widget');
+        await loadCompetitionNames();
+        const upcoming = (rows || []).filter(e => e && e.sid === 1).map(e => {
+          const [o1, ox, o2] = msOdds(e.m, 1, 1);
+          return { id: e.i, home: e.hn, away: e.an, league: iddaaCompNames[e.ci] || 'Futbol', start: e.d || 0, o1, ox, o2 };
+        });
+        iddaaState = Object.assign(iddaaState || { live: [] }, { upcoming });
+      } catch (e) { console.warn('iddaa yaklaşan maçlar alınamadı:', e); }
+    }
+
+    function buildOverlay(base) {
+      const data = Object.assign({}, base);
+      data.matches = (base.matches || []).map(m => Object.assign({}, m));
+      const st = iddaaState;
+      if (!st || !Array.isArray(st.live)) return data;
+
+      const liveNow = st.live;
+      const liveIdsNow = new Set(liveNow.map(x => x.id));
+
+      // Canlıdan düşenleri (biten maçlar) oturum listesine al
+      seenLiveIds.forEach((prev, id) => {
+        if (!liveIdsNow.has(id)) {
+          sessionFinished.unshift({
+            code: prev.code || ('FT-' + String(id).slice(-4)), match_name: `${prev.home} - ${prev.away}`,
+            league: prev.league, time: '', final_score: prev.known ? `${prev.h} - ${prev.a}` : '-',
+            removed_from_bulletin: false, goals: []
+          });
+          seenLiveIds.delete(id);
+        }
+      });
+
+      const liveCards = [];
+      data.matches.forEach(m => {
+        m.is_live = false;
+        const lv = liveNow.find(x => sameFixture(m.home, m.away, x.home, x.away));
+        if (!lv) return;
+        m.is_live = true;
+        m.live_minute = lv.minute;
+        m.live_score = lv.known ? `${lv.h} - ${lv.a}` : '? - ?';
+        m.live_status = periodLabel(lv.period);
+        m.odds_ms1 = lv.o1; m.odds_msx = lv.ox; m.odds_ms2 = lv.o2;
+        if (m.target_market === 'A' && lv.o1) m.suggested_odd = lv.o1;
+        if (m.target_market === 'B' && lv.o2) m.suggested_odd = lv.o2;
+        m.live_prediction_status = lv.known ? evalLivePrediction(m.target_market, lv.h, lv.a, lv.minute, lv.period) : 'Skor bekleniyor ⏳';
+        m.in_bulletin = true;
+        m.__iddaaId = lv.id;
+        // Taban bültendeki gol listesi güncel skorla uyuşmuyorsa gösterme (eski olabilir)
+        if (!lv.known || !Array.isArray(m.goals) || m.goals.length !== (lv.h + lv.a)) m.goals = [];
+      });
+
+      liveNow.forEach(lv => {
+        const bm = data.matches.find(m => m.__iddaaId === lv.id);
+        seenLiveIds.set(lv.id, { home: lv.home, away: lv.away, league: lv.league, h: lv.h, a: lv.a, known: lv.known, code: bm ? bm.code : '' });
+        if (bm) { liveCards.push(bm); return; }
+        liveCards.push({
+          code: 'CANLI-' + String(lv.id).slice(-4), match_name: `${lv.home} - ${lv.away}`,
+          home: lv.home, away: lv.away, league: lv.league, time: trtTime(lv.start),
+          day_name: 'Bugün', is_live: true, in_bulletin: false,
+          live_score: lv.known ? `${lv.h} - ${lv.a}` : '? - ?',
+          live_minute: lv.minute, live_status: periodLabel(lv.period),
+          odds_ms1: lv.o1, odds_msx: lv.ox, odds_ms2: lv.o2, goals: [],
+          target_market: '-', target_market_name: 'Canlı Skor Takibi', suggested_odd: '-',
+          live_prediction_status: 'Anlık Canlı Veri', coupons: []
+        });
+      });
+      data.live_in_play_matches = liveCards;
+
+      if (Array.isArray(st.upcoming)) {
+        const nowSec = Date.now() / 1000;
+        data.upcoming_live_matches = st.upcoming
+          .filter(u => u.start >= nowSec - 900 && !liveNow.some(l => sameFixture(u.home, u.away, l.home, l.away)))
+          .sort((a, b) => a.start - b.start).slice(0, 16)
+          .map(u => {
+            const bm = data.matches.find(m => sameFixture(m.home, m.away, u.home, u.away));
+            return {
+              code: bm ? bm.code : 'UP-' + String(u.id).slice(-4), match_name: `${u.home} - ${u.away}`,
+              home: u.home, away: u.away, league: u.league, time: trtTime(u.start), start_ts: u.start,
+              odds_ms1: u.o1, odds_msx: u.ox, odds_ms2: u.o2, in_bulletin: !!bm,
+              target_market: bm ? bm.target_market : undefined, target_market_name: bm ? bm.target_market_name : undefined,
+              suggested_odd: bm ? bm.suggested_odd : undefined
+            };
+          });
+      }
+      data.finished_matches = sessionFinished.concat(base.finished_matches || []).slice(0, 30);
+      data.last_updated = new Date().toLocaleString('sv-SE', { timeZone: 'Europe/Istanbul' }) + ' (iddaa.com canlı)';
+      data.live_source = 'iddaa.com (tarayıcıdan canlı) + A-Q Formül Motoru';
+      data.__overlaid = true;
+      return data;
+    }
+
+    // renderAllViews'i sar: her render öncesi canlı iddaa verisini taban bültene bindir
+    const __renderAllViewsOrig = renderAllViews;
+    renderAllViews = function () {
+      if (currentData && !currentData.__overlaid) baseSnapshot = currentData;
+      if (baseSnapshot && iddaaState) currentData = buildOverlay(baseSnapshot);
+      __renderAllViewsOrig();
+    };
+
+    async function pollIddaaLive() {
+      const ok = await fetchIddaaLive();
+      if (ok && (currentData || baseSnapshot)) renderAllViews();
+    }
+    // İlk yükleme: canlı + yaklaşan, sonra 20 sn'de bir canlı, 60 sn'de bir yaklaşan
+    (async () => {
+      await Promise.all([fetchIddaaLive(), fetchIddaaUpcoming()]);
+      if (currentData || baseSnapshot) renderAllViews();
+    })();
+    setInterval(pollIddaaLive, 20000);
+    setInterval(async () => { await fetchIddaaUpcoming(); if (currentData || baseSnapshot) renderAllViews(); }, 60000);
+  </script>
+</body>
+</html>
