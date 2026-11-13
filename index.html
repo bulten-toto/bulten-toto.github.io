@@ -208,7 +208,7 @@
               <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
             </span>
             <div class="flex items-center gap-1.5">
-              <span class="text-rose-200 font-extrabold tracking-wide whitespace-nowrap">🔴 Canlı Maçlar</span>
+              <span class="text-rose-200 font-extrabold tracking-wide whitespace-nowrap">Canlı Maçlar</span>
               <span id="liveMatchesBadge" class="px-1.5 py-0.2 rounded-full bg-rose-500/35 text-rose-100 border border-rose-400/60 font-mono text-[10px]">0</span>
             </div>
             <span class="text-slate-500 hidden md:inline">|</span>
@@ -319,7 +319,7 @@
             <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
           </span>
           <span class="flex items-center gap-1.5">
-            🔴 Canlı Maçlar
+            Canlı Maçlar
             <span id="navLiveBadge" class="px-1.5 py-0.5 rounded-full bg-rose-500/25 text-rose-200 text-[10px] font-mono border border-rose-400/40 font-bold">0</span>
           </span>
         </button>
@@ -990,18 +990,21 @@
     });
 
     async function fetchDataFromServer(forceRender = false) {
-      try {
-        const res = await fetch('/api/data?t=' + Date.now(), { cache: 'no-store' });
-        if (res.ok) {
-          const freshData = await res.json();
-          currentData = freshData;
-          renderAllViews();
-          return;
+      const hasLocalApi = location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname.endsWith('trycloudflare.com');
+      if (hasLocalApi) {
+        try {
+          const res = await fetch('/api/data?t=' + Date.now(), { cache: 'no-store' });
+          if (res.ok) {
+            const freshData = await res.json();
+            currentData = freshData;
+            renderAllViews();
+            return;
+          }
+        } catch (e) {
+          console.warn('API fetch failed, fallback to weekly_data.json', e);
         }
-      } catch (e) {
-        console.warn('API fetch failed, fallback to local window.INITIAL_DATA', e);
       }
-      // Statik barındırma (GitHub Pages / Netlify): /api/data yok, weekly_data.json'u dene
+      // Statik barındırma (GitHub Pages / Cloudflare Pages): doğrudan weekly_data.json'u dene
       try {
         const res2 = await fetch('weekly_data.json?t=' + Date.now(), { cache: 'no-store' });
         if (res2.ok) {
@@ -1073,15 +1076,13 @@
       if (icon) icon.classList.add('animate-spin');
       try {
         const res = await fetch('weekly_data.json?t=' + Date.now(), { cache: 'no-store' });
-        if (res.ok) {
-          currentData = await res.json();
-          renderAllViews();
-          showToast(`⚡ Canlı skorlar ve oranlar güncellendi (${currentData.last_updated || 'Şimdi'}).`);
-        } else {
-          window.location.reload();
-        }
+        if (res.ok) baseSnapshot = await res.json();
+        await Promise.all([fetchIddaaLive(), fetchIddaaUpcoming(), fetchIddaaPreMatch()]);
+        if (baseSnapshot) currentData = baseSnapshot;
+        renderAllViews();
+        showToast(`⚡ Canlı skorlar ve iddaa oranları güncellendi (${(currentData && currentData.last_updated) || 'Şimdi'}).`);
       } catch (e) {
-        window.location.reload();
+        if (currentData || baseSnapshot) renderAllViews();
       } finally {
         if (icon) setTimeout(() => icon.classList.remove('animate-spin'), 600);
       }
@@ -2058,13 +2059,253 @@
       } catch (e) { console.warn('iddaa yaklaşan maçlar alınamadı:', e); }
     }
 
+    // Maç önü (events?st=1&type=0) oranlarını A-Q pazar kodlarına eşle
+    function findMarketOutcome(markets, t, st, sov, outName) {
+      const m = (markets || []).find(x =>
+        x.t === t && x.st === st && (sov == null || String(x.sov) === String(sov))
+      );
+      if (!m) return null;
+      const o = (m.o || []).find(x => String(x.n) === outName);
+      return o ? oddOk(o.odd) : null;
+    }
+
+    function extractPreMatchOdds(markets) {
+      const [o1, ox, o2] = msOdds(markets, 1, 1);
+      const odds = {
+        A: o1, B: o2,
+        D: findMarketOutcome(markets, 2, 92, null, '1 ve 0'),
+        E: findMarketOutcome(markets, 2, 92, null, '1 ve 2'),
+        F: findMarketOutcome(markets, 2, 92, null, '0 ve 2'),
+        U: findMarketOutcome(markets, 2, 101, '1.5', 'Üst'),
+        V: findMarketOutcome(markets, 2, 101, '2.5', 'Üst'),
+        Q: findMarketOutcome(markets, 2, 101, '3.5', 'Alt'),
+        R: findMarketOutcome(markets, 2, 60, '0.5', 'Üst'),
+        S: findMarketOutcome(markets, 2, 60, '1.5', 'Alt'),
+        T: findMarketOutcome(markets, 2, 89, null, 'Yok'),
+        Z: findMarketOutcome(markets, 2, 720, null, 'Yok'),
+        M: findMarketOutcome(markets, 2, 603, '1.5', 'Üst'),
+        P: findMarketOutcome(markets, 2, 604, '1.5', 'Üst'),
+        N: findMarketOutcome(markets, 2, 604, '0.5', 'Üst'),
+        K: findMarketOutcome(markets, 2, 603, '0.5', 'Üst'),
+        Y: findMarketOutcome(markets, 2, 61, '0.5', 'Üst')
+      };
+      // Türev pazarlar için makul fallback
+      if (!odds.K && odds.D && odds.U) odds.K = +Math.max(1.06, (odds.D * 0.96)).toFixed(2);
+      if (!odds.G && odds.D && odds.U) odds.G = +Math.max(1.22, +(odds.D * odds.U * 0.92)).toFixed(2);
+      if (!odds.H && odds.E && odds.U) odds.H = +Math.max(1.20, +(odds.E * odds.U * 0.92)).toFixed(2);
+      if (!odds.L && odds.F && odds.U) odds.L = +Math.max(1.22, +(odds.F * odds.U * 0.92)).toFixed(2);
+      return { odds, o1, ox, o2, marketCount: (markets || []).length };
+    }
+
+    async function fetchIddaaPreMatch() {
+      try {
+        const [evData] = await Promise.all([
+          iddaaGet('/events?st=1&type=0&version=0'),
+          loadCompetitionNames()
+        ]);
+        const nowSec = Date.now() / 1000;
+        const preMatch = (evData.events || [])
+          .filter(e => e && e.sid === 1 && e.hn && e.an && (e.d || 0) >= nowSec - 7200)
+          .map(e => {
+            const ext = extractPreMatchOdds(e.m);
+            return {
+              id: e.i, home: e.hn, away: e.an, ci: e.ci,
+              league: iddaaCompNames[e.ci] || 'Futbol',
+              start: e.d || 0, odds: ext.odds, o1: ext.o1, ox: ext.ox, o2: ext.o2,
+              marketCount: ext.marketCount
+            };
+          });
+        iddaaState = Object.assign(iddaaState || { live: [] }, { preMatch, preFetchedAt: new Date() });
+        return true;
+      } catch (e) {
+        console.warn('iddaa maç önü bülteni alınamadı:', e);
+        return false;
+      }
+    }
+
+    function trtDayMeta(ts) {
+      const dt = new Date(ts * 1000);
+      const tr = new Date(dt.toLocaleString('en-US', { timeZone: 'Europe/Istanbul' }));
+      const jsDay = tr.getDay(); // 0=Paz,1=Pzt..6=Cmt
+      const dayNum = jsDay === 0 ? 7 : jsDay;
+      const names = { 1: 'Pazartesi', 2: 'Salı', 3: 'Çarşamba', 4: 'Perşembe', 5: 'Cuma', 6: 'Cumartesi', 7: 'Pazar' };
+      const pfx = { 1: 'PZ', 2: 'SL', 3: 'CR', 4: 'PR', 5: 'CU', 6: 'CT', 7: 'PZ' };
+      const hh = String(tr.getHours()).padStart(2, '0');
+      const code = (dayNum === 7 ? 'PA' : pfx[dayNum]) + hh;
+      return { dayNum, dayName: names[dayNum], timeCode: code, hhmm: `${hh}:${String(tr.getMinutes()).padStart(2, '0')}` };
+    }
+
+    function buildWeeklyFromIddaa(preMatch, marketDefs) {
+      const nowSec = Date.now() / 1000;
+      const upcoming = preMatch
+        .filter(e => e.start > nowSec && e.marketCount >= 8 && (e.o1 || e.odds.U || e.odds.D))
+        .sort((a, b) => (a.start - b.start) || (b.marketCount - a.marketCount))
+        .slice(0, 60);
+      if (upcoming.length < 30) return null;
+
+      const DAY_CHRONO = { 5: 1, 6: 2, 7: 3, 1: 4, 2: 5, 3: 6, 4: 7 };
+      const mdefs = marketDefs || {};
+      const processed = upcoming.map((e, idx) => {
+        const dm = trtDayMeta(e.start);
+        const o = e.odds;
+        let mk = 'U', mtype = 'TIP_3_GOL_SISTEM', conf = 84.5;
+        if (e.o1 && e.o1 <= 1.52) {
+          mtype = 'TIP_1_BANKO';
+          mk = (o.D && o.D >= 1.12 && e.o1 > 1.38) ? 'D' : (e.o1 >= 1.20 ? 'A' : (o.U ? 'U' : 'D'));
+          conf = e.o1 <= 1.32 ? 92.5 : 88.5;
+        } else if (e.o2 && e.o2 <= 1.58) {
+          mtype = 'TIP_2_DEP_FAV';
+          mk = (o.F && o.F >= 1.12 && e.o2 > 1.42) ? 'F' : (e.o2 >= 1.22 ? 'B' : (o.U ? 'U' : 'F'));
+          conf = 87.5;
+        } else if (o.Q && o.Q <= 1.38 && (!o.V || o.V >= 1.85)) {
+          mtype = 'TIP_4_DUSME';
+          mk = 'Q';
+          conf = 83.0;
+        } else if (o.U && o.U <= 1.36) {
+          mtype = 'TIP_3_GOL_SISTEM';
+          mk = 'U';
+          conf = 86.0;
+        } else if (o.R && o.R <= 1.45) {
+          mtype = 'TIP_3_GOL_SISTEM';
+          mk = 'R';
+          conf = 84.0;
+        } else if (o.E && o.E <= 1.35) {
+          mk = 'E';
+          conf = 82.5;
+        } else {
+          mk = o.U ? 'U' : (o.D ? 'D' : 'A');
+        }
+        const suggOdd = +(o[mk] || e.o1 || o.U || 1.28).toFixed(2);
+        const markets = {};
+        const marketOdds = {};
+        Object.keys(mdefs).forEach(k => {
+          const val = o[k];
+          markets[k] = k === mk || !!(val && val >= 1.12 && val <= 1.55);
+          if (val) marketOdds[k] = val;
+        });
+        markets[mk] = true;
+        marketOdds[mk] = suggOdd;
+        const lgLow = (e.league || '').toLowerCase();
+        const isIntl = /uluslar|elem|dünya|avrupa|hazırlık|concacaf|afrika|uefa|fifa/.test(lgLow);
+        return {
+          code: String(100 + idx + 1) + '.0',
+          day_num: dm.dayNum, day_name: dm.dayName, time_code: dm.timeCode,
+          match_name: `${e.home} - ${e.away}`, home: e.home, away: e.away,
+          league: e.league, country: isIntl ? 'Uluslararası' : 'Avrupa / Dünya',
+          category: isIntl ? 'milli' : 'lig',
+          match_type: mtype, target_market: mk,
+          target_market_name: (mdefs[mk] && mdefs[mk].name) || mk,
+          target_market_desc: (mdefs[mk] && mdefs[mk].desc) || mk,
+          confidence: conf, suggested_odd: suggOdd,
+          markets, market_odds: marketOdds,
+          espn_id: 'iddaa-' + e.id, start_ts: e.start, in_bulletin: true,
+          is_live: false, live_minute: null, live_score: null, live_status: null,
+          live_prediction_status: null, goals: [], coupons: []
+        };
+      });
+
+      processed.sort((a, b) => (a.start_ts - b.start_ts) || (parseFloat(a.code) - parseFloat(b.code)));
+      const pools = { B: {}, X: {} };
+      for (let i = 1; i <= 8; i++) { pools.B['B' + i] = []; pools.X['X' + i] = []; }
+      const bankos = processed.filter(m => m.match_type === 'TIP_1_BANKO' || m.match_type === 'TIP_2_DEP_FAV' || m.confidence >= 88);
+      const sistems = processed.filter(m => !bankos.includes(m));
+      bankos.forEach((m, i) => { const k = 'B' + ((i % 8) + 1); if (pools.B[k].length < 10) pools.B[k].push(m); });
+      Object.keys(pools.B).forEach(k => {
+        let si = 0;
+        while (pools.B[k].length < 10 && si < sistems.length * 2) {
+          const cand = sistems[si++ % (sistems.length || 1)] || processed[si % processed.length];
+          if (cand && !pools.B[k].includes(cand)) pools.B[k].push(cand);
+        }
+      });
+      processed.forEach((m, i) => { const k = 'X' + ((i % 8) + 1); if (pools.X[k].length < 15) pools.X[k].push(m); });
+      Object.keys(pools.X).forEach(k => {
+        let pi = 0;
+        while (pools.X[k].length < 15 && pi < processed.length * 2) {
+          const cand = processed[pi++ % processed.length];
+          if (cand && !pools.X[k].includes(cand)) pools.X[k].push(cand);
+        }
+      });
+
+      const makeCoupon = (id, pair, pa, pb, ca, cb, desc) => {
+        const picked = [];
+        const add = m => { if (m && !picked.some(x => x.code === m.code)) picked.push(m); };
+        pa.slice(0, ca).forEach(add);
+        pb.forEach(m => { if (picked.length < ca + cb) add(m); });
+        pb.concat(pa, processed).forEach(m => { if (picked.length < 15) add(m); });
+        picked.sort((a, b) => (DAY_CHRONO[a.day_num] || 99) - (DAY_CHRONO[b.day_num] || 99) || (a.start_ts - b.start_ts));
+        let totalOdd = 1, sumConf = 0;
+        const cMatches = picked.map((m, idx) => {
+          totalOdd *= (m.suggested_odd || 1.25);
+          sumConf += (m.confidence || 85);
+          m.coupons.push(id);
+          return {
+            row_index: idx + 1, code: m.code, time: m.time_code, match_name: m.match_name,
+            league: m.league, prediction: `${m.target_market}: ${m.target_market_name}`,
+            target_market: m.target_market, odd: m.suggested_odd, confidence: m.confidence
+          };
+        });
+        return {
+          coupon_id: id, pair, type_label: desc,
+          avg_confidence: +(sumConf / (cMatches.length || 1)).toFixed(1),
+          total_odd: +totalOdd.toFixed(2),
+          matches: cMatches
+        };
+      };
+
+      const coupons = [
+        makeCoupon('Kupon B1-B5', 'B1 x B5', pools.B.B1, pools.B.B5, 8, 7, 'Süper Banko (Zirve vs Düşme Ağırlıklı)'),
+        makeCoupon('Kupon B2-B6', 'B2 x B6', pools.B.B2, pools.B.B6, 8, 7, 'Süper Banko (Zirve vs Düşme Ağırlıklı)'),
+        makeCoupon('Kupon B3-B7', 'B3 x B7', pools.B.B3, pools.B.B7, 8, 7, 'Süper Banko (Zirve vs Düşme Ağırlıklı)'),
+        makeCoupon('Kupon B4-B8', 'B4 x B8', pools.B.B4, pools.B.B8, 8, 7, 'Süper Banko (Zirve vs Düşme Ağırlıklı)'),
+        makeCoupon('Kupon X1-X5', 'X1 x X5', pools.X.X1, pools.X.X5, 8, 7, 'Spor Toto Formül / Sistem (Dengeli Oran)'),
+        makeCoupon('Kupon X2-X6', 'X2 x X6', pools.X.X2, pools.X.X6, 8, 7, 'Spor Toto Formül / Sistem (Dengeli Oran)'),
+        makeCoupon('Kupon X3-X7', 'X3 x X7', pools.X.X3, pools.X.X7, 8, 7, 'Spor Toto Formül / Sistem (Dengeli Oran)'),
+        makeCoupon('Kupon X4-X8', 'X4 x X8', pools.X.X4, pools.X.X8, 8, 7, 'Spor Toto Formül / Sistem (Dengeli Oran)'),
+        makeCoupon('Kupon X1-B1', 'X1 x B1', pools.X.X1, pools.B.B1, 8, 7, 'Karma Formül (Sistem + Banko Korumalı)'),
+        makeCoupon('Kupon X2-B2', 'X2 x B2', pools.X.X2, pools.B.B2, 8, 7, 'Karma Formül (Sistem + Banko Korumalı)'),
+        makeCoupon('Kupon X3-B3', 'X3 x B3', pools.X.X3, pools.B.B3, 8, 7, 'Karma Formül (Sistem + Banko Korumalı)'),
+        makeCoupon('Kupon X4-B4', 'X4 x B4', pools.X.X4, pools.B.B4, 8, 7, 'Karma Formül (Sistem + Banko Korumalı)'),
+        makeCoupon('Kupon X5-B5', 'X5 x B5', pools.X.X5, pools.B.B5, 8, 7, 'Karma Formül (Sistem + Banko Korumalı)'),
+        makeCoupon('Kupon X6-B6', 'X6 x B6', pools.X.X6, pools.B.B6, 8, 7, 'Karma Formül (Sistem + Banko Korumalı)'),
+        makeCoupon('Kupon X7-B7', 'X7 x B7', pools.X.X7, pools.B.B7, 8, 7, 'Karma Formül (Sistem + Banko Korumalı)'),
+        makeCoupon('Kupon X8-B8', 'X8 x B8', pools.X.X8, pools.B.B8, 8, 7, 'Karma Formül (Sistem + Banko Korumalı)')
+      ];
+
+      const serPools = { B: {}, X: {} };
+      const ser = m => ({ code: m.code, time: m.time_code, name: m.match_name, market: m.target_market_name, odd: m.suggested_odd, conf: m.confidence, category: m.category, league: m.league });
+      Object.keys(pools.B).forEach(k => { serPools.B[k] = pools.B[k].map(ser); });
+      Object.keys(pools.X).forEach(k => { serPools.X[k] = pools.X[k].map(ser); });
+
+      return { matches: processed, total_matches: processed.length, pools: serPools, coupons };
+    }
+
     function buildOverlay(base) {
       const data = Object.assign({}, base);
-      data.matches = (base.matches || []).map(m => Object.assign({}, m));
-      const st = iddaaState;
-      if (!st || !Array.isArray(st.live)) return data;
+      const st = iddaaState || {};
+      const liveNow = Array.isArray(st.live) ? st.live : [];
+      const preMatch = Array.isArray(st.preMatch) ? st.preMatch : [];
 
-      const liveNow = st.live;
+      data.matches = (base.matches || []).map(m => Object.assign({}, m, { market_odds: Object.assign({}, m.market_odds || {}) }));
+
+      // Eğer taban bülten (weekly_data.json) tarihi geçmişse ve güncel <50 maç kalmışsa,
+      // bilgisayar kapalı olsa dahi iddaa.com'un güncel haftalık bülteninden otomatik yeniden üret
+      const stillInIddaaCount = preMatch.length >= 50
+        ? data.matches.filter(m =>
+            liveNow.some(x => sameFixture(m.home, m.away, x.home, x.away)) ||
+            preMatch.some(x => sameFixture(m.home, m.away, x.home, x.away))
+          ).length
+        : data.matches.length;
+
+      if (preMatch.length >= 50 && stillInIddaaCount < 20 && (!base.last_updated || Date.now() - Date.parse(base.last_updated.replace(' ', 'T')) > 4 * 86400000)) {
+        const rolled = buildWeeklyFromIddaa(preMatch, base.market_defs);
+        if (rolled) {
+          data.matches = rolled.matches;
+          data.total_matches = rolled.total_matches;
+          data.pools = rolled.pools;
+          data.coupons = rolled.coupons;
+        }
+      }
+
       const liveIdsNow = new Set(liveNow.map(x => x.id));
 
       // Canlıdan düşenleri (biten maçlar) oturum listesine al
@@ -2082,6 +2323,14 @@
       const liveCards = [];
       data.matches.forEach(m => {
         m.is_live = false;
+        // Maç önü güncel iddaa oranlarını senkronize et
+        const pm = preMatch.find(x => sameFixture(m.home, m.away, x.home, x.away));
+        if (pm) {
+          Object.keys(pm.odds).forEach(mk => {
+            if (pm.odds[mk]) m.market_odds[mk] = pm.odds[mk];
+          });
+          if (pm.odds[m.target_market]) m.suggested_odd = pm.odds[m.target_market];
+        }
         const lv = liveNow.find(x => sameFixture(m.home, m.away, x.home, x.away));
         if (!lv) return;
         m.is_live = true;
@@ -2097,6 +2346,38 @@
         // Taban bültendeki gol listesi güncel skorla uyuşmuyorsa gösterme (eski olabilir)
         if (!lv.known || !Array.isArray(m.goals) || m.goals.length !== (lv.h + lv.a)) m.goals = [];
       });
+
+      // Oturum içinde canlıdan düşen (yeni bitmiş) bülten maçlarını güvenli >= 50 sınırıyla düşür
+      if (sessionFinished.length > 0 && data.matches.length > 50) {
+        const finishedNames = new Set(sessionFinished.map(f => f.match_name));
+        let keep = [];
+        let removable = data.matches.length - 50;
+        data.matches.forEach(m => {
+          if (removable > 0 && !m.is_live && finishedNames.has(m.match_name)) {
+            removable--;
+            const sf = sessionFinished.find(f => f.match_name === m.match_name);
+            if (sf) sf.removed_from_bulletin = true;
+          } else {
+            keep.push(m);
+          }
+        });
+        data.matches = keep;
+      }
+      data.total_matches = data.matches.length;
+
+      // Kupon oranlarını güncel maç oranlarıyla senkronla
+      if (Array.isArray(data.coupons)) {
+        data.coupons = data.coupons.map(c => {
+          let tot = 1;
+          const ms = (c.matches || []).map(cm => {
+            const bm = data.matches.find(x => x.code === cm.code);
+            const oddVal = bm ? bm.suggested_odd : cm.odd;
+            tot *= (parseFloat(oddVal) || 1.2);
+            return Object.assign({}, cm, { odd: oddVal });
+          });
+          return Object.assign({}, c, { total_odd: +tot.toFixed(2), matches: ms });
+        });
+      }
 
       liveNow.forEach(lv => {
         const bm = data.matches.find(m => m.__iddaaId === lv.id);
@@ -2133,7 +2414,7 @@
       }
       data.finished_matches = sessionFinished.concat(base.finished_matches || []).slice(0, 30);
       data.last_updated = new Date().toLocaleString('sv-SE', { timeZone: 'Europe/Istanbul' }) + ' (iddaa.com canlı)';
-      data.live_source = 'iddaa.com (tarayıcıdan canlı) + A-Q Formül Motoru';
+      data.live_source = 'iddaa.com (tarayıcıdan 7/24 canlı) + A-Q Formül Motoru';
       data.__overlaid = true;
       return data;
     }
@@ -2150,13 +2431,13 @@
       const ok = await fetchIddaaLive();
       if (ok && (currentData || baseSnapshot)) renderAllViews();
     }
-    // İlk yükleme: canlı + yaklaşan, sonra 20 sn'de bir canlı, 60 sn'de bir yaklaşan
+    // İlk yükleme: canlı + yaklaşan + haftalık maç önü oran/bülten, sonra 20 sn canlı / 5 dk tam bülten
     (async () => {
-      await Promise.all([fetchIddaaLive(), fetchIddaaUpcoming()]);
+      await Promise.all([fetchIddaaLive(), fetchIddaaUpcoming(), fetchIddaaPreMatch()]);
       if (currentData || baseSnapshot) renderAllViews();
     })();
     setInterval(pollIddaaLive, 20000);
-    setInterval(async () => { await fetchIddaaUpcoming(); if (currentData || baseSnapshot) renderAllViews(); }, 60000);
+    setInterval(async () => { await Promise.all([fetchIddaaUpcoming(), fetchIddaaPreMatch()]); if (currentData || baseSnapshot) renderAllViews(); }, 300000);
   </script>
 </body>
 </html>
