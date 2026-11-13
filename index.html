@@ -168,9 +168,9 @@
       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
       <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
     </span>
-    <span class="font-bold text-emerald-400 font-mono text-[11px] uppercase tracking-wide">🟢 CANLI BOTLAR AKTİF:</span>
-    <span class="text-slate-200 font-medium">Bülten ve 16 formül kuponu arka plandaki canlı takip botlarıyla 7/24 kesintisiz senkronize edilmektedir.</span>
-    <span id="activeWeekPill" class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-semibold border border-emerald-500/30">Hafta 2 • 56 Aktif Maç</span>
+    <span class="font-bold text-emerald-400 font-mono text-[11px] uppercase tracking-wide">🟢 GÜNLÜK OTOMATİK & 7/24 ANLIK CANLI:</span>
+    <span class="text-slate-200 font-medium">Bülten ve 16 formül kuponu her gün iddaa.com'dan otomatik yenilenir; canlı maç skorları 10 sn'de bir anlık güncellenir.</span>
+    <span id="activeWeekPill" class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-semibold border border-emerald-500/30">📅 Günlük Bülten • Yükleniyor</span>
   </div>
 
   <!-- HEADER -->
@@ -187,9 +187,9 @@
             <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
               Sistematik Bahis & Toto Platformu
             </h1>
-            <span class="text-[10px] uppercase font-mono px-2 py-0.5 bg-cyan-950 text-cyan-400 border border-cyan-800 rounded font-semibold">v2.4 Live</span>
+            <span class="text-[10px] uppercase font-mono px-2 py-0.5 bg-cyan-950 text-cyan-400 border border-cyan-800 rounded font-semibold">v2.5 Daily Live</span>
           </div>
-          <p class="text-xs text-slate-400">Arkadaşının Formül Mimarisi & Haftalık 37 Lig Otomasyonu</p>
+          <p class="text-xs text-slate-400">Günlük Otomatik Bülten Motoru & Anlık Canlı Skor Takibi</p>
         </div>
       </div>
 
@@ -197,7 +197,7 @@
       <div class="flex items-center gap-2 sm:gap-2.5">
         <button id="btnLiveBulletin" onclick="openLiveBulletinDirect()" class="flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-lg bg-gradient-to-r from-amber-600 to-emerald-600 hover:from-amber-500 hover:to-emerald-500 text-white font-bold text-xs transition shadow-md shadow-amber-900/40 active:scale-95 border border-amber-400/40">
           <i data-lucide="table" class="w-4 h-4 text-amber-200"></i>
-          <span>📋 Canlı Bülten</span>
+          <span>📋 Günlük Bülten</span>
         </button>
 
         <!-- Hali Hazırda Oynanan Canlı Maçlar Kutucuğu (Hazır Kuponların Hemen Solunda - Direkt Alta Açar) -->
@@ -224,9 +224,9 @@
           <span>🎯 Hazır Kuponlar</span>
         </button>
 
-        <button id="btnHardRefresh" onclick="hardRefreshData()" class="flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-lg bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-bold text-xs transition shadow-md shadow-cyan-900/40 active:scale-95 border border-cyan-400/40">
+        <button id="btnHardRefresh" onclick="hardRefreshData(true)" class="flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-lg bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-bold text-xs transition shadow-md shadow-cyan-900/40 active:scale-95 border border-cyan-400/40">
           <i data-lucide="rotate-cw" class="w-4 h-4" id="hardRefreshIcon"></i>
-          <span>⚡ Canlı Bülteni Yenile</span>
+          <span>⚡ Günlük Bülteni Yenile</span>
         </button>
       </div>
 
@@ -240,7 +240,7 @@
           <div>
             <div class="text-[10px] font-medium text-slate-400">Takip Edilen Lig</div>
             <div class="text-xl font-bold font-mono text-cyan-400 mt-0.5" id="statLeagues">37</div>
-            <div class="text-[9px] text-cyan-300/70">37 Lig Taraması</div>
+            <div class="text-[9px] text-cyan-300/70">Küresel Lig Taraması</div>
           </div>
           <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400">
             <i data-lucide="globe" class="w-4 h-4"></i>
@@ -249,20 +249,20 @@
 
         <div class="glass-card px-3.5 py-2.5 rounded-xl relative overflow-hidden flex items-center justify-between border border-emerald-500/20 bg-emerald-950/20">
           <div>
-            <div class="text-[10px] font-medium text-slate-400">Odak Takım Havuzu</div>
-            <div class="text-xl font-bold font-mono text-emerald-400 mt-0.5" id="statTeams">222</div>
-            <div class="text-[9px] text-emerald-300/70">İlk 4 + Son 2</div>
+            <div class="text-[10px] font-medium text-slate-400">Oynanan Canlı Maç</div>
+            <div class="text-xl font-bold font-mono text-rose-400 mt-0.5" id="statTeams">0</div>
+            <div class="text-[9px] text-rose-300/80" id="statLiveSub">10 sn Anlık Takip</div>
           </div>
-          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
-            <i data-lucide="users" class="w-4 h-4"></i>
+          <div class="w-8 h-8 rounded-lg bg-rose-500/15 flex items-center justify-center text-rose-400">
+            <i data-lucide="radio" class="w-4 h-4"></i>
           </div>
         </div>
 
         <div class="glass-card px-3.5 py-2.5 rounded-xl relative overflow-hidden flex items-center justify-between border border-amber-500/20 bg-amber-950/20">
           <div>
-            <div class="text-[10px] font-medium text-slate-400">Haftalık Odak Maç</div>
-            <div class="text-xl font-bold font-mono text-amber-400 mt-0.5" id="statMatches">56</div>
-            <div class="text-[9px] text-amber-300/70">56 Aktif Canlı Fikstür</div>
+            <div class="text-[10px] font-medium text-slate-400">Günlük Odak Maç</div>
+            <div class="text-xl font-bold font-mono text-amber-400 mt-0.5" id="statMatches">60</div>
+            <div class="text-[9px] text-amber-300/70">Günlük Otomatik Bülten</div>
           </div>
           <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400">
             <i data-lucide="calendar" class="w-4 h-4"></i>
@@ -343,7 +343,33 @@
 
     <!-- ==================== TAB 1: DASHBOARD ==================== -->
     <div id="tab-dashboard" class="tab-content space-y-6">
-      
+
+      <!-- ANLIK CANLI MAÇLAR ÖNİZLEME ŞERİDİ (ANA SAYFADA ANINDA GÖRÜNÜR) -->
+      <div class="glass-card p-4 sm:p-5 rounded-2xl border border-rose-500/40 bg-gradient-to-r from-rose-950/30 via-slate-900/95 to-slate-950 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-slate-800/90">
+          <div class="flex items-center gap-2.5">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
+            </span>
+            <h4 class="font-extrabold text-sm text-white flex items-center gap-2">
+              <span>Şu An Canlı Oynanan Maçlar (Anlık Skorlar)</span>
+              <span id="dashLiveCountBadge" class="px-2 py-0.5 rounded-full bg-rose-500/25 text-rose-200 border border-rose-500/40 font-mono text-[11px]">0 Canlı</span>
+            </h4>
+          </div>
+          <div class="flex items-center gap-2">
+            <span id="dashLiveSyncLabel" class="text-[10px] font-mono text-emerald-300 bg-slate-900 px-2 py-1 rounded border border-slate-800">⚡ 10 sn'de bir güncellenir</span>
+            <button onclick="openLiveMatchesDirect()" class="px-3 py-1 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs transition flex items-center gap-1 shadow-md shadow-rose-950/50">
+              <span>Tüm Canlı Maçlar</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+        <div id="dashLivePreviewGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5">
+          <div class="col-span-full text-xs text-slate-400 py-3 text-center">iddaa.com canlı yayın bağlanıyor...</div>
+        </div>
+      </div>
+
       <!-- HIGHLIGHTS SPLIT: TOP BANKOS vs HIGH CONFIDENCE DERBIES -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
@@ -352,9 +378,9 @@
           <div class="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-800">
             <h4 class="font-bold text-sm text-emerald-400 flex items-center gap-2">
               <i data-lucide="shield-check" class="w-4 h-4"></i>
-              Haftanın En Güvenilir Bankoları (B Havuzundan)
+              Günün En Güvenilir Bankoları (B Havuzundan)
             </h4>
-            <span class="text-[10px] text-slate-400">İlk 4 Evde vs Son 2</span>
+            <span class="text-[10px] text-slate-400">MS / ÇŞ / Yüksek Güven</span>
           </div>
           <div id="topBankosContainer" class="space-y-2.5">
             <!-- Filled dynamically -->
@@ -366,7 +392,7 @@
           <div class="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-800">
             <h4 class="font-bold text-sm text-cyan-400 flex items-center gap-2">
               <i data-lucide="zap" class="w-4 h-4"></i>
-              Haftanın Zirve & Deplasman Fırsatları (X Havuzundan)
+              Günün Değer & Sistem Fırsatları (X Havuzundan)
             </h4>
             <span class="text-[10px] text-slate-400">Çifte Şans + 1.5 Üst vb.</span>
           </div>
@@ -387,19 +413,19 @@
         <div class="flex items-center gap-3">
           <span class="w-3 h-3 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400 animate-pulse"></span>
           <div>
-            <h4 class="text-xs sm:text-sm font-black text-white flex items-center gap-2">
-              <span class="text-emerald-400">⚡ AKTİF BİRLEŞİK BÜLTEN:</span>
-              <span>UEFA Uluslar Ligi & Devam Eden Kulüp Ligleri Yayında</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Toplam 64 Maç</span>
+            <h4 class="text-xs sm:text-sm font-black text-white flex items-center gap-2 flex-wrap">
+              <span class="text-emerald-400">⚡ GÜNLÜK OTOMATİK BÜLTEN:</span>
+              <span>iddaa.com Günlük Maçlar & A-Q Oran Matrisi Yayında</span>
+              <span id="tplTotalBadge" class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">60 Maç</span>
             </h4>
-            <p class="text-[11px] text-slate-300">
-              Milli ara boyunca hem <strong class="text-rose-300">resmi milli maçlar (Türkiye - Belçika, Çekya - İspanya, Norveç - Galler...)</strong> hem de <strong class="text-cyan-300">ekranınızdaki aktif lig maçları (İspanya 2. Lig, Arjantin Süper Kupa, Brezilya Serie A, CONCACAF)</strong> birlikte yayındadır.
+            <p class="text-[11px] text-slate-300" id="tplSubtitle">
+              Her gün gece yarısı (00:00 TR) bir sonraki günün taze iddaa.com maçları ve oranları otomatik çekilir; maçlar başladıkça canlı skor rozetleri anlık güncellenir.
             </p>
           </div>
         </div>
-        <button onclick="hardRefreshData()" class="px-3 py-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-mono text-xs font-bold border border-emerald-500/40 flex items-center gap-1.5 transition">
+        <button onclick="hardRefreshData(true)" class="px-3 py-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-mono text-xs font-bold border border-emerald-500/40 flex items-center gap-1.5 transition">
           <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i>
-          <span>Yenile</span>
+          <span>Günlük Yenile</span>
         </button>
       </div>
 
@@ -408,23 +434,21 @@
         <!-- Üst Satır: Kategori Filtresi & Arama/Görünüm -->
         <div class="flex flex-wrap items-center justify-between gap-3 pb-2.5 border-b border-slate-800/80">
           <div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0" id="catFilterBtns">
-            <button onclick="filterTemplateByCategory('all')" data-cat="all" class="px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 font-bold text-xs border border-emerald-500/30">Tüm Bülten (56 Maç)</button>
+            <button onclick="filterTemplateByCategory('all')" data-cat="all" class="px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 font-bold text-xs border border-emerald-500/30">Tüm Bülten (<span id="catAllCount">0</span>)</button>
             <button onclick="filterTemplateByCategory('milli')" data-cat="milli" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium text-xs border border-slate-700 flex items-center gap-1.5 transition">
-              <span>🇹🇷</span>
-              <span class="font-semibold text-rose-300">Milli Maçlar (38 Maç)</span>
-              <span class="px-1.5 py-0.2 rounded-full bg-rose-500/20 text-rose-300 text-[9px] font-mono border border-rose-500/30">Uluslar Ligi</span>
+              <span>🌍</span>
+              <span class="font-semibold text-rose-300">Milli / Kupa (<span id="catMilliCount">0</span>)</span>
             </button>
             <button onclick="filterTemplateByCategory('lig')" data-cat="lig" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium text-xs border border-slate-700 flex items-center gap-1.5 transition">
               <span>🏆</span>
-              <span class="font-semibold text-cyan-300">Aktif Lig Maçları (18 Maç)</span>
-              <span class="px-1.5 py-0.2 rounded-full bg-cyan-500/20 text-cyan-300 text-[9px] font-mono border border-cyan-500/30">Türkiye 1, İspanya 2, Brezilya</span>
+              <span class="font-semibold text-cyan-300">Lig Maçları (<span id="catLigCount">0</span>)</span>
             </button>
             <button onclick="filterTemplateByCategory('live')" data-cat="live" id="btnFilterLiveCategory" class="px-3 py-1.5 rounded-lg bg-slate-800 text-rose-300 hover:text-white font-medium text-xs border border-rose-500/40 flex items-center gap-1.5 transition">
               <span class="relative flex h-2 w-2">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
               </span>
-              <span class="font-bold text-rose-300">Oynanan Canlı Maçlar (<span id="catLiveMatchesCount">2</span>)</span>
+              <span class="font-bold text-rose-300">Oynanan Canlı Maçlar (<span id="catLiveMatchesCount">0</span>)</span>
             </button>
           </div>
 
@@ -456,13 +480,13 @@
         <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none" id="dayFilterBtns">
           <span class="text-[11px] text-slate-500 font-mono font-semibold mr-1">GÜNLER:</span>
           <button onclick="filterTemplateByDay(0)" class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 font-medium text-xs border border-emerald-500/30 active-day-btn" data-day="0">Tümü</button>
-          <button onclick="filterTemplateByDay(4)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="4">Per (400)</button>
-          <button onclick="filterTemplateByDay(5)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="5">Cuma (500)</button>
-          <button onclick="filterTemplateByDay(6)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="6">Cmt (600 - Türkiye)</button>
-          <button onclick="filterTemplateByDay(7)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="7">Paz (700 - İtalya vs Fransa)</button>
-          <button onclick="filterTemplateByDay(1)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="1">Pzt (100)</button>
-          <button onclick="filterTemplateByDay(2)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="2">Salı (200 - Karadağ vs Türkiye)</button>
-          <button onclick="filterTemplateByDay(3)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="3">Çar (300)</button>
+          <button onclick="filterTemplateByDay(1)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="1">Pazartesi</button>
+          <button onclick="filterTemplateByDay(2)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="2">Salı</button>
+          <button onclick="filterTemplateByDay(3)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="3">Çarşamba</button>
+          <button onclick="filterTemplateByDay(4)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="4">Perşembe</button>
+          <button onclick="filterTemplateByDay(5)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="5">Cuma</button>
+          <button onclick="filterTemplateByDay(6)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="6">Cumartesi</button>
+          <button onclick="filterTemplateByDay(7)" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 font-medium text-xs border border-slate-700" data-day="7">Pazar</button>
         </div>
       </div>
 
@@ -1071,16 +1095,27 @@
       }
     }
 
-    async function hardRefreshData() {
+    async function hardRefreshData(forceDaily = false) {
       const icon = document.getElementById('hardRefreshIcon');
       if (icon) icon.classList.add('animate-spin');
       try {
-        const res = await fetch('weekly_data.json?t=' + Date.now(), { cache: 'no-store' });
-        if (res.ok) baseSnapshot = await res.json();
+        if (forceDaily) {
+          try { localStorage.removeItem('bulten_daily_plan_v2'); } catch (e) {}
+        }
+        const hasLocalApi = location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname.endsWith('trycloudflare.com');
+        if (hasLocalApi) {
+          const res = await fetch('/api/data?t=' + Date.now(), { cache: 'no-store' });
+          if (res.ok) baseSnapshot = await res.json();
+        } else if (!baseSnapshot) {
+          const res = await fetch('weekly_data.json?t=' + Date.now(), { cache: 'no-store' });
+          if (res.ok) baseSnapshot = await res.json();
+        }
         await Promise.all([fetchIddaaLive(), fetchIddaaUpcoming(), fetchIddaaPreMatch()]);
         if (baseSnapshot) currentData = baseSnapshot;
         renderAllViews();
-        showToast(`⚡ Canlı skorlar ve iddaa oranları güncellendi (${(currentData && currentData.last_updated) || 'Şimdi'}).`);
+        showToast(forceDaily
+          ? `⚡ Günlük bülten, kuponlar ve canlı skorlar yenilendi (${(currentData && currentData.last_updated) || 'Şimdi'}).`
+          : `⚡ Canlı skorlar güncellendi (${(currentData && currentData.last_updated) || 'Şimdi'}).`);
       } catch (e) {
         if (currentData || baseSnapshot) renderAllViews();
       } finally {
@@ -1150,24 +1185,83 @@
       lucide.createIcons();
     }
 
-    // Header KPIs
+    function getTodayTrtLabel() {
+      try {
+        return new Date().toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'Europe/Istanbul' });
+      } catch (e) { return 'Bugün'; }
+    }
+
+    // Header KPIs & Dynamic Bulletin Badges
     function updateHeaderKPIs() {
+      const matches = Array.isArray(currentData.matches) ? currentData.matches : [];
+      const liveMatches = getLiveInPlayList();
       const elLeagues = document.getElementById('statLeagues');
       if (elLeagues) elLeagues.innerText = currentData.total_leagues || 37;
       const elTeams = document.getElementById('statTeams');
-      if (elTeams) elTeams.innerText = (currentData.total_leagues || 37) * 6;
+      if (elTeams) elTeams.innerText = liveMatches.length;
+      const elLiveSub = document.getElementById('statLiveSub');
+      if (elLiveSub) elLiveSub.innerText = liveMatches.length > 0 ? 'Şu An Sahada (10 sn)' : 'Canlı Takipte (10 sn)';
       const elMatches = document.getElementById('statMatches');
-      if (elMatches) elMatches.innerText = currentData.total_matches || currentData.matches.length;
+      if (elMatches) elMatches.innerText = matches.length;
       const elCoupons = document.getElementById('statCoupons');
-      if (elCoupons) elCoupons.innerText = `${currentData.coupons.length} Adet`;
+      if (elCoupons) elCoupons.innerText = `${(currentData.coupons || []).length} Adet`;
       const elWeek = document.getElementById('activeWeekPill');
-      if (elWeek) elWeek.innerText = `Hafta ${currentData.week || 1}`;
+      if (elWeek) elWeek.innerText = `📅 Günlük Bülten (${currentData.daily_label || getTodayTrtLabel()}) • ${matches.length} Maç`;
+
+      // Template dynamic counters
+      const milliCount = matches.filter(m => (m.category || 'lig') === 'milli').length;
+      const ligCount = matches.length - milliCount;
+      const setTxt = (id, v) => { const e = document.getElementById(id); if (e) e.innerText = v; };
+      setTxt('tplTotalBadge', `${matches.length} Maç`);
+      setTxt('catAllCount', matches.length);
+      setTxt('catMilliCount', milliCount);
+      setTxt('catLigCount', ligCount);
     }
 
-    // Dashboard Highlights
+    // Dashboard Highlights + Live Preview Strip
     function renderDashboardHighlights() {
-      const topBankos = currentData.matches.filter(m => m.match_type === 'TIP_1_BANKO').slice(0, 5);
-      const topYields = currentData.matches.filter(m => m.match_type !== 'TIP_1_BANKO' && m.confidence >= 82).slice(0, 5);
+      const liveMatches = getLiveInPlayList();
+      const dashLiveBadge = document.getElementById('dashLiveCountBadge');
+      if (dashLiveBadge) dashLiveBadge.textContent = `${liveMatches.length} Canlı Maç`;
+      const dashSyncEl = document.getElementById('dashLiveSyncLabel');
+      if (dashSyncEl && currentData.last_updated) {
+        dashSyncEl.textContent = `⚡ ${currentData.last_updated}`;
+      }
+      const dashGrid = document.getElementById('dashLivePreviewGrid');
+      if (dashGrid) {
+        if (liveMatches.length === 0) {
+          dashGrid.innerHTML = `<div class="col-span-full text-xs text-slate-400 py-3 text-center">Şu anda oynanan canlı maç bulunmuyor. Sistem 10 saniyede bir otomatik kontrol ediyor.</div>`;
+        } else {
+          dashGrid.innerHTML = liveMatches.slice(0, 6).map(m => {
+            const minTxt = m.live_minute ? (String(m.live_minute) === 'İY' ? 'İY' : `${m.live_minute}'`) : 'CANLI';
+            const inBul = m.in_bulletin !== false;
+            return `
+              <div onclick="openLiveMatchesDirect()" class="cursor-pointer p-3 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 border ${inBul ? 'border-rose-500/50' : 'border-slate-800'} transition space-y-1.5">
+                <div class="flex items-center justify-between gap-2 text-[10px]">
+                  <span class="text-slate-400 truncate font-medium">${m.league || 'Futbol'}</span>
+                  <span class="px-1.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 font-mono font-bold whitespace-nowrap">${minTxt} • ${m.live_status || 'Canlı'}</span>
+                </div>
+                <div class="flex items-center justify-between gap-2 text-xs font-bold">
+                  <span class="flex-1 text-slate-100 truncate">${m.home || (m.match_name || '').split('-')[0].trim()}</span>
+                  <span class="px-2 py-0.5 rounded bg-rose-500/25 text-rose-200 border border-rose-500/50 font-mono font-black">${m.live_score || '? - ?'}</span>
+                  <span class="flex-1 text-slate-100 truncate text-right">${m.away || ((m.match_name || '').split('-')[1] || '').trim()}</span>
+                </div>
+                ${(m.odds_ms1 || m.odds_msx || m.odds_ms2) ? `
+                  <div class="flex items-center justify-between text-[10px] font-mono text-slate-400 pt-0.5 border-t border-slate-800/80">
+                    <span>1: <b class="text-cyan-300 ${getOddFlashClass('d_live1_' + m.code, m.odds_ms1 || '-')}">${m.odds_ms1 || '-'}</b></span>
+                    <span>X: <b class="text-amber-300 ${getOddFlashClass('d_livex_' + m.code, m.odds_msx || '-')}">${m.odds_msx || '-'}</b></span>
+                    <span>2: <b class="text-purple-300 ${getOddFlashClass('d_live2_' + m.code, m.odds_ms2 || '-')}">${m.odds_ms2 || '-'}</b></span>
+                  </div>
+                ` : ''}
+              </div>
+            `;
+          }).join('');
+        }
+      }
+
+      const bankoCand = currentData.matches.filter(m => m.match_type === 'TIP_1_BANKO' || m.match_type === 'TIP_2_DEP_FAV');
+      const topBankos = (bankoCand.length >= 5 ? bankoCand : [...currentData.matches].sort((a, b) => (b.confidence || 0) - (a.confidence || 0))).slice(0, 5);
+      const topYields = currentData.matches.filter(m => !topBankos.includes(m) && (m.confidence || 0) >= 80).slice(0, 5);
 
       // Bankos
       const bContainer = document.getElementById('topBankosContainer');
@@ -1176,8 +1270,8 @@
           <div class="flex items-center gap-2.5">
             <span class="font-mono text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">${m.code}</span>
             <div>
-              <div class="font-semibold text-slate-200">${m.match_name}</div>
-              <div class="text-[10px] text-slate-400">${m.league} • ${m.time_code}</div>
+              <div class="font-semibold text-slate-200">${m.match_name}${m.is_live ? ` <span class="ml-1 px-1.5 py-0.2 rounded bg-rose-500/25 text-rose-300 font-mono text-[10px]">🔴 ${m.live_minute}' [${m.live_score}]</span>` : ''}</div>
+              <div class="text-[10px] text-slate-400">${m.league} • ${m.day_name || ''} ${m.time_code}</div>
             </div>
           </div>
           <div class="text-right">
@@ -1194,8 +1288,8 @@
           <div class="flex items-center gap-2.5">
             <span class="font-mono text-[10px] px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-400 font-bold border border-cyan-500/30">${m.code}</span>
             <div>
-              <div class="font-semibold text-slate-200">${m.match_name}</div>
-              <div class="text-[10px] text-slate-400">${m.league} • ${m.time_code}</div>
+              <div class="font-semibold text-slate-200">${m.match_name}${m.is_live ? ` <span class="ml-1 px-1.5 py-0.2 rounded bg-rose-500/25 text-rose-300 font-mono text-[10px]">🔴 ${m.live_minute}' [${m.live_score}]</span>` : ''}</div>
+              <div class="text-[10px] text-slate-400">${m.league} • ${m.day_name || ''} ${m.time_code}</div>
             </div>
           </div>
           <div class="text-right">
@@ -1468,12 +1562,17 @@
       document.getElementById('couponCardOdd').innerText = `~${c.total_odd}`;
 
       const tbody = document.getElementById('couponMatchesTableBody');
-      tbody.innerHTML = c.matches.map(m => `
+      tbody.innerHTML = c.matches.map(m => {
+        const bm = (currentData.matches || []).find(x => x.code === m.code || x.match_name === m.match_name);
+        const liveBadge = (bm && bm.is_live)
+          ? ` <span class="ml-1.5 px-1.5 py-0.5 rounded bg-rose-500/25 text-rose-300 border border-rose-500/40 font-mono text-[10px] font-bold">🔴 ${bm.live_minute || ''}' [${bm.live_score || '? - ?'}]</span>`
+          : '';
+        return `
         <tr class="hover:bg-slate-900/60 transition">
           <td class="py-2.5 px-3 text-center text-slate-500 font-bold">${m.row_index}</td>
           <td class="py-2.5 px-3 text-emerald-400 font-bold">${m.code}</td>
           <td class="py-2.5 px-3 text-slate-400">${m.time}</td>
-          <td class="py-2.5 px-4 font-sans font-medium text-slate-200">${m.match_name}</td>
+          <td class="py-2.5 px-4 font-sans font-medium text-slate-200">${m.match_name}${liveBadge}</td>
           <td class="py-2.5 px-3 text-slate-400 text-[11px]">${m.league}</td>
           <td class="py-2.5 px-4">
             <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold text-xs">
@@ -1484,7 +1583,8 @@
           <td class="py-2.5 px-3 text-right font-mono font-bold text-cyan-400"><span class="${getOddFlashClass('coup_' + selectedCouponIndex + '_' + m.code, m.odd)}">${m.odd}</span></td>
           <td class="py-2.5 px-3 text-right font-mono text-slate-400">%${m.confidence}</td>
         </tr>
-      `).join('');
+      `;
+      }).join('');
     }
 
     // Canlı Bülten Doğrudan Sekme Geçişi (Hazır Kuponlar Mantığında)
@@ -1547,7 +1647,7 @@
             <div class="col-span-full glass-card p-8 rounded-2xl border border-slate-800 text-center space-y-2">
               <i data-lucide="clock" class="w-8 h-8 mx-auto text-slate-500"></i>
               <div class="text-sm font-bold text-slate-200">Şu anda oynanan canlı maç bulunmuyor.</div>
-              <div class="text-xs text-slate-400">Bot arka planda 45 saniyede bir canlı fikstürleri taramaya devam ediyor.</div>
+              <div class="text-xs text-slate-400">Sistem arka planda 10 saniyede bir canlı fikstürleri taramaya devam ediyor.</div>
             </div>
           `;
         } else {
@@ -1752,28 +1852,18 @@
       }
     }, 3500);
 
-    // ARKA PLANDA SÜREKLİ CANLI TAKİP VE GÜNCELLEME BOTU (20 sn Gerçek Zamanlı Polling)
-    setInterval(async () => {
-      try {
-        const res = await fetch('weekly_data.json?t=' + Date.now(), { cache: 'no-store' });
-        if (res.ok) {
-          const freshData = await res.json();
-          const curLiveSig = currentData ? JSON.stringify(currentData.live_in_play_matches || []) : '';
-          const newLiveSig = JSON.stringify(freshData.live_in_play_matches || []);
-          const changed = !currentData
-            || freshData.last_updated !== currentData.last_updated
-            || curLiveSig !== newLiveSig
-            || freshData.total_matches !== currentData.total_matches
-            || (freshData.coupons || []).length !== (currentData.coupons || []).length;
-
-          if (freshData && changed) {
-            currentData = freshData;
-            renderAllViews();
-            console.log('⚡ Arka plan botu canlı skor ve oranları güncelledi:', freshData.last_updated);
+    // Yalnızca yerel sunucu çalışırken /api/data yedek polling (GitHub Pages'te doğrudan iddaa.com kullanılır)
+    if (location.hostname === '127.0.0.1' || location.hostname === 'localhost') {
+      setInterval(async () => {
+        try {
+          const res = await fetch('/api/data?t=' + Date.now(), { cache: 'no-store' });
+          if (res.ok) {
+            const freshData = await res.json();
+            if (freshData) { baseSnapshot = freshData; currentData = freshData; renderAllViews(); }
           }
-        }
-      } catch (e) {}
-    }, 20000);
+        } catch (e) {}
+      }, 20000);
+    }
 
     // Copy to Clipboard
     function copyActiveCouponToClipboard() {
@@ -2030,7 +2120,8 @@
           const ht = sc.ht || {}, at = sc.at || {};
           const known = ht.r != null && at.r != null;
           const markets = (e.m && e.m.length) ? e.m : (widgetMarkets[e.i] || []);
-          const [o1, ox, o2] = msOdds(markets, 4, 4);
+          let [o1, ox, o2] = msOdds(markets, 4, 4);
+          if (!o1 && !ox && !o2) [o1, ox, o2] = msOdds(markets, 1, 1);
           live.push({
             id: e.i, home: e.hn, away: e.an, league: iddaaCompNames[e.ci] || 'Futbol',
             h: known ? (+ht.r || 0) : null, a: known ? (+at.r || 0) : null, known,
@@ -2123,6 +2214,25 @@
       }
     }
 
+    const DAILY_CACHE_KEY = 'bulten_daily_plan_v2';
+
+    function trtDateKey(ms = Date.now()) {
+      try {
+        return new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Istanbul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(ms));
+      } catch (e) {
+        return new Date(ms + 3 * 3600000).toISOString().slice(0, 10);
+      }
+    }
+
+    function trtDateHuman(ms = Date.now()) {
+      try {
+        return new Intl.DateTimeFormat('tr-TR', { timeZone: 'Europe/Istanbul', day: '2-digit', month: '2-digit', year: 'numeric' }).format(new Date(ms));
+      } catch (e) {
+        const k = trtDateKey(ms).split('-');
+        return `${k[2]}.${k[1]}.${k[0]}`;
+      }
+    }
+
     function trtDayMeta(ts) {
       const dt = new Date(ts * 1000);
       const tr = new Date(dt.toLocaleString('en-US', { timeZone: 'Europe/Istanbul' }));
@@ -2135,18 +2245,41 @@
       return { dayNum, dayName: names[dayNum], timeCode: code, hhmm: `${hh}:${String(tr.getMinutes()).padStart(2, '0')}` };
     }
 
-    function buildWeeklyFromIddaa(preMatch, marketDefs) {
+    function buildDailyFromIddaa(preMatch, marketDefs, todayKey) {
       const nowSec = Date.now() / 1000;
+      const tmrKey = trtDateKey(Date.now() + 86400000);
+      const scoreEvent = e => {
+        if (!e || e.marketCount < 8 || (!e.o1 && !e.odds.U && !e.odds.D) || e.start <= nowSec - 300) return -1;
+        const dtKey = trtDateKey(e.start * 1000);
+        const ln = (e.league || '').toLowerCase();
+        let s = e.marketCount;
+        if (dtKey === todayKey) s += 160;
+        else if (dtKey === tmrKey) s += 110;
+        else s -= 100;
+        if (/uluslar|uefa|türkiye|süper lig|1\. lig|premier|la liga|serie a|bundesliga|ligue 1|championship|hazırlık|dünya|concacaf|copa|şampiyonlar|avrupa ligi/.test(ln)) {
+          s += 120;
+        }
+        if (/amatör|women|kadın|u19|u21|u23|rezerv/.test(ln)) {
+          s -= 120;
+        }
+        return s;
+      };
+
       const upcoming = preMatch
-        .filter(e => e.start > nowSec && e.marketCount >= 8 && (e.o1 || e.odds.U || e.odds.D))
-        .sort((a, b) => (a.start - b.start) || (b.marketCount - a.marketCount))
-        .slice(0, 60);
+        .filter(e => scoreEvent(e) > 0)
+        .sort((a, b) => scoreEvent(b) - scoreEvent(a))
+        .slice(0, 60)
+        .sort((a, b) => (a.start - b.start) || (b.marketCount - a.marketCount));
+
       if (upcoming.length < 30) return null;
 
       const DAY_CHRONO = { 5: 1, 6: 2, 7: 3, 1: 4, 2: 5, 3: 6, 4: 7 };
       const mdefs = marketDefs || {};
-      const processed = upcoming.map((e, idx) => {
+      const dayCounters = {};
+      const processed = upcoming.map(e => {
         const dm = trtDayMeta(e.start);
+        dayCounters[dm.dayNum] = (dayCounters[dm.dayNum] || 0) + 1;
+        const codeNum = dm.dayNum * 100 + dayCounters[dm.dayNum];
         const o = e.odds;
         let mk = 'U', mtype = 'TIP_3_GOL_SISTEM', conf = 84.5;
         if (e.o1 && e.o1 <= 1.52) {
@@ -2186,9 +2319,9 @@
         markets[mk] = true;
         marketOdds[mk] = suggOdd;
         const lgLow = (e.league || '').toLowerCase();
-        const isIntl = /uluslar|elem|dünya|avrupa|hazırlık|concacaf|afrika|uefa|fifa/.test(lgLow);
+        const isIntl = /uluslar|elem|dünya|avrupa|hazırlık|concacaf|afrika|uefa|fifa|copa/.test(lgLow);
         return {
-          code: String(100 + idx + 1) + '.0',
+          code: String(codeNum) + '.0',
           day_num: dm.dayNum, day_name: dm.dayName, time_code: dm.timeCode,
           match_name: `${e.home} - ${e.away}`, home: e.home, away: e.away,
           league: e.league, country: isIntl ? 'Uluslararası' : 'Avrupa / Dünya',
@@ -2212,8 +2345,9 @@
       bankos.forEach((m, i) => { const k = 'B' + ((i % 8) + 1); if (pools.B[k].length < 10) pools.B[k].push(m); });
       Object.keys(pools.B).forEach(k => {
         let si = 0;
-        while (pools.B[k].length < 10 && si < sistems.length * 2) {
-          const cand = sistems[si++ % (sistems.length || 1)] || processed[si % processed.length];
+        while (pools.B[k].length < 10 && si < Math.max(sistems.length, processed.length) * 2) {
+          const cand = sistems[si % (sistems.length || 1)] || processed[si % processed.length];
+          si++;
           if (cand && !pools.B[k].includes(cand)) pools.B[k].push(cand);
         }
       });
@@ -2276,7 +2410,18 @@
       Object.keys(pools.B).forEach(k => { serPools.B[k] = pools.B[k].map(ser); });
       Object.keys(pools.X).forEach(k => { serPools.X[k] = pools.X[k].map(ser); });
 
-      return { matches: processed, total_matches: processed.length, pools: serPools, coupons };
+      return { dailyKey: todayKey, dailyLabel: trtDateHuman(Date.now()), matches: processed, total_matches: processed.length, pools: serPools, coupons };
+    }
+
+    function loadDailyPlanCache() {
+      try {
+        const raw = localStorage.getItem(DAILY_CACHE_KEY);
+        return raw ? JSON.parse(raw) : null;
+      } catch (e) { return null; }
+    }
+
+    function saveDailyPlanCache(plan) {
+      try { localStorage.setItem(DAILY_CACHE_KEY, JSON.stringify(plan)); } catch (e) {}
     }
 
     function buildOverlay(base) {
@@ -2284,26 +2429,37 @@
       const st = iddaaState || {};
       const liveNow = Array.isArray(st.live) ? st.live : [];
       const preMatch = Array.isArray(st.preMatch) ? st.preMatch : [];
+      const todayKey = trtDateKey(Date.now());
+      data.daily_label = trtDateHuman(Date.now());
 
-      data.matches = (base.matches || []).map(m => Object.assign({}, m, { market_odds: Object.assign({}, m.market_odds || {}) }));
+      // Günlük Otomatik Bülten Motoru: GitHub'a günlük commit atmadan doğrudan tarayıcıda iddaa.com'dan üretir
+      if (preMatch.length >= 30) {
+        let plan = loadDailyPlanCache();
+        const activeFromPlan = (plan && plan.dailyKey === todayKey && Array.isArray(plan.matches))
+          ? plan.matches.filter(m =>
+              liveNow.some(x => sameFixture(m.home, m.away, x.home, x.away)) ||
+              preMatch.some(x => sameFixture(m.home, m.away, x.home, x.away))
+            ).length
+          : 0;
 
-      // Eğer taban bülten (weekly_data.json) tarihi geçmişse ve güncel <50 maç kalmışsa,
-      // bilgisayar kapalı olsa dahi iddaa.com'un güncel haftalık bülteninden otomatik yeniden üret
-      const stillInIddaaCount = preMatch.length >= 50
-        ? data.matches.filter(m =>
-            liveNow.some(x => sameFixture(m.home, m.away, x.home, x.away)) ||
-            preMatch.some(x => sameFixture(m.home, m.away, x.home, x.away))
-          ).length
-        : data.matches.length;
-
-      if (preMatch.length >= 50 && stillInIddaaCount < 20 && (!base.last_updated || Date.now() - Date.parse(base.last_updated.replace(' ', 'T')) > 4 * 86400000)) {
-        const rolled = buildWeeklyFromIddaa(preMatch, base.market_defs);
-        if (rolled) {
-          data.matches = rolled.matches;
-          data.total_matches = rolled.total_matches;
-          data.pools = rolled.pools;
-          data.coupons = rolled.coupons;
+        if (!plan || plan.dailyKey !== todayKey || activeFromPlan < 15) {
+          const freshDaily = buildDailyFromIddaa(preMatch, base.market_defs, todayKey);
+          if (freshDaily) {
+            plan = freshDaily;
+            saveDailyPlanCache(freshDaily);
+          }
         }
+        if (plan && Array.isArray(plan.matches) && plan.matches.length > 0) {
+          data.matches = plan.matches.map(m => Object.assign({}, m, { market_odds: Object.assign({}, m.market_odds || {}), goals: Array.isArray(m.goals) ? [...m.goals] : [], coupons: Array.isArray(m.coupons) ? [...m.coupons] : [] }));
+          data.total_matches = data.matches.length;
+          data.pools = plan.pools;
+          data.coupons = plan.coupons;
+          data.daily_label = plan.dailyLabel || data.daily_label;
+        } else {
+          data.matches = (base.matches || []).map(m => Object.assign({}, m, { market_odds: Object.assign({}, m.market_odds || {}) }));
+        }
+      } else {
+        data.matches = (base.matches || []).map(m => Object.assign({}, m, { market_odds: Object.assign({}, m.market_odds || {}) }));
       }
 
       const liveIdsNow = new Set(liveNow.map(x => x.id));
@@ -2311,16 +2467,18 @@
       // Canlıdan düşenleri (biten maçlar) oturum listesine al
       seenLiveIds.forEach((prev, id) => {
         if (!liveIdsNow.has(id)) {
-          sessionFinished.unshift({
-            code: prev.code || ('FT-' + String(id).slice(-4)), match_name: `${prev.home} - ${prev.away}`,
-            league: prev.league, time: '', final_score: prev.known ? `${prev.h} - ${prev.a}` : '-',
-            removed_from_bulletin: false, goals: []
-          });
+          const fName = `${prev.home} - ${prev.away}`;
+          if (!sessionFinished.some(f => f.match_name === fName)) {
+            sessionFinished.unshift({
+              code: prev.code || ('FT-' + String(id).slice(-4)), match_name: fName,
+              league: prev.league, time: '', final_score: prev.known ? `${prev.h} - ${prev.a}` : '-',
+              removed_from_bulletin: false, goals: []
+            });
+          }
           seenLiveIds.delete(id);
         }
       });
 
-      const liveCards = [];
       data.matches.forEach(m => {
         m.is_live = false;
         // Maç önü güncel iddaa oranlarını senkronize et
@@ -2343,7 +2501,6 @@
         m.live_prediction_status = lv.known ? evalLivePrediction(m.target_market, lv.h, lv.a, lv.minute, lv.period) : 'Skor bekleniyor ⏳';
         m.in_bulletin = true;
         m.__iddaaId = lv.id;
-        // Taban bültendeki gol listesi güncel skorla uyuşmuyorsa gösterme (eski olabilir)
         if (!lv.known || !Array.isArray(m.goals) || m.goals.length !== (lv.h + lv.a)) m.goals = [];
       });
 
@@ -2379,6 +2536,7 @@
         });
       }
 
+      const liveCards = [];
       liveNow.forEach(lv => {
         const bm = data.matches.find(m => m.__iddaaId === lv.id);
         seenLiveIds.set(lv.id, { home: lv.home, away: lv.away, league: lv.league, h: lv.h, a: lv.a, known: lv.known, code: bm ? bm.code : '' });
@@ -2391,8 +2549,18 @@
           live_minute: lv.minute, live_status: periodLabel(lv.period),
           odds_ms1: lv.o1, odds_msx: lv.ox, odds_ms2: lv.o2, goals: [],
           target_market: '-', target_market_name: 'Canlı Skor Takibi', suggested_odd: '-',
-          live_prediction_status: 'Anlık Canlı Veri', coupons: []
+          live_prediction_status: 'Anlık Canlı Veri', coupons: [], __knownScore: lv.known
         });
+      });
+      // Önce bültendeki canlı maçlar, sonra skoru bilinen canlı maçlar en üste dizilsin
+      liveCards.sort((a, b) => {
+        const ab = a.in_bulletin !== false ? 1 : 0;
+        const bb = b.in_bulletin !== false ? 1 : 0;
+        if (ab !== bb) return bb - ab;
+        const ak = (a.live_score && a.live_score !== '? - ?') ? 1 : 0;
+        const bk = (b.live_score && b.live_score !== '? - ?') ? 1 : 0;
+        if (ak !== bk) return bk - ak;
+        return 0;
       });
       data.live_in_play_matches = liveCards;
 
@@ -2413,8 +2581,8 @@
           });
       }
       data.finished_matches = sessionFinished.concat(base.finished_matches || []).slice(0, 30);
-      data.last_updated = new Date().toLocaleString('sv-SE', { timeZone: 'Europe/Istanbul' }) + ' (iddaa.com canlı)';
-      data.live_source = 'iddaa.com (tarayıcıdan 7/24 canlı) + A-Q Formül Motoru';
+      data.last_updated = new Date().toLocaleString('sv-SE', { timeZone: 'Europe/Istanbul' }) + ' (iddaa.com anlık)';
+      data.live_source = 'iddaa.com (tarayıcıdan günlük bülten + 10 sn anlık canlı) + A-Q Formül Motoru';
       data.__overlaid = true;
       return data;
     }
@@ -2431,13 +2599,15 @@
       const ok = await fetchIddaaLive();
       if (ok && (currentData || baseSnapshot)) renderAllViews();
     }
-    // İlk yükleme: canlı + yaklaşan + haftalık maç önü oran/bülten, sonra 20 sn canlı / 5 dk tam bülten
+    // İlk yükleme: anlık canlı + yaklaşan + günlük bülten, sonra 10 sn canlı / 3 dk bülten
     (async () => {
       await Promise.all([fetchIddaaLive(), fetchIddaaUpcoming(), fetchIddaaPreMatch()]);
       if (currentData || baseSnapshot) renderAllViews();
     })();
-    setInterval(pollIddaaLive, 20000);
-    setInterval(async () => { await Promise.all([fetchIddaaUpcoming(), fetchIddaaPreMatch()]); if (currentData || baseSnapshot) renderAllViews(); }, 300000);
-  </script>
+    setInterval(pollIddaaLive, 10000);
+    setInterval(async () => { await Promise.all([fetchIddaaUpcoming(), fetchIddaaPreMatch()]); if (currentData || baseSnapshot) renderAllViews(); }, 180000);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && (currentData || baseSnapshot)) pollIddaaLive();
+    });
 </body>
 </html>
