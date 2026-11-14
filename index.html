@@ -358,32 +358,6 @@
     <!-- ==================== TAB 1: DASHBOARD ==================== -->
     <div id="tab-dashboard" class="tab-content space-y-6">
 
-      <!-- ANLIK CANLI MAÇLAR ÖNİZLEME ŞERİDİ (ANA SAYFADA ANINDA GÖRÜNÜR) -->
-      <div class="glass-card p-4 sm:p-5 rounded-2xl border border-rose-500/40 bg-gradient-to-r from-rose-950/30 via-slate-900/95 to-slate-950 space-y-3">
-        <div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-slate-800/90">
-          <div class="flex items-center gap-2.5">
-            <span class="relative flex h-2.5 w-2.5">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
-            </span>
-            <h4 class="font-extrabold text-sm text-white flex items-center gap-2">
-              <span>Şu An Canlı Oynanan Maçlar (Anlık Skorlar)</span>
-              <span id="dashLiveCountBadge" class="px-2 py-0.5 rounded-full bg-rose-500/25 text-rose-200 border border-rose-500/40 font-mono text-[11px]">0 Canlı</span>
-            </h4>
-          </div>
-          <div class="flex items-center gap-2">
-            <span id="dashLiveSyncLabel" class="text-[10px] font-mono text-emerald-300 bg-slate-900 px-2 py-1 rounded border border-slate-800">⚡ 10 sn'de bir güncellenir</span>
-            <button onclick="openLiveMatchesDirect()" class="px-3 py-1 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs transition flex items-center gap-1 shadow-md shadow-rose-950/50">
-              <span>Tüm Canlı Maçlar</span>
-              <span aria-hidden="true">→</span>
-            </button>
-          </div>
-        </div>
-        <div id="dashLivePreviewGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5">
-          <div class="col-span-full text-xs text-slate-400 py-3 text-center">iddaa.com canlı yayın bağlanıyor...</div>
-        </div>
-      </div>
-
       <!-- HIGHLIGHTS SPLIT: TOP BANKOS vs HIGH CONFIDENCE DERBIES -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
@@ -1341,47 +1315,8 @@
       setTxt('catLigCount', ligCount);
     }
 
-    // Dashboard Highlights + Live Preview Strip
+    // Dashboard Highlights
     function renderDashboardHighlights() {
-      const liveMatches = getLiveInPlayList();
-      const dashLiveBadge = document.getElementById('dashLiveCountBadge');
-      if (dashLiveBadge) dashLiveBadge.textContent = `${liveMatches.length} Canlı Maç`;
-      const dashSyncEl = document.getElementById('dashLiveSyncLabel');
-      if (dashSyncEl && currentData.last_updated) {
-        dashSyncEl.textContent = `⚡ ${currentData.last_updated}`;
-      }
-      const dashGrid = document.getElementById('dashLivePreviewGrid');
-      if (dashGrid) {
-        if (liveMatches.length === 0) {
-          dashGrid.innerHTML = `<div class="col-span-full text-xs text-slate-400 py-3 text-center">Şu anda oynanan canlı maç bulunmuyor. Sistem 10 saniyede bir otomatik kontrol ediyor.</div>`;
-        } else {
-          dashGrid.innerHTML = liveMatches.slice(0, 6).map(m => {
-            const minTxt = m.live_minute ? (String(m.live_minute) === 'İY' ? 'İY' : `${m.live_minute}'`) : 'CANLI';
-            const inBul = m.in_bulletin !== false;
-            return `
-              <div onclick="openLiveMatchesDirect()" class="cursor-pointer p-3 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 border ${inBul ? 'border-rose-500/50' : 'border-slate-800'} transition space-y-1.5">
-                <div class="flex items-center justify-between gap-2 text-[10px]">
-                  <span class="text-slate-400 truncate font-medium">${m.league || 'Futbol'}</span>
-                  <span class="px-1.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 font-mono font-bold whitespace-nowrap">${minTxt} • ${m.live_status || 'Canlı'}</span>
-                </div>
-                <div class="flex items-center justify-between gap-2 text-xs font-bold">
-                  <span class="flex-1 text-slate-100 truncate">${m.home || (m.match_name || '').split('-')[0].trim()}</span>
-                  <span class="px-2 py-0.5 rounded bg-rose-500/25 text-rose-200 border border-rose-500/50 font-mono font-black">${m.live_score || '? - ?'}</span>
-                  <span class="flex-1 text-slate-100 truncate text-right">${m.away || ((m.match_name || '').split('-')[1] || '').trim()}</span>
-                </div>
-                ${(m.odds_ms1 || m.odds_msx || m.odds_ms2) ? `
-                  <div class="flex items-center justify-between text-[10px] font-mono text-slate-400 pt-0.5 border-t border-slate-800/80">
-                    <span>1: <b class="text-cyan-300 ${getOddFlashClass('d_live1_' + m.code, m.odds_ms1 || '-')}">${m.odds_ms1 || '-'}</b></span>
-                    <span>X: <b class="text-amber-300 ${getOddFlashClass('d_livex_' + m.code, m.odds_msx || '-')}">${m.odds_msx || '-'}</b></span>
-                    <span>2: <b class="text-purple-300 ${getOddFlashClass('d_live2_' + m.code, m.odds_ms2 || '-')}">${m.odds_ms2 || '-'}</b></span>
-                  </div>
-                ` : ''}
-              </div>
-            `;
-          }).join('');
-        }
-      }
-
       const bankoCand = currentData.matches.filter(m => m.match_type === 'TIP_1_BANKO' || m.match_type === 'TIP_2_DEP_FAV');
       const topBankos = (bankoCand.length >= 5 ? bankoCand : [...currentData.matches].sort((a, b) => (b.confidence || 0) - (a.confidence || 0))).slice(0, 5);
       const topYields = currentData.matches.filter(m => !topBankos.includes(m) && (m.confidence || 0) >= 80).slice(0, 5);
