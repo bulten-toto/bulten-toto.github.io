@@ -224,6 +224,13 @@
           <span>🎯 Hazır Kuponlar</span>
         </button>
 
+        <button id="btnEvetEvetDirect" onclick="openEvetEvetDirect()" class="flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-lg bg-gradient-to-r from-amber-500 via-orange-500 to-rose-600 hover:from-amber-400 hover:to-rose-500 text-slate-950 font-extrabold text-xs transition shadow-md shadow-amber-950/60 active:scale-95 border border-amber-300/70">
+          <i data-lucide="flame" class="w-4 h-4 text-slate-950"></i>
+          <span class="whitespace-nowrap">1Y/2Y KG Evet/Evet</span>
+          <span id="headerEEBadge" class="px-1.5 py-0.2 rounded-full bg-slate-950/85 text-amber-300 border border-amber-300/40 font-mono text-[10px]">0</span>
+          <span class="hidden xl:inline text-[9px] font-mono bg-slate-950/20 px-1.5 py-0.5 rounded">60sn Canlı</span>
+        </button>
+
         <button id="btnHardRefresh" onclick="hardRefreshData(true)" class="flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-lg bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-bold text-xs transition shadow-md shadow-cyan-900/40 active:scale-95 border border-cyan-400/40">
           <i data-lucide="rotate-cw" class="w-4 h-4" id="hardRefreshIcon"></i>
           <span>⚡ Günlük Bülteni Yenile</span>
@@ -328,6 +335,13 @@
           <span class="flex items-center gap-1.5">
             15'lik Formül Kuponları
             <span class="px-1.5 py-0.5 rounded-full bg-cyan-500/25 text-cyan-300 text-[10px] font-mono border border-cyan-400/40 font-bold">16 Adet</span>
+          </span>
+        </button>
+        <button onclick="switchTab('evetevet')" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-amber-300/90 bg-amber-950/30 hover:bg-amber-900/40 hover:text-amber-200 border border-amber-700/40 font-medium" data-tab="evetevet">
+          <i data-lucide="flame" class="w-4 h-4 text-amber-400"></i>
+          <span class="flex items-center gap-1.5">
+            1.Y/2.Y KG (Evet/Evet)
+            <span id="navEEBadge" class="px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-mono border border-amber-400/40 font-bold">0</span>
           </span>
         </button>
         <button onclick="switchTab('guide')" class="tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-indigo-400/80 bg-indigo-950/30 hover:bg-indigo-900/40 hover:text-indigo-200 border border-indigo-800/40 font-medium" data-tab="guide">
@@ -947,6 +961,110 @@
       </div>
     </div>
 
+    <!-- ==================== TAB 8: 1. YARI / 2. YARI KG (EVET/EVET) KESİŞİM TARAMASI ==================== -->
+    <div id="tab-evetevet" class="tab-content hidden space-y-6">
+      <div class="glass-card p-5 sm:p-6 rounded-2xl border border-amber-500/40 bg-gradient-to-br from-amber-950/30 via-slate-900/95 to-slate-950">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div class="space-y-1.5">
+            <div class="flex flex-wrap items-center gap-2.5">
+              <i data-lucide="flame" class="w-5 h-5 text-amber-400"></i>
+              <h2 class="text-lg sm:text-xl font-extrabold text-white tracking-tight">1. Yarı / 2. Yarı KG (Evet/Evet) + Algoritma Kesişim Tarayıcısı</h2>
+              <span id="eeStatBadge" class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-mono font-bold">
+                0 Dengeli Aday
+              </span>
+            </div>
+            <p class="text-xs text-slate-300">
+              Canlı Nesine bülteni (<span class="font-mono text-amber-300">MTID 801</span>) + Poisson 1Y/2Y gol beklentisi + Arkadaş Algoritması (<span class="font-mono text-emerald-300">TIP_3_GOL_SISTEM / A-Q / B-X Havuzları</span>) birleştirilerek tek taraflı favori ve alt tuzakları otomatik elenir.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/80 text-[11px] font-mono text-slate-300 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              <span>Tarama:</span>
+              <span id="eeLastUpdated" class="text-amber-300 font-bold">--</span>
+            </div>
+            <button onclick="refreshEvetEvetScan()" id="btnRefreshEE" class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-slate-950 text-xs font-extrabold transition shadow-md shadow-amber-950/60 flex items-center gap-1.5 active:scale-95">
+              <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+              <span>Canlı Nesine'yi Şimdi Tara</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 mt-4 text-xs">
+          <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
+            <div class="text-[10px] text-slate-400 uppercase">EE Açık Maç</div>
+            <div id="eeKpiTotal" class="text-base font-mono font-extrabold text-white mt-0.5">0</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-900/80 border border-emerald-500/30">
+            <div class="text-[10px] text-emerald-300 uppercase">Dengeli Aday</div>
+            <div id="eeKpiBalanced" class="text-base font-mono font-extrabold text-emerald-300 mt-0.5">0</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-900/80 border border-amber-500/30">
+            <div class="text-[10px] text-amber-300 uppercase">Altın Kesişim (TIP_3)</div>
+            <div id="eeKpiGold" class="text-base font-mono font-extrabold text-amber-300 mt-0.5">0</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-900/80 border border-cyan-500/30">
+            <div class="text-[10px] text-cyan-300 uppercase">MBS 1 Tekli</div>
+            <div id="eeKpiMbs1" class="text-base font-mono font-extrabold text-cyan-300 mt-0.5">0</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-900/80 border border-rose-500/30 col-span-2 sm:col-span-1">
+            <div class="text-[10px] text-rose-300 uppercase">Elenen Tuzak</div>
+            <div id="eeKpiTraps" class="text-base font-mono font-extrabold text-rose-300 mt-0.5">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HAZIR SİSTEM VE TEKLİ KURGULARI -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-bold text-amber-300 flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            Otomatik Hazır Evet/Evet Sistem & Tekli Kurguları
+          </h3>
+          <span class="text-[11px] text-slate-400 font-mono">MBS kurallarına göre güncel saat sonrası maçlardan üretilir</span>
+        </div>
+        <div id="eeCouponsGrid" class="grid grid-cols-1 lg:grid-cols-3 gap-4"></div>
+      </div>
+
+      <!-- FİLTRELER VE TABLO -->
+      <div class="glass-card p-4 sm:p-5 rounded-2xl border border-slate-800 space-y-4">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div class="flex flex-wrap items-center gap-1.5" id="eeFilterBtns">
+            <button onclick="setEEFilter('balanced')" data-ee="balanced" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 font-bold text-xs border border-amber-500/40">Dengeli Adaylar</button>
+            <button onclick="setEEFilter('gold')" data-ee="gold" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium text-xs border border-slate-700">Altın Kesişim (TIP_3)</button>
+            <button onclick="setEEFilter('algo')" data-ee="algo" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium text-xs border border-slate-700">Algo Eşleşenler</button>
+            <button onclick="setEEFilter('mbs1')" data-ee="mbs1" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium text-xs border border-slate-700">MBS 1 Tekliler</button>
+            <button onclick="setEEFilter('traps')" data-ee="traps" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium text-xs border border-slate-700">Tuzak Uyarıları</button>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <label class="flex items-center gap-1.5 text-xs text-slate-300 bg-slate-900 border border-slate-700 px-2.5 py-1.5 rounded-lg cursor-pointer">
+              <input type="checkbox" id="eeTodayOnlyChk" checked onchange="toggleEETodayOnly(this.checked)" class="accent-amber-400">
+              <span>Sadece Bugün / Bu Gece</span>
+            </label>
+            <input type="text" id="eeSearchInput" oninput="renderEvetEvetPanel()" placeholder="Takım, lig veya kod ara..." class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400">
+          </div>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-800">
+          <table class="w-full text-left text-xs font-mono">
+            <thead class="bg-slate-900/90 text-slate-400 text-[11px] uppercase border-b border-slate-800">
+              <tr>
+                <th class="py-2.5 px-3">Saat / Kod</th>
+                <th class="py-2.5 px-3">Karşılaşma / Lig</th>
+                <th class="py-2.5 px-2 text-center">MBS</th>
+                <th class="py-2.5 px-3 text-right">Evet/Evet</th>
+                <th class="py-2.5 px-3">Piyasa / Poisson</th>
+                <th class="py-2.5 px-3">xG · 1YKG · KG · 2.5Ü</th>
+                <th class="py-2.5 px-3">Arkadaş Algo (A-Q / Havuz)</th>
+                <th class="py-2.5 px-3">Sınıf / Skor</th>
+              </tr>
+            </thead>
+            <tbody id="eeTableBody" class="divide-y divide-slate-800/70"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- TOAST NOTIFICATION CONTAINER -->
@@ -1133,6 +1251,7 @@
       renderCouponsView();
       renderLiveMatchesPanel();
       updateLiveMatchesTicker();
+      renderEvetEvetPanel();
       lucide.createIcons();
     }
 
@@ -1164,6 +1283,10 @@
       guide: {
         active: 'tab-btn active px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-indigo-300 bg-indigo-500/20 border border-indigo-400/60 shadow-md shadow-indigo-950/50 font-bold',
         inactive: 'tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-indigo-400/80 bg-indigo-950/30 hover:bg-indigo-900/40 hover:text-indigo-200 border border-indigo-800/40 font-medium'
+      },
+      evetevet: {
+        active: 'tab-btn active px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-amber-200 bg-amber-500/25 border border-amber-400/70 shadow-md shadow-amber-950/60 font-bold',
+        inactive: 'tab-btn px-3.5 py-2 rounded-lg transition flex items-center gap-2 text-amber-300/90 bg-amber-950/30 hover:bg-amber-900/40 hover:text-amber-200 border border-amber-700/40 font-medium'
       }
     };
 
@@ -2587,6 +2710,508 @@
       return data;
     }
 
+    // ============== 1. YARI / 2. YARI KG (EVET/EVET) KESİŞİM MOTORU ==============
+    let eeReportCache = null;
+    let eeFilterMode = 'balanced';
+    let eeTodayOnly = true;
+    let eeScanningNow = false;
+
+    function escEE(str) {
+      return String(str || '').replace(/[&<>"']/g, s => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[s]));
+    }
+
+    function openEvetEvetDirect() {
+      switchTab('evetevet');
+      renderEvetEvetPanel();
+      const el = document.getElementById('tab-evetevet');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      refreshEvetEvetScan(true);
+    }
+
+    function getActiveEEReport() {
+      return eeReportCache || (currentData && currentData.evet_evet) || (baseSnapshot && baseSnapshot.evet_evet) || null;
+    }
+
+    function implied2WayJS(o1, o2) {
+      if (!o1 || !o2 || o1 <= 1 || o2 <= 1) return null;
+      const p1 = 1 / o1, p2 = 1 / o2;
+      return p1 / (p1 + p2);
+    }
+
+    function implied3WayJS(o1, ox, o2) {
+      if (!o1 || !ox || !o2 || o1 <= 1 || ox <= 1 || o2 <= 1) return [null, null, null];
+      const p1 = 1 / o1, px = 1 / ox, p2 = 1 / o2, s = p1 + px + p2;
+      return [p1 / s, px / s, p2 / s];
+    }
+
+    function solveXgAndEEJS(p1, px, p2, pO25, pKg) {
+      if (!pO25 || !pKg) return [null, null, null];
+      const fact = [1, 1, 2, 6, 24, 120, 720];
+      const pmf = (k, lam) => Math.exp(-lam) * Math.pow(lam, k) / fact[k];
+      let lo = 0.5, hi = 6.5;
+      for (let i = 0; i < 24; i++) {
+        const mid = (lo + hi) / 2;
+        const pU25 = pmf(0, mid) + pmf(1, mid) + pmf(2, mid);
+        if ((1 - pU25) < pO25) lo = mid; else hi = mid;
+      }
+      const totXg = (lo + hi) / 2;
+      let bestS = 0.5, bestErr = 1e9;
+      for (let i = 0; i <= 100; i++) {
+        const s = 0.15 + i * 0.007;
+        const lh = totXg * s, la = totXg * (1 - s);
+        const predKg = (1 - Math.exp(-lh)) * (1 - Math.exp(-la));
+        let err = Math.pow(predKg - pKg, 2) * 4;
+        if (p1 && p2) {
+          let phWin = 0, paWin = 0;
+          for (let gh = 0; gh <= 6; gh++) {
+            const ph = pmf(gh, lh);
+            for (let ga = 0; ga <= 6; ga++) {
+              const pa = pmf(ga, la);
+              if (gh > ga) phWin += ph * pa;
+              else if (ga > gh) paWin += ph * pa;
+            }
+          }
+          err += Math.pow(phWin - p1, 2) + Math.pow(paWin - p2, 2);
+        }
+        if (err < bestErr) { bestErr = err; bestS = s; }
+      }
+      const xgH = totXg * bestS, xgA = totXg * (1 - bestS);
+      const p1h = (1 - Math.exp(-xgH * 0.44)) * (1 - Math.exp(-xgA * 0.44));
+      const p2h = (1 - Math.exp(-xgH * 0.56)) * (1 - Math.exp(-xgA * 0.56));
+      return [xgH, xgA, Math.min(0.28, p1h * p2h * 1.08)];
+    }
+
+    async function scanIddaaEvetEvetLive() {
+      try {
+        if (!iddaaState || !Array.isArray(iddaaState.preMatch) || iddaaState.preMatch.length === 0) {
+          await fetchIddaaPreMatch();
+        }
+        const raw = await iddaaGet('/events?st=1&type=0&version=0');
+        const allEv = (raw && raw.events) || [];
+        const nowSec = Date.now() / 1000;
+        const cutoffMin = nowSec + 300;
+        const cutoffMax = nowSec + 30 * 3600;
+        const algoList = (currentData && Array.isArray(currentData.matches)) ? currentData.matches : [];
+        const poolsMap = {}, couponsMap = {};
+        if (currentData && currentData.pools) {
+          ['B', 'X'].forEach(g => Object.entries(currentData.pools[g] || {}).forEach(([pn, arr]) => {
+            (arr || []).forEach(pm => { if (pm.code) { poolsMap[pm.code] = poolsMap[pm.code] || []; if (!poolsMap[pm.code].includes(pn)) poolsMap[pm.code].push(pn); } });
+          }));
+        }
+        if (currentData && Array.isArray(currentData.coupons)) {
+          currentData.coupons.forEach(c => (c.matches || []).forEach(cm => {
+            if (cm.code) { couponsMap[cm.code] = couponsMap[cm.code] || []; if (!couponsMap[cm.code].includes(c.coupon_id)) couponsMap[cm.code].push(c.coupon_id); }
+          }));
+        }
+
+        const cands = allEv.filter(e => e && e.sid === 1 && e.hn && e.an && e.d >= cutoffMin && e.d <= cutoffMax).map(e => {
+          const msM = (e.m || []).find(x => x.t === 1 && x.st === 1);
+          const kgM = (e.m || []).find(x => x.t === 2 && x.st === 89);
+          const o25M = (e.m || []).find(x => x.t === 2 && x.st === 101 && (!x.sov || String(x.sov) === '2.5'));
+          const kgY = kgM && kgM.o ? ((kgM.o.find(o => o.no === 1) || {}).wodd || (kgM.o.find(o => o.no === 1) || {}).odd) : null;
+          const o25Y = o25M && o25M.o ? ((o25M.o.find(o => o.n === 'Üst' || o.no === 2) || {}).wodd || (o25M.o.find(o => o.n === 'Üst' || o.no === 2) || {}).odd) : null;
+          const fm = algoList.find(m => sameFixture(m.home, m.away, e.hn, e.an));
+          const rank = (kgY && o25Y) ? (kgY * o25Y) : (fm ? 2.4 : 99);
+          return { e, fm, rank, kgY, o25Y };
+        }).filter(c => c.fm || (c.kgY && c.kgY <= 1.75 && (!c.o25Y || c.o25Y <= 1.95)))
+          .sort((a, b) => a.rank - b.rank)
+          .slice(0, 48);
+
+        if (cands.length === 0) return null;
+
+        const details = [];
+        for (let i = 0; i < cands.length; i += 6) {
+          const batch = cands.slice(i, i + 6);
+          const resBatch = await Promise.all(batch.map(async c => {
+            try {
+              const ed = await iddaaGet(`/event/${c.e.i}`);
+              return { c, ed };
+            } catch (err) { return null; }
+          }));
+          resBatch.forEach(x => { if (x && x.ed) details.push(x); });
+        }
+
+        const trNow = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Istanbul' }));
+        const todayEnd = new Date(trNow);
+        if (trNow.getHours() >= 6) todayEnd.setDate(todayEnd.getDate() + 1);
+        todayEnd.setHours(6, 0, 0, 0);
+        const todayKeyStr = trtDateHuman(Date.now());
+
+        const items = [];
+        details.forEach(({ c, ed }) => {
+          const mkts = ed.m || [];
+          const mEE = mkts.find(x => x.st === 866);
+          if (!mEE || !Array.isArray(mEE.o)) return;
+          const getO = (m, pred) => {
+            if (!m || !m.o) return null;
+            const o = m.o.find(pred);
+            return o ? +(o.wodd || o.odd || 0).toFixed(2) : null;
+          };
+          const eeHH = getO(mEE, o => o.no === 1), eeEH = getO(mEE, o => o.no === 2);
+          const ee = getO(mEE, o => o.no === 3), eeHE = getO(mEE, o => o.no === 4);
+          if (!ee || ee <= 1) return;
+
+          const mMS = mkts.find(x => x.t === 1 && x.st === 1);
+          const ms1 = getO(mMS, o => o.no === 1), msx = getO(mMS, o => o.no === 2), ms2 = getO(mMS, o => o.no === 3);
+          const mbs = ed.mbc || mEE.mbc || c.e.mbc || 1;
+          const m1YKG = mkts.find(x => x.st === 720);
+          const iyKg = getO(m1YKG, o => o.no === 1), iyKgN = getO(m1YKG, o => o.no === 2);
+          const mKG = mkts.find(x => x.st === 89);
+          const kg = getO(mKG, o => o.no === 1), kgN = getO(mKG, o => o.no === 2);
+          const mO25 = mkts.find(x => x.st === 101 && String(x.sov) === '2.5');
+          const u25 = getO(mO25, o => o.no === 1), o25 = getO(mO25, o => o.no === 2);
+          const mO35 = mkts.find(x => x.st === 101 && String(x.sov) === '3.5');
+          const u35 = getO(mO35, o => o.no === 1), o35 = getO(mO35, o => o.no === 2);
+
+          const invSum = [eeHH, eeEH, ee, eeHE].filter(v => v && v > 1).reduce((s, v) => s + 1 / v, 0);
+          const fairEeP = invSum > 0 ? (1 / ee) / invSum : (1 / ee);
+          const pIyKg = implied2WayJS(iyKg, iyKgN);
+          const pKg = implied2WayJS(kg, kgN);
+          const pO25 = implied2WayJS(o25, u25);
+          const [p1, px, p2] = implied3WayJS(ms1, msx, ms2);
+          const [xgH, xgA, pEePois] = solveXgAndEEJS(p1, px, p2, pO25, pKg);
+          const minXg = (xgH != null && xgA != null) ? Math.min(xgH, xgA) : 0;
+          const minMs = (ms1 && ms2) ? Math.min(ms1, ms2) : 9.9;
+
+          const fm = c.fm;
+          const algoInList = !!fm;
+          const algoCode = fm ? fm.code : '-';
+          const algoType = fm ? fm.match_type : (minMs <= 1.52 ? 'TIP_1_BANKO (Simüle)' : (u35 && u35 <= 1.38 ? 'TIP_4_DUSME (Simüle)' : 'TIP_3_GOL_SISTEM (Simüle)'));
+          const algoTarget = fm ? `${fm.target_market} (${fm.target_market_name})` : 'R/U';
+
+          const traps = [];
+          if (minMs <= 1.35 || (xgH != null && minXg < 1.0)) traps.push('TEK_TARAF_FAVORI');
+          if (fm && algoType === 'TIP_4_DUSME') traps.push('TIP_4_DUSME_ALT');
+          if ((pKg != null && pKg < 0.54) || (pIyKg != null && pIyKg < 0.22)) traps.push('DUSUK_KG_TEMPO');
+
+          let score = fairEeP * 100;
+          if (pEePois) score = (score + pEePois * 100) / 2;
+          if (pIyKg && pKg) score += (pIyKg * pKg) * 20;
+          if (minXg >= 1.25) score += 2; else if (minXg < 1.0) score -= 3.5;
+          if (minMs <= 1.28) score -= 4; else if (minMs <= 1.40) score -= 1.5;
+          if (algoInList && algoType === 'TIP_3_GOL_SISTEM') score += 2.5;
+          else if (algoType === 'TIP_4_DUSME') score -= 5;
+          else if ((algoType === 'TIP_1_BANKO' || algoType === 'TIP_2_DEP_FAV') && minMs <= 1.35) score -= 1.5;
+
+          const isTrap = traps.length > 0;
+          const tier = isTrap ? 'TUZAK' : (algoInList && algoType === 'TIP_3_GOL_SISTEM' ? 'ALTIN_KESISIM' : (algoInList ? 'ALGO_TEMPOLU' : 'CANLI_DENGELI'));
+          const dm = trtDayMeta(c.e.d);
+          const dTr = new Date(new Date(c.e.d * 1000).toLocaleString('en-US', { timeZone: 'Europe/Istanbul' }));
+          const ddmm = `${String(dTr.getDate()).padStart(2, '0')}.${String(dTr.getMonth() + 1).padStart(2, '0')}`;
+
+          items.push({
+            code: String(c.e.i),
+            match_name: `${c.e.hn} - ${c.e.an}`,
+            home: c.e.hn, away: c.e.an,
+            league: iddaaCompNames[c.e.ci] || 'Futbol',
+            time_str: `${ddmm} ${dm.hhmm}`,
+            hhmm: dm.hhmm,
+            start_ts: c.e.d,
+            is_today_session: dTr <= todayEnd,
+            mbs, ee_odd: ee,
+            fair_ee_pct: +(fairEeP * 100).toFixed(2),
+            poisson_ee_pct: pEePois ? +(pEePois * 100).toFixed(2) : null,
+            xg_home: xgH ? +xgH.toFixed(2) : null,
+            xg_away: xgA ? +xgA.toFixed(2) : null,
+            iy_kg_odd: iyKg, kg_odd: kg, o25_odd: o25, o35_odd: o35,
+            ms1, msx, ms2,
+            score: +score.toFixed(2),
+            tier,
+            traps,
+            algo_in_list: algoInList,
+            algo_code: algoCode,
+            algo_type: algoType,
+            algo_target: algoTarget,
+            algo_pools: poolsMap[algoCode] || [],
+            algo_coupons: couponsMap[algoCode] || [],
+            algo_badge: algoInList ? `[${algoCode}] ${algoType}` : algoType
+          });
+        });
+
+        if (items.length === 0) return null;
+        items.sort((a, b) => (b.score - a.score) || (a.ee_odd - b.ee_odd));
+        const balanced = items.filter(x => x.tier !== 'TUZAK');
+        const todayBal = balanced.filter(x => x.is_today_session);
+        const cPool = todayBal.length >= 4 ? todayBal : balanced;
+        const nightPool = cPool.filter(m => m.hhmm >= '19:30' && m.mbs <= 2);
+        const sys3 = (nightPool.length >= 3 ? nightPool : cPool.filter(m => m.mbs <= 2)).slice(0, 3);
+        const sys4 = [];
+        cPool.forEach(m => { if (m.algo_in_list && m.algo_type === 'TIP_3_GOL_SISTEM' && sys4.length < 3) sys4.push(m); });
+        cPool.forEach(m => { if (!sys4.includes(m) && sys4.length < 4) sys4.push(m); });
+        const singles = (balanced.filter(m => m.is_today_session && m.mbs === 1).length ? balanced.filter(m => m.is_today_session && m.mbs === 1) : balanced.filter(m => m.mbs === 1));
+
+        const mkCoup = (id, title, sysType, arr) => ({
+          id, title, system_type: sysType,
+          min_mbs: Math.max(...arr.map(x => x.mbs || 1)),
+          double_odds: arr.length === 1 ? [arr[0].ee_odd] : (sysType.startsWith('Tekli') ? arr.map(x => x.ee_odd) : arr.flatMap((a, idx) => arr.slice(idx + 1).map(b => +(a.ee_odd * b.ee_odd).toFixed(2)))),
+          full_odd: sysType.startsWith('Tekli') ? arr[0].ee_odd : +arr.reduce((p, x) => p * x.ee_odd, 1).toFixed(2),
+          matches: arr.map(x => ({ code: x.code, time: x.time_str, match_name: x.match_name, league: x.league, mbs: x.mbs, ee_odd: x.ee_odd, algo_badge: x.algo_badge }))
+        });
+        const recCoupons = [];
+        if (sys3.length === 3) recCoupons.push(mkCoup('EE_SYS_2_3', 'Gece / Akşam Ana Sistem 2-3 (Anlık Canlı)', 'Sistem 2-3 (3 Adet 2\'li + 1 Adet 3\'lü)', sys3));
+        if (sys4.length === 4) recCoupons.push(mkCoup('EE_SYS_2_4', 'Bugün Geniş Karma Sistem 2-4 (Algo + Canlı)', 'Sistem 2-4 (6 Adet 2\'li + 4 Adet 3\'lü + 1 Adet 4\'lü)', sys4));
+        if (singles.length > 0) recCoupons.push(mkCoup('EE_MBS1_TEKLI', 'Bugün MBS 1 Tekli Adayları (Direkt Tek Maç)', 'Tekli (MBS 1)', singles.slice(0, 3)));
+
+        const nowLabel = new Date().toLocaleTimeString('tr-TR', { timeZone: 'Europe/Istanbul', hour12: false });
+        return {
+          generated_at: `${todayKeyStr} ${nowLabel} (iddaa.com Canlı 60sn)`,
+          source: 'Canlı iddaa.com (st=866/720) + Poisson + Arkadaş Algoritması',
+          stats: {
+            upcoming_football: cands.length,
+            total_with_ee: items.length,
+            balanced_count: balanced.length,
+            algo_matched_count: items.filter(x => x.algo_in_list).length,
+            algo_gold_count: balanced.filter(x => x.algo_in_list && x.algo_type === 'TIP_3_GOL_SISTEM').length,
+            mbs1_count: singles.length,
+            trap_count: items.filter(x => x.tier === 'TUZAK').length
+          },
+          recommended_coupons: recCoupons,
+          matches: items
+        };
+      } catch (err) {
+        console.warn('Canlı iddaa Evet/Evet taraması atlandı:', err);
+        return null;
+      }
+    }
+
+    async function loadEvetEvetReport() {
+      const hasLocalApi = location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname.endsWith('trycloudflare.com');
+      if (hasLocalApi) {
+        try {
+          const res = await fetch('/api/evet-evet?t=' + Date.now(), { cache: 'no-store' });
+          if (res.ok) {
+            const payload = await res.json();
+            if (payload && payload.report) {
+              eeReportCache = payload.report;
+              renderEvetEvetPanel();
+              return;
+            }
+          }
+        } catch (e) {}
+      }
+      try {
+        const res2 = await fetch('evet_evet_report.json?t=' + Date.now(), { cache: 'no-store' });
+        if (res2.ok) {
+          eeReportCache = await res2.json();
+          renderEvetEvetPanel();
+        }
+      } catch (e) {}
+      // Ardından tarayıcı üzerinden anlık canlı iddaa.com (st=866) ile tazele
+      const liveRep = await scanIddaaEvetEvetLive();
+      if (liveRep) {
+        eeReportCache = liveRep;
+        renderEvetEvetPanel();
+      }
+    }
+
+    async function refreshEvetEvetScan(silent = false) {
+      if (eeScanningNow) return;
+      eeScanningNow = true;
+      const btn = document.getElementById('btnRefreshEE');
+      const icon = btn ? btn.querySelector('svg') : null;
+      if (icon) icon.classList.add('animate-spin');
+      try {
+        const hasLocalApi = location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname.endsWith('trycloudflare.com');
+        if (hasLocalApi) {
+          try {
+            const res = await fetch('/api/evet-evet?refresh=1&t=' + Date.now(), { cache: 'no-store' });
+            if (res.ok) {
+              const payload = await res.json();
+              if (payload && payload.report) {
+                eeReportCache = payload.report;
+                renderEvetEvetPanel();
+                if (!silent) showToast(`🔥 Nesine Evet/Evet taraması güncellendi (${payload.report.stats.balanced_count} dengeli aday).`);
+                return;
+              }
+            }
+          } catch (e) {}
+        }
+        const liveRep = await scanIddaaEvetEvetLive();
+        if (liveRep) {
+          eeReportCache = liveRep;
+          renderEvetEvetPanel();
+          if (!silent) showToast(`🔥 Canlı iddaa.com Evet/Evet taraması güncellendi (${liveRep.stats.balanced_count} dengeli aday).`);
+        } else {
+          await loadEvetEvetReport();
+        }
+      } finally {
+        eeScanningNow = false;
+        if (icon) setTimeout(() => icon.classList.remove('animate-spin'), 400);
+      }
+    }
+
+    function setEEFilter(mode) {
+      eeFilterMode = mode;
+      document.querySelectorAll('#eeFilterBtns button').forEach(btn => {
+        const m = btn.getAttribute('data-ee');
+        if (m === mode) {
+          btn.className = 'px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 font-bold text-xs border border-amber-500/40';
+        } else {
+          btn.className = 'px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium text-xs border border-slate-700';
+        }
+      });
+      renderEvetEvetPanel();
+    }
+
+    function toggleEETodayOnly(checked) {
+      eeTodayOnly = !!checked;
+      renderEvetEvetPanel();
+    }
+
+    function copyEECoupon(idx) {
+      const rep = getActiveEEReport();
+      const c = rep && Array.isArray(rep.recommended_coupons) ? rep.recommended_coupons[idx] : null;
+      if (!c) return;
+      const lines = [
+        `🔥 ${c.title} [${c.system_type} | Min MBS: ${c.min_mbs}]`,
+        ...c.matches.map((m, i) => `${i + 1}. [${m.code}] ${m.time} ${m.match_name} -> 1Y/2Y KG Evet/Evet: ${m.ee_odd} (${m.algo_badge})`),
+        `Oranlar: ${Array.isArray(c.double_odds) ? c.double_odds.join(' · ') : ''} | Tam Oran: ${c.full_odd}`
+      ];
+      navigator.clipboard.writeText(lines.join('\n')).then(() => showToast('📋 Evet/Evet sistem kurgusu kopyalandı!'));
+    }
+
+    function renderEvetEvetPanel() {
+      const rep = getActiveEEReport();
+      const navBadge = document.getElementById('navEEBadge');
+      const hdrBadge = document.getElementById('headerEEBadge');
+      const statBadge = document.getElementById('eeStatBadge');
+      if (!rep) {
+        if (navBadge) navBadge.textContent = '0';
+        if (hdrBadge) hdrBadge.textContent = '0';
+        return;
+      }
+
+      const st = rep.stats || {};
+      const balCnt = st.balanced_count || 0;
+      const goldCnt = st.algo_gold_count || 0;
+      if (navBadge) navBadge.textContent = balCnt;
+      if (hdrBadge) hdrBadge.textContent = goldCnt > 0 ? `${goldCnt} Altın · ${balCnt}` : balCnt;
+      if (statBadge) statBadge.textContent = `${balCnt} Dengeli Aday`;
+      const elUpd = document.getElementById('eeLastUpdated');
+      if (elUpd) elUpd.textContent = rep.generated_at || '--';
+      const elTot = document.getElementById('eeKpiTotal');
+      if (elTot) elTot.textContent = `${st.total_with_ee || 0}/${st.upcoming_football || 0}`;
+      const elBal = document.getElementById('eeKpiBalanced');
+      if (elBal) elBal.textContent = st.balanced_count || 0;
+      const elGold = document.getElementById('eeKpiGold');
+      if (elGold) elGold.textContent = st.algo_gold_count || 0;
+      const elMbs1 = document.getElementById('eeKpiMbs1');
+      if (elMbs1) elMbs1.textContent = st.mbs1_count || 0;
+      const elTrap = document.getElementById('eeKpiTraps');
+      if (elTrap) elTrap.textContent = st.trap_count || 0;
+
+      const cGrid = document.getElementById('eeCouponsGrid');
+      if (cGrid) {
+        const coupons = Array.isArray(rep.recommended_coupons) ? rep.recommended_coupons : [];
+        cGrid.innerHTML = coupons.map((c, idx) => `
+          <div class="glass-card p-4 rounded-2xl border border-amber-500/35 bg-slate-950/85 flex flex-col justify-between space-y-3">
+            <div class="space-y-2">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <div class="text-xs font-extrabold text-amber-300">${escEE(c.title)}</div>
+                  <div class="text-[11px] font-mono text-slate-400">${escEE(c.system_type)} · Min MBS: ${c.min_mbs}</div>
+                </div>
+                <button onclick="copyEECoupon(${idx})" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 text-[10px] font-bold">Kopyala</button>
+              </div>
+              <div class="space-y-1.5">
+                ${(c.matches || []).map(cm => `
+                  <div class="flex items-center justify-between gap-2 p-2 rounded-lg bg-slate-900/90 border border-slate-800 text-[11px]">
+                    <div class="min-w-0 flex-1">
+                      <div class="flex items-center gap-1.5 font-mono text-[10px] text-slate-400">
+                        <span class="text-amber-300 font-bold">[${escEE(cm.code)}]</span>
+                        <span>${escEE(cm.time)}</span>
+                        <span class="px-1 rounded bg-slate-800 text-slate-300">MBS:${cm.mbs}</span>
+                      </div>
+                      <div class="font-bold text-slate-100 truncate">${escEE(cm.match_name)}</div>
+                      <div class="text-[10px] text-emerald-300 truncate">${escEE(cm.algo_badge)}</div>
+                    </div>
+                    <div class="text-right shrink-0">
+                      <span class="px-2 py-1 rounded bg-amber-500/20 text-amber-200 border border-amber-500/40 font-mono font-extrabold">${cm.ee_odd}</span>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+            <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono">
+              <span class="text-slate-400 truncate">Kombo: ${(c.double_odds || []).join(' · ')}</span>
+              <span class="text-emerald-300 font-extrabold shrink-0">Tam: ${c.full_odd}</span>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const tbody = document.getElementById('eeTableBody');
+      if (!tbody) return;
+      const q = (document.getElementById('eeSearchInput')?.value || '').trim().toLowerCase();
+      let list = Array.isArray(rep.matches) ? [...rep.matches] : [];
+      if (eeTodayOnly) list = list.filter(m => m.is_today_session);
+      if (eeFilterMode === 'balanced') list = list.filter(m => m.tier !== 'TUZAK');
+      else if (eeFilterMode === 'gold') list = list.filter(m => m.tier === 'ALTIN_KESISIM');
+      else if (eeFilterMode === 'algo') list = list.filter(m => m.algo_in_list);
+      else if (eeFilterMode === 'mbs1') list = list.filter(m => m.tier !== 'TUZAK' && m.mbs === 1);
+      else if (eeFilterMode === 'traps') {
+        list = list.filter(m => m.tier === 'TUZAK').sort((a, b) => a.ee_odd - b.ee_odd);
+      }
+      if (q) {
+        list = list.filter(m =>
+          (m.match_name || '').toLowerCase().includes(q) ||
+          (m.league || '').toLowerCase().includes(q) ||
+          (m.code || '').toLowerCase().includes(q)
+        );
+      }
+
+      if (list.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" class="py-8 text-center text-slate-400">Bu filtrede eşleşen maç bulunamadı.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = list.slice(0, 80).map(m => {
+        const tierBadge = m.tier === 'ALTIN_KESISIM'
+          ? `<span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-bold">Altın Kesişim</span>`
+          : m.tier === 'TUZAK'
+          ? `<span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/40 text-[10px] font-bold">${escEE((m.traps || []).join(', '))}</span>`
+          : m.tier === 'ALGO_TEMPOLU'
+          ? `<span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 text-[10px] font-bold">Algo + Gol</span>`
+          : `<span class="px-2 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30 text-[10px] font-bold">Canlı Dengeli</span>`;
+        const poolsTxt = (m.algo_pools || []).length ? `Havuz: ${m.algo_pools.join(',')}` : '';
+        const couponsTxt = (m.algo_coupons || []).length ? ` · ${m.algo_coupons.slice(0, 2).join(', ')}` : '';
+        return `
+          <tr class="hover:bg-slate-900/70 transition">
+            <td class="py-2.5 px-3 whitespace-nowrap">
+              <div class="text-slate-200 font-bold">${escEE(m.time_str)}</div>
+              <div class="text-[10px] text-amber-300">${escEE(m.code)}</div>
+            </td>
+            <td class="py-2.5 px-3">
+              <div class="font-bold text-white">${escEE(m.match_name)}</div>
+              <div class="text-[10px] text-slate-400">${escEE(m.league)}</div>
+            </td>
+            <td class="py-2.5 px-2 text-center">
+              <span class="px-1.5 py-0.5 rounded ${m.mbs === 1 ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' : 'bg-slate-800 text-slate-300'} text-[10px] font-bold">${m.mbs}</span>
+            </td>
+            <td class="py-2.5 px-3 text-right">
+              <span class="px-2 py-1 rounded bg-amber-500/20 text-amber-200 border border-amber-500/40 font-extrabold">${m.ee_odd}</span>
+            </td>
+            <td class="py-2.5 px-3 text-[11px]">
+              <div class="text-slate-200">Piyasa: %${m.fair_ee_pct}</div>
+              <div class="text-cyan-300">Poisson: %${m.poisson_ee_pct ?? '-'}</div>
+            </td>
+            <td class="py-2.5 px-3 text-[11px]">
+              <div class="text-emerald-300">xG: ${m.xg_home ?? '-'}-${m.xg_away ?? '-'}</div>
+              <div class="text-slate-400">1Y:${m.iy_kg_odd || '-'} · KG:${m.kg_odd || '-'} · 2.5Ü:${m.o25_odd || '-'}</div>
+            </td>
+            <td class="py-2.5 px-3 text-[11px]">
+              <div class="${m.algo_in_list ? 'text-amber-300 font-bold' : 'text-slate-400'}">${escEE(m.algo_badge)}</div>
+              <div class="text-[10px] text-slate-400">${escEE(m.algo_target)} ${poolsTxt ? '· ' + escEE(poolsTxt + couponsTxt) : ''}</div>
+            </td>
+            <td class="py-2.5 px-3">
+              <div>${tierBadge}</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">Skor: ${m.score}</div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
     // renderAllViews'i sar: her render öncesi canlı iddaa verisini taban bültene bindir
     const __renderAllViewsOrig = renderAllViews;
     renderAllViews = function () {
@@ -2601,10 +3226,11 @@
     }
     // İlk yükleme: anlık canlı + yaklaşan + günlük bülten, sonra 10 sn canlı / 3 dk bülten
     (async () => {
-      await Promise.all([fetchIddaaLive(), fetchIddaaUpcoming(), fetchIddaaPreMatch()]);
+      await Promise.all([fetchIddaaLive(), fetchIddaaUpcoming(), fetchIddaaPreMatch(), loadEvetEvetReport()]);
       if (currentData || baseSnapshot) renderAllViews();
     })();
     setInterval(pollIddaaLive, 10000);
+    setInterval(() => refreshEvetEvetScan(true), 60000);
     setInterval(async () => { await Promise.all([fetchIddaaUpcoming(), fetchIddaaPreMatch()]); if (currentData || baseSnapshot) renderAllViews(); }, 180000);
     document.addEventListener('visibilitychange', () => {
       if (!document.hidden && (currentData || baseSnapshot)) pollIddaaLive();
