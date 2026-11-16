@@ -20,7 +20,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Fallback local data script -->
-  <script src="data.js?v=20261113_2053"></script>
+  <script src="data.js?v=20261117_0050"></script>
 
   <script>
     tailwind.config = {
@@ -1175,7 +1175,7 @@
       if (icon) icon.classList.add('animate-spin');
       try {
         if (forceDaily) {
-          try { localStorage.removeItem('bulten_daily_plan_v2'); } catch (e) {}
+          try { localStorage.removeItem('bulten_daily_plan_v3'); } catch (e) {}
         }
         const hasLocalApi = location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname.endsWith('trycloudflare.com');
         if (hasLocalApi) {
@@ -2265,7 +2265,7 @@
       }
     }
 
-    const DAILY_CACHE_KEY = 'bulten_daily_plan_v2';
+    const DAILY_CACHE_KEY = 'bulten_daily_plan_v3';
 
     function trtDateKey(ms = Date.now()) {
       try {
@@ -2306,12 +2306,12 @@
         let s = e.marketCount;
         if (dtKey === todayKey) s += 160;
         else if (dtKey === tmrKey) s += 110;
-        else s -= 100;
-        if (/uluslar|uefa|türkiye|süper lig|1\. lig|premier|la liga|serie a|bundesliga|ligue 1|championship|hazırlık|dünya|concacaf|copa|şampiyonlar|avrupa ligi/.test(ln)) {
+        else s += 25;
+        if (/uluslar|türkiye|süper lig|1\. lig|premier|la liga|serie a|bundesliga|ligue 1|championship|brezilya|major lig|kral kupası|ulusal lig|danimarka|hazırlık|dünya|concacaf|copa|şampiyonlar|avrupa ligi/.test(ln)) {
           s += 120;
         }
-        if (/amatör|women|kadın|u19|u21|u23|rezerv/.test(ln)) {
-          s -= 120;
+        if (/amatör|women|kadın|u19|u20|u21|u23|rezerv/.test(ln)) {
+          s -= 90;
         }
         return s;
       };
@@ -2370,7 +2370,7 @@
         markets[mk] = true;
         marketOdds[mk] = suggOdd;
         const lgLow = (e.league || '').toLowerCase();
-        const isIntl = /uluslar|elem|dünya|avrupa|hazırlık|concacaf|afrika|uefa|fifa|copa/.test(lgLow);
+        const isIntl = /uluslar|uluslararası|hazırlık|afrika uluslar|concacaf|elemeleri|euro\.?\s*champ|avr\.?\s*şamp\.?\s*el|u19|u20|u21|fifa|copa america|dünya kupası|saff/.test(lgLow);
         return {
           code: String(codeNum) + '.0',
           day_num: dm.dayNum, day_name: dm.dayName, time_code: dm.timeCode,
@@ -2417,7 +2417,7 @@
         pa.slice(0, ca).forEach(add);
         pb.forEach(m => { if (picked.length < ca + cb) add(m); });
         pb.concat(pa, processed).forEach(m => { if (picked.length < 15) add(m); });
-        picked.sort((a, b) => (DAY_CHRONO[a.day_num] || 99) - (DAY_CHRONO[b.day_num] || 99) || (a.start_ts - b.start_ts));
+        picked.sort((a, b) => (a.start_ts - b.start_ts) || (parseFloat(a.code) - parseFloat(b.code)));
         let totalOdd = 1, sumConf = 0;
         const cMatches = picked.map((m, idx) => {
           totalOdd *= (m.suggested_odd || 1.25);
