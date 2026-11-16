@@ -20,7 +20,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Fallback local data script -->
-  <script src="data.js?v=20261117_0050"></script>
+  <script src="data.js?v=20261117_0100"></script>
 
   <script>
     tailwind.config = {
@@ -2169,13 +2169,15 @@
           const e = evById[sc.id];
           if (!e) return;
           const ht = sc.ht || {}, at = sc.at || {};
-          const known = ht.r != null && at.r != null;
+          const hVal = ht.r != null ? ht.r : ht.c;
+          const aVal = at.r != null ? at.r : at.c;
+          const known = hVal != null && aVal != null;
           const markets = (e.m && e.m.length) ? e.m : (widgetMarkets[e.i] || []);
           let [o1, ox, o2] = msOdds(markets, 4, 4);
           if (!o1 && !ox && !o2) [o1, ox, o2] = msOdds(markets, 1, 1);
           live.push({
             id: e.i, home: e.hn, away: e.an, league: iddaaCompNames[e.ci] || 'Futbol',
-            h: known ? (+ht.r || 0) : null, a: known ? (+at.r || 0) : null, known,
+            h: known ? (+hVal || 0) : null, a: known ? (+aVal || 0) : null, known,
             period: sc.s, minute: sc.s === 4 ? 'İY' : String(sc.min != null ? sc.min : 0),
             o1, ox, o2, start: e.d || 0
           });

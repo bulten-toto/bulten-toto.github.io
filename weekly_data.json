@@ -2529,14 +2529,14 @@
         "D": 1.07,
         "A": 1.07,
         "K": 1.04,
-        "B": 9.57,
-        "F": 3.22,
-        "N": 1.47,
-        "S": 1.72,
-        "T": 1.8,
-        "V": 1.16,
-        "Z": 1.11,
-        "Q": 1.76
+        "B": 9.35,
+        "F": 3.21,
+        "N": 1.48,
+        "S": 1.7,
+        "T": 1.79,
+        "V": 1.17,
+        "Z": 1.1,
+        "Q": 1.74
       },
       "espn_id": "iddaa-3309741",
       "start_ts": 1794873600,
@@ -2547,8 +2547,8 @@
       "live_status": null,
       "live_prediction_status": null,
       "odds_ms1": 1.07,
-      "odds_msx": 6.17,
-      "odds_ms2": 9.57,
+      "odds_msx": 6.23,
+      "odds_ms2": 9.35,
       "goals": [],
       "coupons": [
         "Kupon B1-B5",
@@ -2556,8 +2556,7 @@
         "Kupon B3-B7",
         "Kupon B4-B8",
         "Kupon X1-X5",
-        "Kupon X1-B1",
-        "Kupon X5-B5"
+        "Kupon X1-B1"
       ]
     },
     {
@@ -2627,7 +2626,6 @@
       "coupons": [
         "Kupon B1-B5",
         "Kupon B2-B6",
-        "Kupon B3-B7",
         "Kupon B4-B8",
         "Kupon X2-X6",
         "Kupon X2-B2"
@@ -2971,17 +2969,17 @@
       "league": "Kralın Kupası",
       "country": "Avrupa / Dünya",
       "category": "lig",
-      "match_type": "TIP_3_GOL_SISTEM",
-      "target_market": "R",
-      "target_market_name": "İY 0.5 Üst",
-      "target_market_desc": "İlk Yarıda En Az 1 Gol",
-      "confidence": 84.0,
-      "suggested_odd": 1.25,
+      "match_type": "TIP_2_DEP_FAV",
+      "target_market": "B",
+      "target_market_name": "MS 2",
+      "target_market_desc": "Deplasman Galibiyeti",
+      "confidence": 87.5,
+      "suggested_odd": 1.56,
       "markets": {
         "A": false,
-        "B": false,
+        "B": true,
         "D": false,
-        "E": true,
+        "E": false,
         "F": false,
         "G": false,
         "H": false,
@@ -3000,15 +2998,18 @@
         "Q": false
       },
       "market_odds": {
-        "R": 1.25,
-        "A": 3.67,
-        "B": 1.59,
-        "D": 1.68,
-        "E": 1.12,
+        "B": 1.56,
         "F": 1.09,
-        "K": 1.38,
-        "P": 1.73,
-        "T": 1.63,
+        "L": 1.84,
+        "N": 1.14,
+        "P": 1.71,
+        "R": 1.25,
+        "U": 1.32,
+        "A": 3.77,
+        "D": 1.71,
+        "E": 1.11,
+        "K": 1.4,
+        "T": 1.62,
         "V": 1.75
       },
       "espn_id": "iddaa-3401989",
@@ -3019,24 +3020,15 @@
       "live_score": null,
       "live_status": null,
       "live_prediction_status": null,
-      "odds_ms1": 3.67,
-      "odds_msx": 3.32,
-      "odds_ms2": 1.59,
+      "odds_ms1": 3.77,
+      "odds_msx": 3.38,
+      "odds_ms2": 1.56,
       "goals": [],
       "coupons": [
-        "Kupon B1-B5",
-        "Kupon B2-B6",
         "Kupon B3-B7",
-        "Kupon B4-B8",
         "Kupon X3-X7",
-        "Kupon X1-B1",
-        "Kupon X2-B2",
         "Kupon X3-B3",
-        "Kupon X4-B4",
-        "Kupon X5-B5",
-        "Kupon X6-B6",
-        "Kupon X7-B7",
-        "Kupon X8-B8"
+        "Kupon X7-B7"
       ]
     },
     {
@@ -3104,9 +3096,9 @@
       "odds_ms2": 1.12,
       "goals": [],
       "coupons": [
-        "Kupon B3-B7",
+        "Kupon B4-B8",
         "Kupon X4-X8",
-        "Kupon X3-B3",
+        "Kupon X4-B4",
         "Kupon X8-B8"
       ]
     },
@@ -3180,10 +3172,10 @@
       "odds_ms2": 1.25,
       "goals": [],
       "coupons": [
-        "Kupon B4-B8",
+        "Kupon B1-B5",
         "Kupon X1-X5",
         "Kupon X1-B1",
-        "Kupon X4-B4"
+        "Kupon X5-B5"
       ]
     },
     {
@@ -3256,10 +3248,10 @@
       "odds_ms2": 1.31,
       "goals": [],
       "coupons": [
-        "Kupon B1-B5",
+        "Kupon B2-B6",
         "Kupon X2-X6",
         "Kupon X2-B2",
-        "Kupon X5-B5"
+        "Kupon X6-B6"
       ]
     },
     {
@@ -3327,10 +3319,10 @@
       "odds_ms2": 1.07,
       "goals": [],
       "coupons": [
-        "Kupon B2-B6",
+        "Kupon B3-B7",
         "Kupon X3-X7",
         "Kupon X3-B3",
-        "Kupon X6-B6"
+        "Kupon X7-B7"
       ]
     },
     {
@@ -3490,9 +3482,9 @@
         "Kupon B3-B7",
         "Kupon B4-B8",
         "Kupon X1-X5",
-        "Kupon X3-B3",
         "Kupon X4-B4",
-        "Kupon X5-B5"
+        "Kupon X5-B5",
+        "Kupon X6-B6"
       ]
     },
     {
@@ -3564,10 +3556,10 @@
       "odds_ms2": 4.41,
       "goals": [],
       "coupons": [
-        "Kupon B3-B7",
+        "Kupon B4-B8",
         "Kupon X2-X6",
         "Kupon X6-B6",
-        "Kupon X7-B7"
+        "Kupon X8-B8"
       ]
     },
     {
@@ -3641,7 +3633,13 @@
       "odds_ms2": 2.85,
       "goals": [],
       "coupons": [
+        "Kupon B1-B5",
+        "Kupon B2-B6",
+        "Kupon B3-B7",
+        "Kupon B4-B8",
         "Kupon X3-X7",
+        "Kupon X4-B4",
+        "Kupon X5-B5",
         "Kupon X7-B7"
       ]
     },
@@ -3689,16 +3687,16 @@
         "F": 1.11,
         "L": 1.56,
         "N": 1.08,
-        "P": 1.48,
+        "P": 1.46,
         "R": 1.3,
         "U": 1.26,
         "A": 5.7,
         "D": 2.12,
         "E": 1.08,
-        "K": 1.58,
-        "S": 1.27,
-        "T": 1.52,
-        "V": 1.67
+        "K": 1.57,
+        "S": 1.29,
+        "T": 1.54,
+        "V": 1.66
       },
       "espn_id": "iddaa-3404371",
       "start_ts": 1794924000,
@@ -3713,8 +3711,9 @@
       "odds_ms2": 1.32,
       "goals": [],
       "coupons": [
-        "Kupon B4-B8",
+        "Kupon B1-B5",
         "Kupon X4-X8",
+        "Kupon X1-B1",
         "Kupon X8-B8"
       ]
     },
@@ -3785,9 +3784,10 @@
       "odds_ms2": 7.18,
       "goals": [],
       "coupons": [
-        "Kupon B1-B5",
+        "Kupon B2-B6",
         "Kupon X1-X5",
-        "Kupon X1-B1"
+        "Kupon X1-B1",
+        "Kupon X2-B2"
       ]
     },
     {
@@ -3860,9 +3860,10 @@
       "odds_ms2": 6.85,
       "goals": [],
       "coupons": [
-        "Kupon B2-B6",
+        "Kupon B3-B7",
         "Kupon X2-X6",
-        "Kupon X2-B2"
+        "Kupon X2-B2",
+        "Kupon X3-B3"
       ]
     },
     {
@@ -3935,9 +3936,10 @@
       "odds_ms2": 1.51,
       "goals": [],
       "coupons": [
-        "Kupon B3-B7",
+        "Kupon B4-B8",
         "Kupon X3-X7",
-        "Kupon X3-B3"
+        "Kupon X3-B3",
+        "Kupon X4-B4"
       ]
     },
     {
@@ -4007,9 +4009,10 @@
       "odds_ms2": 1.21,
       "goals": [],
       "coupons": [
-        "Kupon B4-B8",
+        "Kupon B1-B5",
         "Kupon X4-X8",
-        "Kupon X4-B4"
+        "Kupon X4-B4",
+        "Kupon X5-B5"
       ]
     },
     {
@@ -4082,9 +4085,10 @@
       "odds_ms2": 1.46,
       "goals": [],
       "coupons": [
-        "Kupon B1-B5",
+        "Kupon B2-B6",
         "Kupon X1-X5",
-        "Kupon X5-B5"
+        "Kupon X5-B5",
+        "Kupon X6-B6"
       ]
     },
     {
@@ -4367,10 +4371,10 @@
       "odds_ms2": 4.98,
       "goals": [],
       "coupons": [
-        "Kupon B2-B6",
+        "Kupon B3-B7",
         "Kupon X1-X5",
         "Kupon X1-B1",
-        "Kupon X6-B6"
+        "Kupon X7-B7"
       ]
     },
     {
@@ -4716,10 +4720,10 @@
       "odds_ms2": 3.93,
       "goals": [],
       "coupons": [
-        "Kupon B3-B7",
+        "Kupon B4-B8",
         "Kupon X2-X6",
         "Kupon X6-B6",
-        "Kupon X7-B7"
+        "Kupon X8-B8"
       ]
     },
     {
@@ -4785,10 +4789,10 @@
       "odds_ms2": 1.07,
       "goals": [],
       "coupons": [
-        "Kupon B4-B8",
+        "Kupon B1-B5",
         "Kupon X3-X7",
-        "Kupon X7-B7",
-        "Kupon X8-B8"
+        "Kupon X1-B1",
+        "Kupon X7-B7"
       ]
     },
     {
@@ -4862,9 +4866,9 @@
       "odds_ms2": 6.46,
       "goals": [],
       "coupons": [
-        "Kupon B1-B5",
+        "Kupon B2-B6",
         "Kupon X4-X8",
-        "Kupon X1-B1",
+        "Kupon X2-B2",
         "Kupon X8-B8"
       ]
     },
@@ -4884,11 +4888,11 @@
       "target_market_name": "Toplam 1.5 Üst",
       "target_market_desc": "Maçta En Az 2 Gol",
       "confidence": 86.0,
-      "suggested_odd": 1.08,
+      "suggested_odd": 1.07,
       "markets": {
         "A": false,
         "B": false,
-        "D": true,
+        "D": false,
         "E": true,
         "F": false,
         "G": true,
@@ -4908,22 +4912,22 @@
         "Q": true
       },
       "market_odds": {
-        "U": 1.08,
-        "R": 1.13,
+        "U": 1.07,
+        "R": 1.12,
         "V": 1.48,
-        "A": 1.72,
-        "B": 3.2,
-        "D": 1.13,
+        "A": 1.67,
+        "B": 3.36,
+        "D": 1.11,
         "E": 1.13,
-        "F": 1.57,
+        "F": 1.6,
         "G": 1.22,
         "H": 1.2,
-        "L": 1.56,
-        "K": 1.08,
-        "M": 1.59,
-        "P": 2.35,
+        "L": 1.58,
+        "K": 1.07,
+        "M": 1.57,
+        "P": 2.42,
         "S": 1.36,
-        "T": 1.99,
+        "T": 1.98,
         "Z": 1.1,
         "Q": 1.3
       },
@@ -4935,9 +4939,9 @@
       "live_score": null,
       "live_status": null,
       "live_prediction_status": null,
-      "odds_ms1": 1.72,
-      "odds_msx": 3.25,
-      "odds_ms2": 3.2,
+      "odds_ms1": 1.67,
+      "odds_msx": 3.26,
+      "odds_ms2": 3.36,
       "goals": [],
       "coupons": [
         "Kupon X1-X5",
@@ -5233,9 +5237,9 @@
       "odds_ms2": 3.79,
       "goals": [],
       "coupons": [
-        "Kupon B2-B6",
+        "Kupon B3-B7",
         "Kupon X1-X5",
-        "Kupon X2-B2",
+        "Kupon X3-B3",
         "Kupon X5-B5"
       ]
     },
@@ -5254,8 +5258,8 @@
       "target_market": "A",
       "target_market_name": "MS 1",
       "target_market_desc": "Ev Sahibi Galibiyeti",
-      "confidence": 92.5,
-      "suggested_odd": 1.31,
+      "confidence": 88.5,
+      "suggested_odd": 1.33,
       "markets": {
         "A": true,
         "B": false,
@@ -5279,20 +5283,20 @@
         "Q": false
       },
       "market_odds": {
-        "A": 1.31,
-        "D": 1.11,
-        "G": 1.55,
+        "A": 1.33,
+        "D": 1.12,
+        "G": 1.57,
         "K": 1.08,
-        "M": 1.57,
-        "R": 1.3,
+        "M": 1.6,
+        "R": 1.31,
         "U": 1.26,
-        "B": 4.67,
-        "F": 2.13,
-        "P": 2.22,
+        "B": 4.52,
+        "F": 2.08,
+        "P": 2.18,
         "S": 1.71,
-        "T": 2.4,
+        "T": 2.44,
         "V": 1.16,
-        "Z": 1.2,
+        "Z": 1.21,
         "Q": 1.78
       },
       "espn_id": "iddaa-3307683",
@@ -5303,14 +5307,14 @@
       "live_score": null,
       "live_status": null,
       "live_prediction_status": null,
-      "odds_ms1": 1.31,
-      "odds_msx": 4.44,
-      "odds_ms2": 4.67,
+      "odds_ms1": 1.33,
+      "odds_msx": 4.38,
+      "odds_ms2": 4.52,
       "goals": [],
       "coupons": [
-        "Kupon B3-B7",
+        "Kupon B4-B8",
         "Kupon X2-X6",
-        "Kupon X3-B3",
+        "Kupon X4-B4",
         "Kupon X6-B6"
       ]
     },
@@ -5456,9 +5460,9 @@
       "odds_ms2": 4.44,
       "goals": [],
       "coupons": [
-        "Kupon B4-B8",
+        "Kupon B1-B5",
         "Kupon X4-X8",
-        "Kupon X4-B4",
+        "Kupon X5-B5",
         "Kupon X8-B8"
       ]
     },
@@ -5592,10 +5596,10 @@
       "odds_ms2": 6.68,
       "goals": [],
       "coupons": [
-        "Kupon B1-B5",
+        "Kupon B2-B6",
         "Kupon X2-X6",
         "Kupon X2-B2",
-        "Kupon X5-B5"
+        "Kupon X6-B6"
       ]
     },
     {
@@ -5987,7 +5991,7 @@
       "target_market_name": "MS 2",
       "target_market_desc": "Deplasman Galibiyeti",
       "confidence": 87.5,
-      "suggested_odd": 1.28,
+      "suggested_odd": 1.3,
       "markets": {
         "A": false,
         "B": true,
@@ -6007,28 +6011,28 @@
         "U": false,
         "V": true,
         "Y": false,
-        "Z": false,
+        "Z": true,
         "Q": true
       },
       "market_odds": {
-        "B": 1.28,
+        "B": 1.3,
         "F": 1.1,
-        "L": 1.51,
+        "L": 1.53,
         "N": 1.07,
-        "P": 1.54,
+        "P": 1.56,
         "R": 1.14,
         "U": 1.06,
-        "A": 6.2,
-        "D": 2.55,
-        "E": 1.07,
-        "G": 2.49,
+        "A": 5.97,
+        "D": 2.49,
+        "E": 1.08,
+        "G": 2.43,
         "H": 1.2,
-        "K": 2.45,
-        "M": 3.54,
-        "S": 1.51,
-        "T": 1.88,
+        "K": 2.39,
+        "M": 3.44,
+        "S": 1.5,
+        "T": 1.9,
         "V": 1.4,
-        "Z": 1.11,
+        "Z": 1.12,
         "Q": 1.45
       },
       "espn_id": "iddaa-3303389",
@@ -6039,14 +6043,14 @@
       "live_score": null,
       "live_status": null,
       "live_prediction_status": null,
-      "odds_ms1": 6.2,
-      "odds_msx": 4.63,
-      "odds_ms2": 1.28,
+      "odds_ms1": 5.97,
+      "odds_msx": 4.55,
+      "odds_ms2": 1.3,
       "goals": [],
       "coupons": [
-        "Kupon B2-B6",
+        "Kupon B3-B7",
         "Kupon X4-X8",
-        "Kupon X6-B6",
+        "Kupon X7-B7",
         "Kupon X8-B8"
       ]
     },
@@ -6322,10 +6326,10 @@
       "odds_ms2": 11.6,
       "goals": [],
       "coupons": [
-        "Kupon B3-B7",
+        "Kupon B4-B8",
         "Kupon X4-X8",
         "Kupon X4-B4",
-        "Kupon X7-B7"
+        "Kupon X8-B8"
       ]
     },
     {
@@ -6469,10 +6473,10 @@
       "odds_ms2": 7.94,
       "goals": [],
       "coupons": [
-        "Kupon B4-B8",
+        "Kupon B1-B5",
         "Kupon X2-X6",
-        "Kupon X6-B6",
-        "Kupon X8-B8"
+        "Kupon X1-B1",
+        "Kupon X6-B6"
       ]
     },
     {
@@ -6692,9 +6696,9 @@
       "odds_ms2": 4.47,
       "goals": [],
       "coupons": [
-        "Kupon B1-B5",
+        "Kupon B2-B6",
         "Kupon X1-X5",
-        "Kupon X1-B1"
+        "Kupon X2-B2"
       ]
     },
     {
@@ -6713,9 +6717,9 @@
       "target_market_name": "1-X (10.0)",
       "target_market_desc": "Çifte Şans 1-X",
       "confidence": 92.5,
-      "suggested_odd": 1.11,
+      "suggested_odd": 1.12,
       "markets": {
-        "A": false,
+        "A": true,
         "B": false,
         "D": true,
         "E": false,
@@ -6737,17 +6741,17 @@
         "Q": true
       },
       "market_odds": {
-        "D": 1.11,
-        "A": 1.11,
+        "D": 1.12,
+        "A": 1.12,
         "K": 1.04,
-        "B": 10.4,
-        "F": 3.6,
-        "P": 5.06,
+        "B": 10.0,
+        "F": 3.52,
+        "P": 4.89,
         "R": 1.11,
         "S": 1.57,
-        "T": 1.64,
+        "T": 1.66,
         "V": 1.34,
-        "Z": 1.08,
+        "Z": 1.09,
         "Q": 1.51
       },
       "espn_id": "iddaa-3304922",
@@ -6758,14 +6762,14 @@
       "live_score": null,
       "live_status": null,
       "live_prediction_status": null,
-      "odds_ms1": 1.11,
-      "odds_msx": 6.12,
-      "odds_ms2": 10.4,
+      "odds_ms1": 1.12,
+      "odds_msx": 6.0,
+      "odds_ms2": 10.0,
       "goals": [],
       "coupons": [
-        "Kupon B2-B6",
+        "Kupon B3-B7",
         "Kupon X2-X6",
-        "Kupon X2-B2"
+        "Kupon X3-B3"
       ]
     },
     {
@@ -6915,8 +6919,7 @@
       "odds_ms2": 2.77,
       "goals": [],
       "coupons": [
-        "Kupon X4-X8",
-        "Kupon X4-B4"
+        "Kupon X4-X8"
       ]
     }
   ],
@@ -6929,6 +6932,108 @@
           "name": "Trinidad ve Tobago - Antigua & Barbuda",
           "market": "1-X (10.0)",
           "odd": 1.07,
+          "conf": 92.5,
+          "category": "milli",
+          "league": "CONCACAF Uluslar Ligi, Hazılık"
+        },
+        {
+          "code": "216.0",
+          "time": "SL17",
+          "name": "Katar - Güney Kore",
+          "market": "MS 2",
+          "odd": 1.32,
+          "conf": 87.5,
+          "category": "milli",
+          "league": "Uluslararası Hazırlık Maçları"
+        },
+        {
+          "code": "231.0",
+          "time": "SL21",
+          "name": "Arnavutluk U21 - İspanya U21",
+          "market": "X-2 (.02)",
+          "odd": 11.65,
+          "conf": 87.5,
+          "category": "milli",
+          "league": "U21 Hazırlık Maçları"
+        },
+        {
+          "code": "304.0",
+          "time": "CR04",
+          "name": "El Salvador - Saint Martin",
+          "market": "Toplam 1.5 Üst",
+          "odd": 1.06,
+          "conf": 92.5,
+          "category": "milli",
+          "league": "CONCACAF Uluslar Ligi, Hazılık"
+        },
+        {
+          "code": "203.0",
+          "time": "SL05",
+          "name": "New Mexico - Sacramento R",
+          "market": "Toplam 1.5 Üst",
+          "odd": 1.1,
+          "conf": 86.0,
+          "category": "lig",
+          "league": "ABD Championship, Playoff"
+        },
+        {
+          "code": "204.0",
+          "time": "SL13",
+          "name": "Havadar SC - Sanat Mes Kerman FC",
+          "market": "1-2 (12.0)",
+          "odd": 1.21,
+          "conf": 82.5,
+          "category": "lig",
+          "league": "İran Azadegan Ligi"
+        },
+        {
+          "code": "205.0",
+          "time": "SL15",
+          "name": "Kırgızistan - Vietnam",
+          "market": "İY 0.5 Üst",
+          "odd": 1.28,
+          "conf": 84.0,
+          "category": "milli",
+          "league": "Uluslararası Hazırlık Maçları"
+        },
+        {
+          "code": "206.0",
+          "time": "SL15",
+          "name": "Çin - Bahreyn",
+          "market": "İY 0.5 Üst",
+          "odd": 1.31,
+          "conf": 84.0,
+          "category": "milli",
+          "league": "Uluslararası Hazırlık Maçları"
+        },
+        {
+          "code": "212.0",
+          "time": "SL16",
+          "name": "Etiyopya - Mozambik",
+          "market": "Toplam 1.5 Üst",
+          "odd": 1.33,
+          "conf": 86.0,
+          "category": "milli",
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.J"
+        },
+        {
+          "code": "213.0",
+          "time": "SL16",
+          "name": "Burundi - Zambiya",
+          "market": "Toplam 1.5 Üst",
+          "odd": 1.36,
+          "conf": 86.0,
+          "category": "milli",
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.I"
+        }
+      ],
+      "B2": [
+        {
+          "code": "202.0",
+          "time": "SL03",
+          "name": "Martinik - Aruba",
+          "market": "1-X (10.0)",
+          "odd": 1.1,
           "conf": 92.5,
           "category": "milli",
           "league": "CONCACAF Uluslar Ligi, Hazılık"
@@ -7004,16 +7109,6 @@
           "league": "Uluslararası Hazırlık Maçları"
         },
         {
-          "code": "207.0",
-          "time": "SL15",
-          "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
-          "category": "lig",
-          "league": "Kralın Kupası"
-        },
-        {
           "code": "212.0",
           "time": "SL16",
           "name": "Etiyopya - Mozambik",
@@ -7022,18 +7117,28 @@
           "conf": 86.0,
           "category": "milli",
           "league": "Afrika Uluslar Kup.,Eleme,Gr.J"
+        },
+        {
+          "code": "213.0",
+          "time": "SL16",
+          "name": "Burundi - Zambiya",
+          "market": "Toplam 1.5 Üst",
+          "odd": 1.36,
+          "conf": 86.0,
+          "category": "milli",
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.I"
         }
       ],
-      "B2": [
+      "B3": [
         {
-          "code": "202.0",
-          "time": "SL03",
-          "name": "Martinik - Aruba",
-          "market": "1-X (10.0)",
-          "odd": 1.1,
-          "conf": 92.5,
-          "category": "milli",
-          "league": "CONCACAF Uluslar Ligi, Hazılık"
+          "code": "207.0",
+          "time": "SL15",
+          "name": "Tacikistan - Tayland",
+          "market": "MS 2",
+          "odd": 1.56,
+          "conf": 87.5,
+          "category": "lig",
+          "league": "Kralın Kupası"
         },
         {
           "code": "218.0",
@@ -7060,7 +7165,7 @@
           "time": "PR02",
           "name": "Flamengo - Paranaense",
           "market": "1-X (10.0)",
-          "odd": 1.11,
+          "odd": 1.12,
           "conf": 92.5,
           "category": "lig",
           "league": "Brezilya Serie A"
@@ -7106,16 +7211,6 @@
           "league": "Uluslararası Hazırlık Maçları"
         },
         {
-          "code": "207.0",
-          "time": "SL15",
-          "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
-          "category": "lig",
-          "league": "Kralın Kupası"
-        },
-        {
           "code": "212.0",
           "time": "SL16",
           "name": "Etiyopya - Mozambik",
@@ -7124,9 +7219,19 @@
           "conf": 86.0,
           "category": "milli",
           "league": "Afrika Uluslar Kup.,Eleme,Gr.J"
+        },
+        {
+          "code": "213.0",
+          "time": "SL16",
+          "name": "Burundi - Zambiya",
+          "market": "Toplam 1.5 Üst",
+          "odd": 1.36,
+          "conf": 86.0,
+          "category": "milli",
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.I"
         }
       ],
-      "B3": [
+      "B4": [
         {
           "code": "208.0",
           "time": "SL16",
@@ -7152,8 +7257,8 @@
           "time": "SL22",
           "name": "ST Kitts ve Nevis - Bonaire",
           "market": "MS 1",
-          "odd": 1.31,
-          "conf": 92.5,
+          "odd": 1.33,
+          "conf": 88.5,
           "category": "milli",
           "league": "CONCACAF Uluslar B Ligi, Grp C"
         },
@@ -7198,16 +7303,6 @@
           "league": "Uluslararası Hazırlık Maçları"
         },
         {
-          "code": "207.0",
-          "time": "SL15",
-          "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
-          "category": "lig",
-          "league": "Kralın Kupası"
-        },
-        {
           "code": "212.0",
           "time": "SL16",
           "name": "Etiyopya - Mozambik",
@@ -7226,9 +7321,19 @@
           "conf": 86.0,
           "category": "milli",
           "league": "Afrika Uluslar Kup.,Eleme,Gr.I"
+        },
+        {
+          "code": "215.0",
+          "time": "SL17",
+          "name": "Hindistan - Pakistan",
+          "market": "Toplam 1.5 Üst",
+          "odd": 1.17,
+          "conf": 86.0,
+          "category": "milli",
+          "league": "SAFF Şampiyonası, Eleme Turu"
         }
       ],
-      "B4": [
+      "B5": [
         {
           "code": "209.0",
           "time": "SL16",
@@ -7300,16 +7405,6 @@
           "league": "Uluslararası Hazırlık Maçları"
         },
         {
-          "code": "207.0",
-          "time": "SL15",
-          "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
-          "category": "lig",
-          "league": "Kralın Kupası"
-        },
-        {
           "code": "212.0",
           "time": "SL16",
           "name": "Etiyopya - Mozambik",
@@ -7328,9 +7423,19 @@
           "conf": 86.0,
           "category": "milli",
           "league": "Afrika Uluslar Kup.,Eleme,Gr.I"
+        },
+        {
+          "code": "215.0",
+          "time": "SL17",
+          "name": "Hindistan - Pakistan",
+          "market": "Toplam 1.5 Üst",
+          "odd": 1.17,
+          "conf": 86.0,
+          "category": "milli",
+          "league": "SAFF Şampiyonası, Eleme Turu"
         }
       ],
-      "B5": [
+      "B6": [
         {
           "code": "210.0",
           "time": "SL16",
@@ -7402,16 +7507,6 @@
           "league": "Uluslararası Hazırlık Maçları"
         },
         {
-          "code": "207.0",
-          "time": "SL15",
-          "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
-          "category": "lig",
-          "league": "Kralın Kupası"
-        },
-        {
           "code": "212.0",
           "time": "SL16",
           "name": "Etiyopya - Mozambik",
@@ -7430,9 +7525,19 @@
           "conf": 86.0,
           "category": "milli",
           "league": "Afrika Uluslar Kup.,Eleme,Gr.I"
+        },
+        {
+          "code": "215.0",
+          "time": "SL17",
+          "name": "Hindistan - Pakistan",
+          "market": "Toplam 1.5 Üst",
+          "odd": 1.17,
+          "conf": 86.0,
+          "category": "milli",
+          "league": "SAFF Şampiyonası, Eleme Turu"
         }
       ],
-      "B6": [
+      "B7": [
         {
           "code": "211.0",
           "time": "SL16",
@@ -7458,7 +7563,7 @@
           "time": "SL22",
           "name": "Galler - Portekiz",
           "market": "MS 2",
-          "odd": 1.28,
+          "odd": 1.3,
           "conf": 87.5,
           "category": "milli",
           "league": "UEFA Uluslar Ligi"
@@ -7504,16 +7609,6 @@
           "league": "Uluslararası Hazırlık Maçları"
         },
         {
-          "code": "207.0",
-          "time": "SL15",
-          "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
-          "category": "lig",
-          "league": "Kralın Kupası"
-        },
-        {
           "code": "212.0",
           "time": "SL16",
           "name": "Etiyopya - Mozambik",
@@ -7532,9 +7627,19 @@
           "conf": 86.0,
           "category": "milli",
           "league": "Afrika Uluslar Kup.,Eleme,Gr.I"
+        },
+        {
+          "code": "215.0",
+          "time": "SL17",
+          "name": "Hindistan - Pakistan",
+          "market": "Toplam 1.5 Üst",
+          "odd": 1.17,
+          "conf": 86.0,
+          "category": "milli",
+          "league": "SAFF Şampiyonası, Eleme Turu"
         }
       ],
-      "B7": [
+      "B8": [
         {
           "code": "214.0",
           "time": "SL16",
@@ -7606,16 +7711,6 @@
           "league": "Uluslararası Hazırlık Maçları"
         },
         {
-          "code": "207.0",
-          "time": "SL15",
-          "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
-          "category": "lig",
-          "league": "Kralın Kupası"
-        },
-        {
           "code": "212.0",
           "time": "SL16",
           "name": "Etiyopya - Mozambik",
@@ -7634,108 +7729,16 @@
           "conf": 86.0,
           "category": "milli",
           "league": "Afrika Uluslar Kup.,Eleme,Gr.I"
-        }
-      ],
-      "B8": [
+        },
         {
-          "code": "216.0",
+          "code": "215.0",
           "time": "SL17",
-          "name": "Katar - Güney Kore",
-          "market": "MS 2",
-          "odd": 1.32,
-          "conf": 87.5,
-          "category": "milli",
-          "league": "Uluslararası Hazırlık Maçları"
-        },
-        {
-          "code": "231.0",
-          "time": "SL21",
-          "name": "Arnavutluk U21 - İspanya U21",
-          "market": "X-2 (.02)",
-          "odd": 11.65,
-          "conf": 87.5,
-          "category": "milli",
-          "league": "U21 Hazırlık Maçları"
-        },
-        {
-          "code": "304.0",
-          "time": "CR04",
-          "name": "El Salvador - Saint Martin",
+          "name": "Hindistan - Pakistan",
           "market": "Toplam 1.5 Üst",
-          "odd": 1.06,
-          "conf": 92.5,
-          "category": "milli",
-          "league": "CONCACAF Uluslar Ligi, Hazılık"
-        },
-        {
-          "code": "203.0",
-          "time": "SL05",
-          "name": "New Mexico - Sacramento R",
-          "market": "Toplam 1.5 Üst",
-          "odd": 1.1,
-          "conf": 86.0,
-          "category": "lig",
-          "league": "ABD Championship, Playoff"
-        },
-        {
-          "code": "204.0",
-          "time": "SL13",
-          "name": "Havadar SC - Sanat Mes Kerman FC",
-          "market": "1-2 (12.0)",
-          "odd": 1.21,
-          "conf": 82.5,
-          "category": "lig",
-          "league": "İran Azadegan Ligi"
-        },
-        {
-          "code": "205.0",
-          "time": "SL15",
-          "name": "Kırgızistan - Vietnam",
-          "market": "İY 0.5 Üst",
-          "odd": 1.28,
-          "conf": 84.0,
-          "category": "milli",
-          "league": "Uluslararası Hazırlık Maçları"
-        },
-        {
-          "code": "206.0",
-          "time": "SL15",
-          "name": "Çin - Bahreyn",
-          "market": "İY 0.5 Üst",
-          "odd": 1.31,
-          "conf": 84.0,
-          "category": "milli",
-          "league": "Uluslararası Hazırlık Maçları"
-        },
-        {
-          "code": "207.0",
-          "time": "SL15",
-          "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
-          "category": "lig",
-          "league": "Kralın Kupası"
-        },
-        {
-          "code": "212.0",
-          "time": "SL16",
-          "name": "Etiyopya - Mozambik",
-          "market": "Toplam 1.5 Üst",
-          "odd": 1.33,
+          "odd": 1.17,
           "conf": 86.0,
           "category": "milli",
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.J"
-        },
-        {
-          "code": "213.0",
-          "time": "SL16",
-          "name": "Burundi - Zambiya",
-          "market": "Toplam 1.5 Üst",
-          "odd": 1.36,
-          "conf": 86.0,
-          "category": "milli",
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.I"
+          "league": "SAFF Şampiyonası, Eleme Turu"
         }
       ]
     },
@@ -7786,7 +7789,7 @@
           "time": "SL22",
           "name": "Belize - Sint Maarten",
           "market": "Toplam 1.5 Üst",
-          "odd": 1.08,
+          "odd": 1.07,
           "conf": 86.0,
           "category": "milli",
           "league": "CONCACAF Uluslar B Ligi, Grp D"
@@ -7875,9 +7878,9 @@
           "code": "207.0",
           "time": "SL15",
           "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
+          "market": "MS 2",
+          "odd": 1.56,
+          "conf": 87.5,
           "category": "lig",
           "league": "Kralın Kupası"
         },
@@ -7968,7 +7971,7 @@
           "time": "PR02",
           "name": "Flamengo - Paranaense",
           "market": "1-X (10.0)",
-          "odd": 1.11,
+          "odd": 1.12,
           "conf": 92.5,
           "category": "lig",
           "league": "Brezilya Serie A"
@@ -8027,9 +8030,9 @@
           "code": "207.0",
           "time": "SL15",
           "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
+          "market": "MS 2",
+          "odd": 1.56,
+          "conf": 87.5,
           "category": "lig",
           "league": "Kralın Kupası"
         },
@@ -8179,9 +8182,9 @@
           "code": "207.0",
           "time": "SL15",
           "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
+          "market": "MS 2",
+          "odd": 1.56,
+          "conf": 87.5,
           "category": "lig",
           "league": "Kralın Kupası"
         },
@@ -8331,9 +8334,9 @@
           "code": "207.0",
           "time": "SL15",
           "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
+          "market": "MS 2",
+          "odd": 1.56,
+          "conf": 87.5,
           "category": "lig",
           "league": "Kralın Kupası"
         },
@@ -8473,9 +8476,9 @@
           "code": "207.0",
           "time": "SL15",
           "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
+          "market": "MS 2",
+          "odd": 1.56,
+          "conf": 87.5,
           "category": "lig",
           "league": "Kralın Kupası"
         },
@@ -8546,8 +8549,8 @@
           "time": "SL22",
           "name": "ST Kitts ve Nevis - Bonaire",
           "market": "MS 1",
-          "odd": 1.31,
-          "conf": 92.5,
+          "odd": 1.33,
+          "conf": 88.5,
           "category": "milli",
           "league": "CONCACAF Uluslar B Ligi, Grp C"
         },
@@ -8625,9 +8628,9 @@
           "code": "207.0",
           "time": "SL15",
           "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
+          "market": "MS 2",
+          "odd": 1.56,
+          "conf": 87.5,
           "category": "lig",
           "league": "Kralın Kupası"
         },
@@ -8657,9 +8660,9 @@
           "code": "207.0",
           "time": "SL15",
           "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
+          "market": "MS 2",
+          "odd": 1.56,
+          "conf": 87.5,
           "category": "lig",
           "league": "Kralın Kupası"
         },
@@ -8860,7 +8863,7 @@
           "time": "SL22",
           "name": "Galler - Portekiz",
           "market": "MS 2",
-          "odd": 1.28,
+          "odd": 1.3,
           "conf": 87.5,
           "category": "milli",
           "league": "UEFA Uluslar Ligi"
@@ -8939,9 +8942,9 @@
           "code": "207.0",
           "time": "SL15",
           "name": "Tacikistan - Tayland",
-          "market": "İY 0.5 Üst",
-          "odd": 1.25,
-          "conf": 84.0,
+          "market": "MS 2",
+          "odd": 1.56,
+          "conf": 87.5,
           "category": "lig",
           "league": "Kralın Kupası"
         },
@@ -8963,8 +8966,8 @@
       "coupon_id": "Kupon B1-B5",
       "pair": "B1 x B5",
       "type_label": "Süper Banko (Zirve vs Düşme Ağırlıklı)",
-      "avg_confidence": 87.9,
-      "total_odd": 28.7,
+      "avg_confidence": 87.4,
+      "total_odd": 188.09,
       "matches": [
         {
           "row_index": 1,
@@ -9034,539 +9037,6 @@
         },
         {
           "row_index": 7,
-          "code": "207.0",
-          "time": "SL15",
-          "match_name": "Tacikistan - Tayland",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.25,
-          "league": "Kralın Kupası",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 8,
-          "code": "210.0",
-          "time": "SL16",
-          "match_name": "Lesotho - Gabon",
-          "prediction": "MS 2 (B)",
-          "market_code": "B",
-          "odd": 1.31,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.A",
-          "confidence": 87.5
-        },
-        {
-          "row_index": 9,
-          "code": "212.0",
-          "time": "SL16",
-          "match_name": "Etiyopya - Mozambik",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.33,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.J",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 10,
-          "code": "213.0",
-          "time": "SL16",
-          "match_name": "Burundi - Zambiya",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.36,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 11,
-          "code": "217.0",
-          "time": "SL17",
-          "match_name": "Birleşik Arap Emirlikleri - Suriye",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.21,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 12,
-          "code": "221.0",
-          "time": "SL19",
-          "match_name": "Togo - Cezayir",
-          "prediction": "MS 2 (B)",
-          "market_code": "B",
-          "odd": 1.46,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
-          "confidence": 87.5
-        },
-        {
-          "row_index": 13,
-          "code": "232.0",
-          "time": "SL22",
-          "match_name": "Dominika - Cayman Adaları",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.24,
-          "league": "CONCACAF Uluslar B Ligi, Grp A",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 14,
-          "code": "242.0",
-          "time": "SL22",
-          "match_name": "Swansea U21 - Gillingham FC Reserve",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.13,
-          "league": "İngiltere Amatör U21 Premier League Cup, Group ",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 15,
-          "code": "402.0",
-          "time": "PR02",
-          "match_name": "Clube do Remo - Chapecoense",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.49,
-          "league": "Brezilya Serie A",
-          "confidence": 88.5
-        }
-      ]
-    },
-    {
-      "coupon_id": "Kupon B2-B6",
-      "pair": "B2 x B6",
-      "type_label": "Süper Banko (Zirve vs Düşme Ağırlıklı)",
-      "avg_confidence": 87.6,
-      "total_odd": 24.18,
-      "matches": [
-        {
-          "row_index": 1,
-          "code": "201.0",
-          "time": "SL03",
-          "match_name": "Trinidad ve Tobago - Antigua & Barbuda",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.07,
-          "league": "CONCACAF Uluslar Ligi, Hazılık",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 2,
-          "code": "202.0",
-          "time": "SL03",
-          "match_name": "Martinik - Aruba",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.1,
-          "league": "CONCACAF Uluslar Ligi, Hazılık",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 3,
-          "code": "203.0",
-          "time": "SL05",
-          "match_name": "New Mexico - Sacramento R",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.1,
-          "league": "ABD Championship, Playoff",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 4,
-          "code": "204.0",
-          "time": "SL13",
-          "match_name": "Havadar SC - Sanat Mes Kerman FC",
-          "prediction": "1-2 (12.0) (E)",
-          "market_code": "E",
-          "odd": 1.21,
-          "league": "İran Azadegan Ligi",
-          "confidence": 82.5
-        },
-        {
-          "row_index": 5,
-          "code": "205.0",
-          "time": "SL15",
-          "match_name": "Kırgızistan - Vietnam",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.28,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 6,
-          "code": "206.0",
-          "time": "SL15",
-          "match_name": "Çin - Bahreyn",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.31,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 7,
-          "code": "207.0",
-          "time": "SL15",
-          "match_name": "Tacikistan - Tayland",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.25,
-          "league": "Kralın Kupası",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 8,
-          "code": "211.0",
-          "time": "SL16",
-          "match_name": "Malavi - Mısır",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.1,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.B",
-          "confidence": 87.5
-        },
-        {
-          "row_index": 9,
-          "code": "212.0",
-          "time": "SL16",
-          "match_name": "Etiyopya - Mozambik",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.33,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.J",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 10,
-          "code": "213.0",
-          "time": "SL16",
-          "match_name": "Burundi - Zambiya",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.36,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 11,
-          "code": "218.0",
-          "time": "SL19",
-          "match_name": "Gine Bissau - Madagaskar",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.25,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.L",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 12,
-          "code": "225.0",
-          "time": "SL19",
-          "match_name": "Rusya - Venezuela",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.38,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 88.5
-        },
-        {
-          "row_index": 13,
-          "code": "237.0",
-          "time": "SL22",
-          "match_name": "Saint Lucia - Barbados",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.51,
-          "league": "CONCACAF Uluslar B Ligi,Grup B",
-          "confidence": 88.5
-        },
-        {
-          "row_index": 14,
-          "code": "248.0",
-          "time": "SL22",
-          "match_name": "Galler - Portekiz",
-          "prediction": "MS 2 (B)",
-          "market_code": "B",
-          "odd": 1.28,
-          "league": "UEFA Uluslar Ligi",
-          "confidence": 87.5
-        },
-        {
-          "row_index": 15,
-          "code": "403.0",
-          "time": "PR02",
-          "match_name": "Flamengo - Paranaense",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.11,
-          "league": "Brezilya Serie A",
-          "confidence": 92.5
-        }
-      ]
-    },
-    {
-      "coupon_id": "Kupon B3-B7",
-      "pair": "B3 x B7",
-      "type_label": "Süper Banko (Zirve vs Düşme Ağırlıklı)",
-      "avg_confidence": 87.6,
-      "total_odd": 32.51,
-      "matches": [
-        {
-          "row_index": 1,
-          "code": "201.0",
-          "time": "SL03",
-          "match_name": "Trinidad ve Tobago - Antigua & Barbuda",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.07,
-          "league": "CONCACAF Uluslar Ligi, Hazılık",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 2,
-          "code": "202.0",
-          "time": "SL03",
-          "match_name": "Martinik - Aruba",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.1,
-          "league": "CONCACAF Uluslar Ligi, Hazılık",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 3,
-          "code": "203.0",
-          "time": "SL05",
-          "match_name": "New Mexico - Sacramento R",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.1,
-          "league": "ABD Championship, Playoff",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 4,
-          "code": "204.0",
-          "time": "SL13",
-          "match_name": "Havadar SC - Sanat Mes Kerman FC",
-          "prediction": "1-2 (12.0) (E)",
-          "market_code": "E",
-          "odd": 1.21,
-          "league": "İran Azadegan Ligi",
-          "confidence": 82.5
-        },
-        {
-          "row_index": 5,
-          "code": "205.0",
-          "time": "SL15",
-          "match_name": "Kırgızistan - Vietnam",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.28,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 6,
-          "code": "206.0",
-          "time": "SL15",
-          "match_name": "Çin - Bahreyn",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.31,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 7,
-          "code": "207.0",
-          "time": "SL15",
-          "match_name": "Tacikistan - Tayland",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.25,
-          "league": "Kralın Kupası",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 8,
-          "code": "208.0",
-          "time": "SL16",
-          "match_name": "Güney Sudan - Angola",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.2,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.B",
-          "confidence": 87.5
-        },
-        {
-          "row_index": 9,
-          "code": "212.0",
-          "time": "SL16",
-          "match_name": "Etiyopya - Mozambik",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.33,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.J",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 10,
-          "code": "213.0",
-          "time": "SL16",
-          "match_name": "Burundi - Zambiya",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.36,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 11,
-          "code": "214.0",
-          "time": "SL16",
-          "match_name": "Japonya - Paraguay",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.46,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 88.5
-        },
-        {
-          "row_index": 12,
-          "code": "219.0",
-          "time": "SL19",
-          "match_name": "Gambiya - Fildişi Sahili",
-          "prediction": "MS 2 (B)",
-          "market_code": "B",
-          "odd": 1.51,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.C",
-          "confidence": 87.5
-        },
-        {
-          "row_index": 13,
-          "code": "230.0",
-          "time": "SL20",
-          "match_name": "Portekiz U21 - Norveç U21",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.49,
-          "league": "U21 Hazırlık Maçları",
-          "confidence": 88.5
-        },
-        {
-          "row_index": 14,
-          "code": "238.0",
-          "time": "SL22",
-          "match_name": "ST Kitts ve Nevis - Bonaire",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.31,
-          "league": "CONCACAF Uluslar B Ligi, Grp C",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 15,
-          "code": "302.0",
-          "time": "CR02",
-          "match_name": "Ekvador - Bolivya",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.06,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 92.5
-        }
-      ]
-    },
-    {
-      "coupon_id": "Kupon B4-B8",
-      "pair": "B4 x B8",
-      "type_label": "Süper Banko (Zirve vs Düşme Ağırlıklı)",
-      "avg_confidence": 87.2,
-      "total_odd": 200.95,
-      "matches": [
-        {
-          "row_index": 1,
-          "code": "201.0",
-          "time": "SL03",
-          "match_name": "Trinidad ve Tobago - Antigua & Barbuda",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.07,
-          "league": "CONCACAF Uluslar Ligi, Hazılık",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 2,
-          "code": "202.0",
-          "time": "SL03",
-          "match_name": "Martinik - Aruba",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.1,
-          "league": "CONCACAF Uluslar Ligi, Hazılık",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 3,
-          "code": "203.0",
-          "time": "SL05",
-          "match_name": "New Mexico - Sacramento R",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.1,
-          "league": "ABD Championship, Playoff",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 4,
-          "code": "204.0",
-          "time": "SL13",
-          "match_name": "Havadar SC - Sanat Mes Kerman FC",
-          "prediction": "1-2 (12.0) (E)",
-          "market_code": "E",
-          "odd": 1.21,
-          "league": "İran Azadegan Ligi",
-          "confidence": 82.5
-        },
-        {
-          "row_index": 5,
-          "code": "205.0",
-          "time": "SL15",
-          "match_name": "Kırgızistan - Vietnam",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.28,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 6,
-          "code": "206.0",
-          "time": "SL15",
-          "match_name": "Çin - Bahreyn",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.31,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 7,
-          "code": "207.0",
-          "time": "SL15",
-          "match_name": "Tacikistan - Tayland",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.25,
-          "league": "Kralın Kupası",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 8,
           "code": "209.0",
           "time": "SL16",
           "match_name": "Tanzanya - Nijerya",
@@ -9577,7 +9047,7 @@
           "confidence": 87.5
         },
         {
-          "row_index": 9,
+          "row_index": 8,
           "code": "212.0",
           "time": "SL16",
           "match_name": "Etiyopya - Mozambik",
@@ -9588,7 +9058,7 @@
           "confidence": 86.0
         },
         {
-          "row_index": 10,
+          "row_index": 9,
           "code": "213.0",
           "time": "SL16",
           "match_name": "Burundi - Zambiya",
@@ -9596,6 +9066,17 @@
           "market_code": "U",
           "odd": 1.36,
           "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 10,
+          "code": "215.0",
+          "time": "SL17",
+          "match_name": "Hindistan - Pakistan",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.17,
+          "league": "SAFF Şampiyonası, Eleme Turu",
           "confidence": 86.0
         },
         {
@@ -9656,11 +9137,533 @@
       ]
     },
     {
+      "coupon_id": "Kupon B2-B6",
+      "pair": "B2 x B6",
+      "type_label": "Süper Banko (Zirve vs Düşme Ağırlıklı)",
+      "avg_confidence": 88.0,
+      "total_odd": 26.86,
+      "matches": [
+        {
+          "row_index": 1,
+          "code": "201.0",
+          "time": "SL03",
+          "match_name": "Trinidad ve Tobago - Antigua & Barbuda",
+          "prediction": "1-X (10.0) (D)",
+          "market_code": "D",
+          "odd": 1.07,
+          "league": "CONCACAF Uluslar Ligi, Hazılık",
+          "confidence": 92.5
+        },
+        {
+          "row_index": 2,
+          "code": "202.0",
+          "time": "SL03",
+          "match_name": "Martinik - Aruba",
+          "prediction": "1-X (10.0) (D)",
+          "market_code": "D",
+          "odd": 1.1,
+          "league": "CONCACAF Uluslar Ligi, Hazılık",
+          "confidence": 92.5
+        },
+        {
+          "row_index": 3,
+          "code": "203.0",
+          "time": "SL05",
+          "match_name": "New Mexico - Sacramento R",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.1,
+          "league": "ABD Championship, Playoff",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 4,
+          "code": "204.0",
+          "time": "SL13",
+          "match_name": "Havadar SC - Sanat Mes Kerman FC",
+          "prediction": "1-2 (12.0) (E)",
+          "market_code": "E",
+          "odd": 1.21,
+          "league": "İran Azadegan Ligi",
+          "confidence": 82.5
+        },
+        {
+          "row_index": 5,
+          "code": "205.0",
+          "time": "SL15",
+          "match_name": "Kırgızistan - Vietnam",
+          "prediction": "İY 0.5 Üst (R)",
+          "market_code": "R",
+          "odd": 1.28,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 84.0
+        },
+        {
+          "row_index": 6,
+          "code": "206.0",
+          "time": "SL15",
+          "match_name": "Çin - Bahreyn",
+          "prediction": "İY 0.5 Üst (R)",
+          "market_code": "R",
+          "odd": 1.31,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 84.0
+        },
+        {
+          "row_index": 7,
+          "code": "210.0",
+          "time": "SL16",
+          "match_name": "Lesotho - Gabon",
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.31,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.A",
+          "confidence": 87.5
+        },
+        {
+          "row_index": 8,
+          "code": "212.0",
+          "time": "SL16",
+          "match_name": "Etiyopya - Mozambik",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.33,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.J",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 9,
+          "code": "213.0",
+          "time": "SL16",
+          "match_name": "Burundi - Zambiya",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.36,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 10,
+          "code": "215.0",
+          "time": "SL17",
+          "match_name": "Hindistan - Pakistan",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.17,
+          "league": "SAFF Şampiyonası, Eleme Turu",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 11,
+          "code": "217.0",
+          "time": "SL17",
+          "match_name": "Birleşik Arap Emirlikleri - Suriye",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.21,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 92.5
+        },
+        {
+          "row_index": 12,
+          "code": "221.0",
+          "time": "SL19",
+          "match_name": "Togo - Cezayir",
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.46,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
+          "confidence": 87.5
+        },
+        {
+          "row_index": 13,
+          "code": "232.0",
+          "time": "SL22",
+          "match_name": "Dominika - Cayman Adaları",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.24,
+          "league": "CONCACAF Uluslar B Ligi, Grp A",
+          "confidence": 92.5
+        },
+        {
+          "row_index": 14,
+          "code": "242.0",
+          "time": "SL22",
+          "match_name": "Swansea U21 - Gillingham FC Reserve",
+          "prediction": "1-X (10.0) (D)",
+          "market_code": "D",
+          "odd": 1.13,
+          "league": "İngiltere Amatör U21 Premier League Cup, Group ",
+          "confidence": 92.5
+        },
+        {
+          "row_index": 15,
+          "code": "402.0",
+          "time": "PR02",
+          "match_name": "Clube do Remo - Chapecoense",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.49,
+          "league": "Brezilya Serie A",
+          "confidence": 88.5
+        }
+      ]
+    },
+    {
+      "coupon_id": "Kupon B3-B7",
+      "pair": "B3 x B7",
+      "type_label": "Süper Banko (Zirve vs Düşme Ağırlıklı)",
+      "avg_confidence": 87.4,
+      "total_odd": 32.89,
+      "matches": [
+        {
+          "row_index": 1,
+          "code": "201.0",
+          "time": "SL03",
+          "match_name": "Trinidad ve Tobago - Antigua & Barbuda",
+          "prediction": "1-X (10.0) (D)",
+          "market_code": "D",
+          "odd": 1.07,
+          "league": "CONCACAF Uluslar Ligi, Hazılık",
+          "confidence": 92.5
+        },
+        {
+          "row_index": 2,
+          "code": "203.0",
+          "time": "SL05",
+          "match_name": "New Mexico - Sacramento R",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.1,
+          "league": "ABD Championship, Playoff",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 3,
+          "code": "204.0",
+          "time": "SL13",
+          "match_name": "Havadar SC - Sanat Mes Kerman FC",
+          "prediction": "1-2 (12.0) (E)",
+          "market_code": "E",
+          "odd": 1.21,
+          "league": "İran Azadegan Ligi",
+          "confidence": 82.5
+        },
+        {
+          "row_index": 4,
+          "code": "205.0",
+          "time": "SL15",
+          "match_name": "Kırgızistan - Vietnam",
+          "prediction": "İY 0.5 Üst (R)",
+          "market_code": "R",
+          "odd": 1.28,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 84.0
+        },
+        {
+          "row_index": 5,
+          "code": "206.0",
+          "time": "SL15",
+          "match_name": "Çin - Bahreyn",
+          "prediction": "İY 0.5 Üst (R)",
+          "market_code": "R",
+          "odd": 1.31,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 84.0
+        },
+        {
+          "row_index": 6,
+          "code": "207.0",
+          "time": "SL15",
+          "match_name": "Tacikistan - Tayland",
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.56,
+          "league": "Kralın Kupası",
+          "confidence": 87.5
+        },
+        {
+          "row_index": 7,
+          "code": "211.0",
+          "time": "SL16",
+          "match_name": "Malavi - Mısır",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.1,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.B",
+          "confidence": 87.5
+        },
+        {
+          "row_index": 8,
+          "code": "212.0",
+          "time": "SL16",
+          "match_name": "Etiyopya - Mozambik",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.33,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.J",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 9,
+          "code": "213.0",
+          "time": "SL16",
+          "match_name": "Burundi - Zambiya",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.36,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 10,
+          "code": "215.0",
+          "time": "SL17",
+          "match_name": "Hindistan - Pakistan",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.17,
+          "league": "SAFF Şampiyonası, Eleme Turu",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 11,
+          "code": "218.0",
+          "time": "SL19",
+          "match_name": "Gine Bissau - Madagaskar",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.25,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.L",
+          "confidence": 92.5
+        },
+        {
+          "row_index": 12,
+          "code": "225.0",
+          "time": "SL19",
+          "match_name": "Rusya - Venezuela",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.38,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 88.5
+        },
+        {
+          "row_index": 13,
+          "code": "237.0",
+          "time": "SL22",
+          "match_name": "Saint Lucia - Barbados",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.51,
+          "league": "CONCACAF Uluslar B Ligi,Grup B",
+          "confidence": 88.5
+        },
+        {
+          "row_index": 14,
+          "code": "248.0",
+          "time": "SL22",
+          "match_name": "Galler - Portekiz",
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.3,
+          "league": "UEFA Uluslar Ligi",
+          "confidence": 87.5
+        },
+        {
+          "row_index": 15,
+          "code": "403.0",
+          "time": "PR02",
+          "match_name": "Flamengo - Paranaense",
+          "prediction": "1-X (10.0) (D)",
+          "market_code": "D",
+          "odd": 1.12,
+          "league": "Brezilya Serie A",
+          "confidence": 92.5
+        }
+      ]
+    },
+    {
+      "coupon_id": "Kupon B4-B8",
+      "pair": "B4 x B8",
+      "type_label": "Süper Banko (Zirve vs Düşme Ağırlıklı)",
+      "avg_confidence": 87.5,
+      "total_odd": 30.89,
+      "matches": [
+        {
+          "row_index": 1,
+          "code": "201.0",
+          "time": "SL03",
+          "match_name": "Trinidad ve Tobago - Antigua & Barbuda",
+          "prediction": "1-X (10.0) (D)",
+          "market_code": "D",
+          "odd": 1.07,
+          "league": "CONCACAF Uluslar Ligi, Hazılık",
+          "confidence": 92.5
+        },
+        {
+          "row_index": 2,
+          "code": "202.0",
+          "time": "SL03",
+          "match_name": "Martinik - Aruba",
+          "prediction": "1-X (10.0) (D)",
+          "market_code": "D",
+          "odd": 1.1,
+          "league": "CONCACAF Uluslar Ligi, Hazılık",
+          "confidence": 92.5
+        },
+        {
+          "row_index": 3,
+          "code": "203.0",
+          "time": "SL05",
+          "match_name": "New Mexico - Sacramento R",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.1,
+          "league": "ABD Championship, Playoff",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 4,
+          "code": "204.0",
+          "time": "SL13",
+          "match_name": "Havadar SC - Sanat Mes Kerman FC",
+          "prediction": "1-2 (12.0) (E)",
+          "market_code": "E",
+          "odd": 1.21,
+          "league": "İran Azadegan Ligi",
+          "confidence": 82.5
+        },
+        {
+          "row_index": 5,
+          "code": "205.0",
+          "time": "SL15",
+          "match_name": "Kırgızistan - Vietnam",
+          "prediction": "İY 0.5 Üst (R)",
+          "market_code": "R",
+          "odd": 1.28,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 84.0
+        },
+        {
+          "row_index": 6,
+          "code": "206.0",
+          "time": "SL15",
+          "match_name": "Çin - Bahreyn",
+          "prediction": "İY 0.5 Üst (R)",
+          "market_code": "R",
+          "odd": 1.31,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 84.0
+        },
+        {
+          "row_index": 7,
+          "code": "208.0",
+          "time": "SL16",
+          "match_name": "Güney Sudan - Angola",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.2,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.B",
+          "confidence": 87.5
+        },
+        {
+          "row_index": 8,
+          "code": "212.0",
+          "time": "SL16",
+          "match_name": "Etiyopya - Mozambik",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.33,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.J",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 9,
+          "code": "213.0",
+          "time": "SL16",
+          "match_name": "Burundi - Zambiya",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.36,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 10,
+          "code": "214.0",
+          "time": "SL16",
+          "match_name": "Japonya - Paraguay",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.46,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 88.5
+        },
+        {
+          "row_index": 11,
+          "code": "215.0",
+          "time": "SL17",
+          "match_name": "Hindistan - Pakistan",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.17,
+          "league": "SAFF Şampiyonası, Eleme Turu",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 12,
+          "code": "219.0",
+          "time": "SL19",
+          "match_name": "Gambiya - Fildişi Sahili",
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.51,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.C",
+          "confidence": 87.5
+        },
+        {
+          "row_index": 13,
+          "code": "230.0",
+          "time": "SL20",
+          "match_name": "Portekiz U21 - Norveç U21",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.49,
+          "league": "U21 Hazırlık Maçları",
+          "confidence": 88.5
+        },
+        {
+          "row_index": 14,
+          "code": "238.0",
+          "time": "SL22",
+          "match_name": "ST Kitts ve Nevis - Bonaire",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.33,
+          "league": "CONCACAF Uluslar B Ligi, Grp C",
+          "confidence": 88.5
+        },
+        {
+          "row_index": 15,
+          "code": "302.0",
+          "time": "CR02",
+          "match_name": "Ekvador - Bolivya",
+          "prediction": "1-X (10.0) (D)",
+          "market_code": "D",
+          "odd": 1.06,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 92.5
+        }
+      ]
+    },
+    {
       "coupon_id": "Kupon X1-X5",
       "pair": "X1 x X5",
       "type_label": "Spor Toto Formül / Sistem (Dengeli Oran)",
       "avg_confidence": 86.9,
-      "total_odd": 30.17,
+      "total_odd": 29.89,
       "matches": [
         {
           "row_index": 1,
@@ -9757,7 +9760,7 @@
           "match_name": "Belize - Sint Maarten",
           "prediction": "Toplam 1.5 Üst (U)",
           "market_code": "U",
-          "odd": 1.08,
+          "odd": 1.07,
           "league": "CONCACAF Uluslar B Ligi, Grp D",
           "confidence": 86.0
         },
@@ -9833,8 +9836,8 @@
       "coupon_id": "Kupon X2-X6",
       "pair": "X2 x X6",
       "type_label": "Spor Toto Formül / Sistem (Dengeli Oran)",
-      "avg_confidence": 88.3,
-      "total_odd": 79.51,
+      "avg_confidence": 88.0,
+      "total_odd": 81.45,
       "matches": [
         {
           "row_index": 1,
@@ -9942,9 +9945,9 @@
           "match_name": "ST Kitts ve Nevis - Bonaire",
           "prediction": "MS 1 (A)",
           "market_code": "A",
-          "odd": 1.31,
+          "odd": 1.33,
           "league": "CONCACAF Uluslar B Ligi, Grp C",
-          "confidence": 92.5
+          "confidence": 88.5
         },
         {
           "row_index": 11,
@@ -9997,7 +10000,7 @@
           "match_name": "Flamengo - Paranaense",
           "prediction": "1-X (10.0) (D)",
           "market_code": "D",
-          "odd": 1.11,
+          "odd": 1.12,
           "league": "Brezilya Serie A",
           "confidence": 92.5
         }
@@ -10007,8 +10010,8 @@
       "coupon_id": "Kupon X3-X7",
       "pair": "X3 x X7",
       "type_label": "Spor Toto Formül / Sistem (Dengeli Oran)",
-      "avg_confidence": 85.1,
-      "total_odd": 162.68,
+      "avg_confidence": 85.3,
+      "total_odd": 203.03,
       "matches": [
         {
           "row_index": 1,
@@ -10026,11 +10029,11 @@
           "code": "207.0",
           "time": "SL15",
           "match_name": "Tacikistan - Tayland",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.25,
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.56,
           "league": "Kralın Kupası",
-          "confidence": 84.0
+          "confidence": 87.5
         },
         {
           "row_index": 3,
@@ -10182,7 +10185,7 @@
       "pair": "X4 x X8",
       "type_label": "Spor Toto Formül / Sistem (Dengeli Oran)",
       "avg_confidence": 86.6,
-      "total_odd": 17.35,
+      "total_odd": 17.62,
       "matches": [
         {
           "row_index": 1,
@@ -10312,7 +10315,7 @@
           "match_name": "Galler - Portekiz",
           "prediction": "MS 2 (B)",
           "market_code": "B",
-          "odd": 1.28,
+          "odd": 1.3,
           "league": "UEFA Uluslar Ligi",
           "confidence": 87.5
         },
@@ -10355,8 +10358,8 @@
       "coupon_id": "Kupon X1-B1",
       "pair": "X1 x B1",
       "type_label": "Risk Dağıtımlı Çapraz Hibrit",
-      "avg_confidence": 87.0,
-      "total_odd": 25.77,
+      "avg_confidence": 87.1,
+      "total_odd": 180.23,
       "matches": [
         {
           "row_index": 1,
@@ -10415,17 +10418,6 @@
         },
         {
           "row_index": 6,
-          "code": "207.0",
-          "time": "SL15",
-          "match_name": "Tacikistan - Tayland",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.25,
-          "league": "Kralın Kupası",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 7,
           "code": "209.0",
           "time": "SL16",
           "match_name": "Tanzanya - Nijerya",
@@ -10436,7 +10428,7 @@
           "confidence": 87.5
         },
         {
-          "row_index": 8,
+          "row_index": 7,
           "code": "212.0",
           "time": "SL16",
           "match_name": "Etiyopya - Mozambik",
@@ -10445,6 +10437,17 @@
           "odd": 1.33,
           "league": "Afrika Uluslar Kup.,Eleme,Gr.J",
           "confidence": 86.0
+        },
+        {
+          "row_index": 8,
+          "code": "216.0",
+          "time": "SL17",
+          "match_name": "Katar - Güney Kore",
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.32,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 87.5
         },
         {
           "row_index": 9,
@@ -10470,14 +10473,14 @@
         },
         {
           "row_index": 11,
-          "code": "232.0",
-          "time": "SL22",
-          "match_name": "Dominika - Cayman Adaları",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.24,
-          "league": "CONCACAF Uluslar B Ligi, Grp A",
-          "confidence": 92.5
+          "code": "231.0",
+          "time": "SL21",
+          "match_name": "Arnavutluk U21 - İspanya U21",
+          "prediction": "X-2 (.02) (F)",
+          "market_code": "F",
+          "odd": 11.65,
+          "league": "U21 Hazırlık Maçları",
+          "confidence": 87.5
         },
         {
           "row_index": 12,
@@ -10486,7 +10489,7 @@
           "match_name": "Belize - Sint Maarten",
           "prediction": "Toplam 1.5 Üst (U)",
           "market_code": "U",
-          "odd": 1.08,
+          "odd": 1.07,
           "league": "CONCACAF Uluslar B Ligi, Grp D",
           "confidence": 86.0
         },
@@ -10514,14 +10517,14 @@
         },
         {
           "row_index": 15,
-          "code": "402.0",
-          "time": "PR02",
-          "match_name": "Clube do Remo - Chapecoense",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.49,
-          "league": "Brezilya Serie A",
-          "confidence": 88.5
+          "code": "304.0",
+          "time": "CR04",
+          "match_name": "El Salvador - Saint Martin",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.06,
+          "league": "CONCACAF Uluslar Ligi, Hazılık",
+          "confidence": 92.5
         }
       ]
     },
@@ -10529,8 +10532,8 @@
       "coupon_id": "Kupon X2-B2",
       "pair": "X2 x B2",
       "type_label": "Risk Dağıtımlı Çapraz Hibrit",
-      "avg_confidence": 86.9,
-      "total_odd": 79.1,
+      "avg_confidence": 87.5,
+      "total_odd": 84.4,
       "matches": [
         {
           "row_index": 1,
@@ -10589,17 +10592,6 @@
         },
         {
           "row_index": 6,
-          "code": "207.0",
-          "time": "SL15",
-          "match_name": "Tacikistan - Tayland",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.25,
-          "league": "Kralın Kupası",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 7,
           "code": "210.0",
           "time": "SL16",
           "match_name": "Lesotho - Gabon",
@@ -10610,7 +10602,7 @@
           "confidence": 87.5
         },
         {
-          "row_index": 8,
+          "row_index": 7,
           "code": "212.0",
           "time": "SL16",
           "match_name": "Etiyopya - Mozambik",
@@ -10619,6 +10611,17 @@
           "odd": 1.33,
           "league": "Afrika Uluslar Kup.,Eleme,Gr.J",
           "confidence": 86.0
+        },
+        {
+          "row_index": 8,
+          "code": "217.0",
+          "time": "SL17",
+          "match_name": "Birleşik Arap Emirlikleri - Suriye",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.21,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 92.5
         },
         {
           "row_index": 9,
@@ -10644,6 +10647,17 @@
         },
         {
           "row_index": 11,
+          "code": "232.0",
+          "time": "SL22",
+          "match_name": "Dominika - Cayman Adaları",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.24,
+          "league": "CONCACAF Uluslar B Ligi, Grp A",
+          "confidence": 92.5
+        },
+        {
+          "row_index": 12,
           "code": "234.0",
           "time": "SL22",
           "match_name": "Liberya - Yeşil Burun Adaları",
@@ -10652,17 +10666,6 @@
           "odd": 1.09,
           "league": "Afrika Uluslar Kup.,Eleme,Gr.K",
           "confidence": 83.0
-        },
-        {
-          "row_index": 12,
-          "code": "237.0",
-          "time": "SL22",
-          "match_name": "Saint Lucia - Barbados",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.51,
-          "league": "CONCACAF Uluslar B Ligi,Grup B",
-          "confidence": 88.5
         },
         {
           "row_index": 13,
@@ -10688,14 +10691,14 @@
         },
         {
           "row_index": 15,
-          "code": "403.0",
+          "code": "402.0",
           "time": "PR02",
-          "match_name": "Flamengo - Paranaense",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.11,
+          "match_name": "Clube do Remo - Chapecoense",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.49,
           "league": "Brezilya Serie A",
-          "confidence": 92.5
+          "confidence": 88.5
         }
       ]
     },
@@ -10703,8 +10706,8 @@
       "coupon_id": "Kupon X3-B3",
       "pair": "X3 x B3",
       "type_label": "Risk Dağıtımlı Çapraz Hibrit",
-      "avg_confidence": 85.4,
-      "total_odd": 24.09,
+      "avg_confidence": 86.1,
+      "total_odd": 29.73,
       "matches": [
         {
           "row_index": 1,
@@ -10755,25 +10758,14 @@
           "code": "207.0",
           "time": "SL15",
           "match_name": "Tacikistan - Tayland",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.25,
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.56,
           "league": "Kralın Kupası",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 6,
-          "code": "208.0",
-          "time": "SL16",
-          "match_name": "Güney Sudan - Angola",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.2,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.B",
           "confidence": 87.5
         },
         {
-          "row_index": 7,
+          "row_index": 6,
           "code": "211.0",
           "time": "SL16",
           "match_name": "Malavi - Mısır",
@@ -10784,7 +10776,7 @@
           "confidence": 87.5
         },
         {
-          "row_index": 8,
+          "row_index": 7,
           "code": "212.0",
           "time": "SL16",
           "match_name": "Etiyopya - Mozambik",
@@ -10795,18 +10787,18 @@
           "confidence": 86.0
         },
         {
-          "row_index": 9,
-          "code": "213.0",
-          "time": "SL16",
-          "match_name": "Burundi - Zambiya",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.36,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
-          "confidence": 86.0
+          "row_index": 8,
+          "code": "218.0",
+          "time": "SL19",
+          "match_name": "Gine Bissau - Madagaskar",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.25,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.L",
+          "confidence": 92.5
         },
         {
-          "row_index": 10,
+          "row_index": 9,
           "code": "219.0",
           "time": "SL19",
           "match_name": "Gambiya - Fildişi Sahili",
@@ -10817,7 +10809,7 @@
           "confidence": 87.5
         },
         {
-          "row_index": 11,
+          "row_index": 10,
           "code": "227.0",
           "time": "SL20",
           "match_name": "Sırbistan U21 - Polonya U21",
@@ -10828,7 +10820,7 @@
           "confidence": 82.5
         },
         {
-          "row_index": 12,
+          "row_index": 11,
           "code": "235.0",
           "time": "SL22",
           "match_name": "Ruanda - Mali",
@@ -10839,18 +10831,18 @@
           "confidence": 83.0
         },
         {
-          "row_index": 13,
-          "code": "238.0",
+          "row_index": 12,
+          "code": "237.0",
           "time": "SL22",
-          "match_name": "ST Kitts ve Nevis - Bonaire",
+          "match_name": "Saint Lucia - Barbados",
           "prediction": "MS 1 (A)",
           "market_code": "A",
-          "odd": 1.31,
-          "league": "CONCACAF Uluslar B Ligi, Grp C",
-          "confidence": 92.5
+          "odd": 1.51,
+          "league": "CONCACAF Uluslar B Ligi,Grup B",
+          "confidence": 88.5
         },
         {
-          "row_index": 14,
+          "row_index": 13,
           "code": "243.0",
           "time": "SL22",
           "match_name": "Danimarka - Norveç",
@@ -10861,7 +10853,7 @@
           "confidence": 84.0
         },
         {
-          "row_index": 15,
+          "row_index": 14,
           "code": "301.0",
           "time": "CR02",
           "match_name": "Şili - Kolombiya",
@@ -10870,6 +10862,17 @@
           "odd": 1.34,
           "league": "Uluslararası Hazırlık Maçları",
           "confidence": 84.0
+        },
+        {
+          "row_index": 15,
+          "code": "403.0",
+          "time": "PR02",
+          "match_name": "Flamengo - Paranaense",
+          "prediction": "1-X (10.0) (D)",
+          "market_code": "D",
+          "odd": 1.12,
+          "league": "Brezilya Serie A",
+          "confidence": 92.5
         }
       ]
     },
@@ -10877,8 +10880,8 @@
       "coupon_id": "Kupon X4-B4",
       "pair": "X4 x B4",
       "type_label": "Risk Dağıtımlı Çapraz Hibrit",
-      "avg_confidence": 85.7,
-      "total_odd": 19.67,
+      "avg_confidence": 86.0,
+      "total_odd": 23.91,
       "matches": [
         {
           "row_index": 1,
@@ -10926,28 +10929,17 @@
         },
         {
           "row_index": 5,
-          "code": "207.0",
-          "time": "SL15",
-          "match_name": "Tacikistan - Tayland",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.25,
-          "league": "Kralın Kupası",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 6,
-          "code": "209.0",
+          "code": "208.0",
           "time": "SL16",
-          "match_name": "Tanzanya - Nijerya",
-          "prediction": "MS 2 (B)",
-          "market_code": "B",
-          "odd": 1.25,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.L",
+          "match_name": "Güney Sudan - Angola",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.2,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.B",
           "confidence": 87.5
         },
         {
-          "row_index": 7,
+          "row_index": 6,
           "code": "212.0",
           "time": "SL16",
           "match_name": "Etiyopya - Mozambik",
@@ -10958,7 +10950,7 @@
           "confidence": 86.0
         },
         {
-          "row_index": 8,
+          "row_index": 7,
           "code": "213.0",
           "time": "SL16",
           "match_name": "Burundi - Zambiya",
@@ -10966,6 +10958,191 @@
           "market_code": "U",
           "odd": 1.36,
           "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 8,
+          "code": "215.0",
+          "time": "SL17",
+          "match_name": "Hindistan - Pakistan",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.17,
+          "league": "SAFF Şampiyonası, Eleme Turu",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 9,
+          "code": "219.0",
+          "time": "SL19",
+          "match_name": "Gambiya - Fildişi Sahili",
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.51,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.C",
+          "confidence": 87.5
+        },
+        {
+          "row_index": 10,
+          "code": "220.0",
+          "time": "SL19",
+          "match_name": "Sierra Leone - Demokratik Kongo Cumhu.",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.23,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.E",
+          "confidence": 87.5
+        },
+        {
+          "row_index": 11,
+          "code": "228.0",
+          "time": "SL20",
+          "match_name": "Hırvatistan U21 - Almanya U21",
+          "prediction": "1-2 (12.0) (E)",
+          "market_code": "E",
+          "odd": 1.13,
+          "league": "U21 Hazırlık Maçları",
+          "confidence": 82.5
+        },
+        {
+          "row_index": 12,
+          "code": "236.0",
+          "time": "SL22",
+          "match_name": "Kongo - Komorlar",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.32,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.G",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 13,
+          "code": "238.0",
+          "time": "SL22",
+          "match_name": "ST Kitts ve Nevis - Bonaire",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.33,
+          "league": "CONCACAF Uluslar B Ligi, Grp C",
+          "confidence": 88.5
+        },
+        {
+          "row_index": 14,
+          "code": "244.0",
+          "time": "SL22",
+          "match_name": "İrlanda - Kosova",
+          "prediction": "Toplam 3.5 Alt (Q)",
+          "market_code": "Q",
+          "odd": 1.08,
+          "league": "UEFA Uluslar Ligi",
+          "confidence": 83.0
+        },
+        {
+          "row_index": 15,
+          "code": "302.0",
+          "time": "CR02",
+          "match_name": "Ekvador - Bolivya",
+          "prediction": "1-X (10.0) (D)",
+          "market_code": "D",
+          "odd": 1.06,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 92.5
+        }
+      ]
+    },
+    {
+      "coupon_id": "Kupon X5-B5",
+      "pair": "X5 x B5",
+      "type_label": "Risk Dağıtımlı Çapraz Hibrit (Grup 2)",
+      "avg_confidence": 85.7,
+      "total_odd": 30.33,
+      "matches": [
+        {
+          "row_index": 1,
+          "code": "203.0",
+          "time": "SL05",
+          "match_name": "New Mexico - Sacramento R",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.1,
+          "league": "ABD Championship, Playoff",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 2,
+          "code": "204.0",
+          "time": "SL13",
+          "match_name": "Havadar SC - Sanat Mes Kerman FC",
+          "prediction": "1-2 (12.0) (E)",
+          "market_code": "E",
+          "odd": 1.21,
+          "league": "İran Azadegan Ligi",
+          "confidence": 82.5
+        },
+        {
+          "row_index": 3,
+          "code": "205.0",
+          "time": "SL15",
+          "match_name": "Kırgızistan - Vietnam",
+          "prediction": "İY 0.5 Üst (R)",
+          "market_code": "R",
+          "odd": 1.28,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 84.0
+        },
+        {
+          "row_index": 4,
+          "code": "206.0",
+          "time": "SL15",
+          "match_name": "Çin - Bahreyn",
+          "prediction": "İY 0.5 Üst (R)",
+          "market_code": "R",
+          "odd": 1.31,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 84.0
+        },
+        {
+          "row_index": 5,
+          "code": "209.0",
+          "time": "SL16",
+          "match_name": "Tanzanya - Nijerya",
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.25,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.L",
+          "confidence": 87.5
+        },
+        {
+          "row_index": 6,
+          "code": "212.0",
+          "time": "SL16",
+          "match_name": "Etiyopya - Mozambik",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.33,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.J",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 7,
+          "code": "213.0",
+          "time": "SL16",
+          "match_name": "Burundi - Zambiya",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.36,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 8,
+          "code": "215.0",
+          "time": "SL17",
+          "match_name": "Hindistan - Pakistan",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.17,
+          "league": "SAFF Şampiyonası, Eleme Turu",
           "confidence": 86.0
         },
         {
@@ -10978,180 +11155,6 @@
           "odd": 1.23,
           "league": "Afrika Uluslar Kup.,Eleme,Gr.E",
           "confidence": 87.5
-        },
-        {
-          "row_index": 10,
-          "code": "228.0",
-          "time": "SL20",
-          "match_name": "Hırvatistan U21 - Almanya U21",
-          "prediction": "1-2 (12.0) (E)",
-          "market_code": "E",
-          "odd": 1.13,
-          "league": "U21 Hazırlık Maçları",
-          "confidence": 82.5
-        },
-        {
-          "row_index": 11,
-          "code": "236.0",
-          "time": "SL22",
-          "match_name": "Kongo - Komorlar",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.32,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.G",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 12,
-          "code": "240.0",
-          "time": "SL22",
-          "match_name": "Luton Town - Peterborough",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.35,
-          "league": "İngiltere Futbol Ligi Kupası, Güney Grub",
-          "confidence": 88.5
-        },
-        {
-          "row_index": 13,
-          "code": "244.0",
-          "time": "SL22",
-          "match_name": "İrlanda - Kosova",
-          "prediction": "Toplam 3.5 Alt (Q)",
-          "market_code": "Q",
-          "odd": 1.08,
-          "league": "UEFA Uluslar Ligi",
-          "confidence": 83.0
-        },
-        {
-          "row_index": 14,
-          "code": "302.0",
-          "time": "CR02",
-          "match_name": "Ekvador - Bolivya",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.06,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 15,
-          "code": "405.0",
-          "time": "PR03",
-          "match_name": "Gremio Porto - Bahia BA",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.1,
-          "league": "Brezilya Serie A",
-          "confidence": 86.0
-        }
-      ]
-    },
-    {
-      "coupon_id": "Kupon X5-B5",
-      "pair": "X5 x B5",
-      "type_label": "Risk Dağıtımlı Çapraz Hibrit (Grup 2)",
-      "avg_confidence": 86.2,
-      "total_odd": 24.73,
-      "matches": [
-        {
-          "row_index": 1,
-          "code": "201.0",
-          "time": "SL03",
-          "match_name": "Trinidad ve Tobago - Antigua & Barbuda",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.07,
-          "league": "CONCACAF Uluslar Ligi, Hazılık",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 2,
-          "code": "203.0",
-          "time": "SL05",
-          "match_name": "New Mexico - Sacramento R",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.1,
-          "league": "ABD Championship, Playoff",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 3,
-          "code": "204.0",
-          "time": "SL13",
-          "match_name": "Havadar SC - Sanat Mes Kerman FC",
-          "prediction": "1-2 (12.0) (E)",
-          "market_code": "E",
-          "odd": 1.21,
-          "league": "İran Azadegan Ligi",
-          "confidence": 82.5
-        },
-        {
-          "row_index": 4,
-          "code": "205.0",
-          "time": "SL15",
-          "match_name": "Kırgızistan - Vietnam",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.28,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 5,
-          "code": "206.0",
-          "time": "SL15",
-          "match_name": "Çin - Bahreyn",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.31,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 6,
-          "code": "207.0",
-          "time": "SL15",
-          "match_name": "Tacikistan - Tayland",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.25,
-          "league": "Kralın Kupası",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 7,
-          "code": "210.0",
-          "time": "SL16",
-          "match_name": "Lesotho - Gabon",
-          "prediction": "MS 2 (B)",
-          "market_code": "B",
-          "odd": 1.31,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.A",
-          "confidence": 87.5
-        },
-        {
-          "row_index": 8,
-          "code": "212.0",
-          "time": "SL16",
-          "match_name": "Etiyopya - Mozambik",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.33,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.J",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 9,
-          "code": "213.0",
-          "time": "SL16",
-          "match_name": "Burundi - Zambiya",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.36,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
-          "confidence": 86.0
         },
         {
           "row_index": 10,
@@ -11188,14 +11191,14 @@
         },
         {
           "row_index": 13,
-          "code": "242.0",
+          "code": "240.0",
           "time": "SL22",
-          "match_name": "Swansea U21 - Gillingham FC Reserve",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.13,
-          "league": "İngiltere Amatör U21 Premier League Cup, Group ",
-          "confidence": 92.5
+          "match_name": "Luton Town - Peterborough",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.35,
+          "league": "İngiltere Futbol Ligi Kupası, Güney Grub",
+          "confidence": 88.5
         },
         {
           "row_index": 14,
@@ -11225,8 +11228,182 @@
       "coupon_id": "Kupon X6-B6",
       "pair": "X6 x B6",
       "type_label": "Risk Dağıtımlı Çapraz Hibrit (Grup 2)",
-      "avg_confidence": 86.7,
-      "total_odd": 30.99,
+      "avg_confidence": 86.9,
+      "total_odd": 38.08,
+      "matches": [
+        {
+          "row_index": 1,
+          "code": "203.0",
+          "time": "SL05",
+          "match_name": "New Mexico - Sacramento R",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.1,
+          "league": "ABD Championship, Playoff",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 2,
+          "code": "204.0",
+          "time": "SL13",
+          "match_name": "Havadar SC - Sanat Mes Kerman FC",
+          "prediction": "1-2 (12.0) (E)",
+          "market_code": "E",
+          "odd": 1.21,
+          "league": "İran Azadegan Ligi",
+          "confidence": 82.5
+        },
+        {
+          "row_index": 3,
+          "code": "205.0",
+          "time": "SL15",
+          "match_name": "Kırgızistan - Vietnam",
+          "prediction": "İY 0.5 Üst (R)",
+          "market_code": "R",
+          "odd": 1.28,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 84.0
+        },
+        {
+          "row_index": 4,
+          "code": "206.0",
+          "time": "SL15",
+          "match_name": "Çin - Bahreyn",
+          "prediction": "İY 0.5 Üst (R)",
+          "market_code": "R",
+          "odd": 1.31,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 84.0
+        },
+        {
+          "row_index": 5,
+          "code": "210.0",
+          "time": "SL16",
+          "match_name": "Lesotho - Gabon",
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.31,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.A",
+          "confidence": 87.5
+        },
+        {
+          "row_index": 6,
+          "code": "212.0",
+          "time": "SL16",
+          "match_name": "Etiyopya - Mozambik",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.33,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.J",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 7,
+          "code": "213.0",
+          "time": "SL16",
+          "match_name": "Burundi - Zambiya",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.36,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 8,
+          "code": "214.0",
+          "time": "SL16",
+          "match_name": "Japonya - Paraguay",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.46,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 88.5
+        },
+        {
+          "row_index": 9,
+          "code": "221.0",
+          "time": "SL19",
+          "match_name": "Togo - Cezayir",
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.46,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.I",
+          "confidence": 87.5
+        },
+        {
+          "row_index": 10,
+          "code": "222.0",
+          "time": "SL19",
+          "match_name": "Libya - Tunus",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.33,
+          "league": "Afrika Uluslar Kup.,Eleme,Gr.H",
+          "confidence": 86.0
+        },
+        {
+          "row_index": 11,
+          "code": "230.0",
+          "time": "SL20",
+          "match_name": "Portekiz U21 - Norveç U21",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.49,
+          "league": "U21 Hazırlık Maçları",
+          "confidence": 88.5
+        },
+        {
+          "row_index": 12,
+          "code": "238.0",
+          "time": "SL22",
+          "match_name": "ST Kitts ve Nevis - Bonaire",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.33,
+          "league": "CONCACAF Uluslar B Ligi, Grp C",
+          "confidence": 88.5
+        },
+        {
+          "row_index": 13,
+          "code": "242.0",
+          "time": "SL22",
+          "match_name": "Swansea U21 - Gillingham FC Reserve",
+          "prediction": "1-X (10.0) (D)",
+          "market_code": "D",
+          "odd": 1.13,
+          "league": "İngiltere Amatör U21 Premier League Cup, Group ",
+          "confidence": 92.5
+        },
+        {
+          "row_index": 14,
+          "code": "246.0",
+          "time": "SL22",
+          "match_name": "Macaristan - Kuzey İrlanda",
+          "prediction": "Toplam 3.5 Alt (Q)",
+          "market_code": "Q",
+          "odd": 1.07,
+          "league": "UEFA Uluslar Ligi",
+          "confidence": 83.0
+        },
+        {
+          "row_index": 15,
+          "code": "304.0",
+          "time": "CR04",
+          "match_name": "El Salvador - Saint Martin",
+          "prediction": "Toplam 1.5 Üst (U)",
+          "market_code": "U",
+          "odd": 1.06,
+          "league": "CONCACAF Uluslar Ligi, Hazılık",
+          "confidence": 92.5
+        }
+      ]
+    },
+    {
+      "coupon_id": "Kupon X7-B7",
+      "pair": "X7 x B7",
+      "type_label": "Risk Dağıtımlı Çapraz Hibrit (Grup 2)",
+      "avg_confidence": 85.7,
+      "total_odd": 317.83,
       "matches": [
         {
           "row_index": 1,
@@ -11277,11 +11454,11 @@
           "code": "207.0",
           "time": "SL15",
           "match_name": "Tacikistan - Tayland",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.25,
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.56,
           "league": "Kralın Kupası",
-          "confidence": 84.0
+          "confidence": 87.5
         },
         {
           "row_index": 6,
@@ -11307,180 +11484,6 @@
         },
         {
           "row_index": 8,
-          "code": "214.0",
-          "time": "SL16",
-          "match_name": "Japonya - Paraguay",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.46,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 88.5
-        },
-        {
-          "row_index": 9,
-          "code": "222.0",
-          "time": "SL19",
-          "match_name": "Libya - Tunus",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.33,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.H",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 10,
-          "code": "225.0",
-          "time": "SL19",
-          "match_name": "Rusya - Venezuela",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.38,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 88.5
-        },
-        {
-          "row_index": 11,
-          "code": "230.0",
-          "time": "SL20",
-          "match_name": "Portekiz U21 - Norveç U21",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.49,
-          "league": "U21 Hazırlık Maçları",
-          "confidence": 88.5
-        },
-        {
-          "row_index": 12,
-          "code": "238.0",
-          "time": "SL22",
-          "match_name": "ST Kitts ve Nevis - Bonaire",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.31,
-          "league": "CONCACAF Uluslar B Ligi, Grp C",
-          "confidence": 92.5
-        },
-        {
-          "row_index": 13,
-          "code": "246.0",
-          "time": "SL22",
-          "match_name": "Macaristan - Kuzey İrlanda",
-          "prediction": "Toplam 3.5 Alt (Q)",
-          "market_code": "Q",
-          "odd": 1.07,
-          "league": "UEFA Uluslar Ligi",
-          "confidence": 83.0
-        },
-        {
-          "row_index": 14,
-          "code": "248.0",
-          "time": "SL22",
-          "match_name": "Galler - Portekiz",
-          "prediction": "MS 2 (B)",
-          "market_code": "B",
-          "odd": 1.28,
-          "league": "UEFA Uluslar Ligi",
-          "confidence": 87.5
-        },
-        {
-          "row_index": 15,
-          "code": "304.0",
-          "time": "CR04",
-          "match_name": "El Salvador - Saint Martin",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.06,
-          "league": "CONCACAF Uluslar Ligi, Hazılık",
-          "confidence": 92.5
-        }
-      ]
-    },
-    {
-      "coupon_id": "Kupon X7-B7",
-      "pair": "X7 x B7",
-      "type_label": "Risk Dağıtımlı Çapraz Hibrit (Grup 2)",
-      "avg_confidence": 85.9,
-      "total_odd": 297.58,
-      "matches": [
-        {
-          "row_index": 1,
-          "code": "203.0",
-          "time": "SL05",
-          "match_name": "New Mexico - Sacramento R",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.1,
-          "league": "ABD Championship, Playoff",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 2,
-          "code": "204.0",
-          "time": "SL13",
-          "match_name": "Havadar SC - Sanat Mes Kerman FC",
-          "prediction": "1-2 (12.0) (E)",
-          "market_code": "E",
-          "odd": 1.21,
-          "league": "İran Azadegan Ligi",
-          "confidence": 82.5
-        },
-        {
-          "row_index": 3,
-          "code": "205.0",
-          "time": "SL15",
-          "match_name": "Kırgızistan - Vietnam",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.28,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 4,
-          "code": "206.0",
-          "time": "SL15",
-          "match_name": "Çin - Bahreyn",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.31,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 5,
-          "code": "207.0",
-          "time": "SL15",
-          "match_name": "Tacikistan - Tayland",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.25,
-          "league": "Kralın Kupası",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 6,
-          "code": "212.0",
-          "time": "SL16",
-          "match_name": "Etiyopya - Mozambik",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
-          "odd": 1.33,
-          "league": "Afrika Uluslar Kup.,Eleme,Gr.J",
-          "confidence": 86.0
-        },
-        {
-          "row_index": 7,
-          "code": "214.0",
-          "time": "SL16",
-          "match_name": "Japonya - Paraguay",
-          "prediction": "MS 1 (A)",
-          "market_code": "A",
-          "odd": 1.46,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 88.5
-        },
-        {
-          "row_index": 8,
           "code": "215.0",
           "time": "SL17",
           "match_name": "Hindistan - Pakistan",
@@ -11503,13 +11506,13 @@
         },
         {
           "row_index": 10,
-          "code": "230.0",
-          "time": "SL20",
-          "match_name": "Portekiz U21 - Norveç U21",
+          "code": "225.0",
+          "time": "SL19",
+          "match_name": "Rusya - Venezuela",
           "prediction": "MS 1 (A)",
           "market_code": "A",
-          "odd": 1.49,
-          "league": "U21 Hazırlık Maçları",
+          "odd": 1.38,
+          "league": "Uluslararası Hazırlık Maçları",
           "confidence": 88.5
         },
         {
@@ -11547,14 +11550,14 @@
         },
         {
           "row_index": 14,
-          "code": "302.0",
-          "time": "CR02",
-          "match_name": "Ekvador - Bolivya",
-          "prediction": "1-X (10.0) (D)",
-          "market_code": "D",
-          "odd": 1.06,
-          "league": "Uluslararası Hazırlık Maçları",
-          "confidence": 92.5
+          "code": "248.0",
+          "time": "SL22",
+          "match_name": "Galler - Portekiz",
+          "prediction": "MS 2 (B)",
+          "market_code": "B",
+          "odd": 1.3,
+          "league": "UEFA Uluslar Ligi",
+          "confidence": 87.5
         },
         {
           "row_index": 15,
@@ -11573,8 +11576,8 @@
       "coupon_id": "Kupon X8-B8",
       "pair": "X8 x B8",
       "type_label": "Risk Dağıtımlı Çapraz Hibrit (Grup 2)",
-      "avg_confidence": 86.7,
-      "total_odd": 213.83,
+      "avg_confidence": 87.0,
+      "total_odd": 32.44,
       "matches": [
         {
           "row_index": 1,
@@ -11622,17 +11625,6 @@
         },
         {
           "row_index": 5,
-          "code": "207.0",
-          "time": "SL15",
-          "match_name": "Tacikistan - Tayland",
-          "prediction": "İY 0.5 Üst (R)",
-          "market_code": "R",
-          "odd": 1.25,
-          "league": "Kralın Kupası",
-          "confidence": 84.0
-        },
-        {
-          "row_index": 6,
           "code": "208.0",
           "time": "SL16",
           "match_name": "Güney Sudan - Angola",
@@ -11643,7 +11635,7 @@
           "confidence": 87.5
         },
         {
-          "row_index": 7,
+          "row_index": 6,
           "code": "212.0",
           "time": "SL16",
           "match_name": "Etiyopya - Mozambik",
@@ -11652,6 +11644,17 @@
           "odd": 1.33,
           "league": "Afrika Uluslar Kup.,Eleme,Gr.J",
           "confidence": 86.0
+        },
+        {
+          "row_index": 7,
+          "code": "214.0",
+          "time": "SL16",
+          "match_name": "Japonya - Paraguay",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.46,
+          "league": "Uluslararası Hazırlık Maçları",
+          "confidence": 88.5
         },
         {
           "row_index": 8,
@@ -11677,14 +11680,14 @@
         },
         {
           "row_index": 10,
-          "code": "231.0",
-          "time": "SL21",
-          "match_name": "Arnavutluk U21 - İspanya U21",
-          "prediction": "X-2 (.02) (F)",
-          "market_code": "F",
-          "odd": 11.65,
+          "code": "230.0",
+          "time": "SL20",
+          "match_name": "Portekiz U21 - Norveç U21",
+          "prediction": "MS 1 (A)",
+          "market_code": "A",
+          "odd": 1.49,
           "league": "U21 Hazırlık Maçları",
-          "confidence": 87.5
+          "confidence": 88.5
         },
         {
           "row_index": 11,
@@ -11715,19 +11718,19 @@
           "match_name": "Galler - Portekiz",
           "prediction": "MS 2 (B)",
           "market_code": "B",
-          "odd": 1.28,
+          "odd": 1.3,
           "league": "UEFA Uluslar Ligi",
           "confidence": 87.5
         },
         {
           "row_index": 14,
-          "code": "304.0",
-          "time": "CR04",
-          "match_name": "El Salvador - Saint Martin",
-          "prediction": "Toplam 1.5 Üst (U)",
-          "market_code": "U",
+          "code": "302.0",
+          "time": "CR02",
+          "match_name": "Ekvador - Bolivya",
+          "prediction": "1-X (10.0) (D)",
+          "market_code": "D",
           "odd": 1.06,
-          "league": "CONCACAF Uluslar Ligi, Hazılık",
+          "league": "Uluslararası Hazırlık Maçları",
           "confidence": 92.5
         },
         {
@@ -11755,11 +11758,11 @@
       "day_name": "Bugün",
       "is_live": true,
       "in_bulletin": false,
-      "live_score": "? - ?",
-      "live_minute": "55",
+      "live_score": "2 - 0",
+      "live_minute": "69",
       "live_status": "2. Yarı",
       "odds_ms1": null,
-      "odds_msx": 10.5,
+      "odds_msx": 15.9,
       "odds_ms2": 17.55,
       "goals": [],
       "target_market": "-",
@@ -11769,94 +11772,25 @@
       "pools": []
     },
     {
-      "code": "CANLI-5353",
-      "match_name": "Larne Reserves - Glentoran Reserves",
-      "home": "Larne Reserves",
-      "away": "Glentoran Reserves",
-      "league": "Northern Ireland NIFL Premiers",
-      "time": "23:00",
+      "code": "CANLI-7645",
+      "match_name": "Cusco FC - Asociacion Deportiva Tarma",
+      "home": "Cusco FC",
+      "away": "Asociacion Deportiva Tarma",
+      "league": "Peru Primera Ligi, Açılış",
+      "time": "23:15",
       "day_name": "Bugün",
       "is_live": true,
       "in_bulletin": false,
-      "live_score": "? - ?",
-      "live_minute": "88",
+      "live_score": "2 - 1",
+      "live_minute": "83",
       "live_status": "2. Yarı",
-      "odds_ms1": null,
-      "odds_msx": 26.5,
-      "odds_ms2": 26.5,
+      "odds_ms1": 1.12,
+      "odds_msx": 3.21,
+      "odds_ms2": 17.55,
       "goals": [],
       "target_market": "-",
       "target_market_name": "Canlı Skor Takibi",
-      "suggested_odd": 26.5,
-      "live_prediction_status": "Anlık Canlı Veri",
-      "pools": []
-    },
-    {
-      "code": "CANLI-0261",
-      "match_name": "Linfield Swifts Gençler - Carrick Rangers Gençler",
-      "home": "Linfield Swifts Gençler",
-      "away": "Carrick Rangers Gençler",
-      "league": "Kuzey İrlanda NIFL Development League",
-      "time": "23:00",
-      "day_name": "Bugün",
-      "is_live": true,
-      "in_bulletin": false,
-      "live_score": "? - ?",
-      "live_minute": "47",
-      "live_status": "Canlı",
-      "odds_ms1": null,
-      "odds_msx": null,
-      "odds_ms2": null,
-      "goals": [],
-      "target_market": "-",
-      "target_market_name": "Canlı Skor Takibi",
-      "suggested_odd": "-",
-      "live_prediction_status": "Anlık Canlı Veri",
-      "pools": []
-    },
-    {
-      "code": "CANLI-8411",
-      "match_name": "Limavady United Reserves - Bangor FC Gençler",
-      "home": "Limavady United Reserves",
-      "away": "Bangor FC Gençler",
-      "league": "Kuzey İrlanda NIFL Development League",
-      "time": "23:00",
-      "day_name": "Bugün",
-      "is_live": true,
-      "in_bulletin": false,
-      "live_score": "? - ?",
-      "live_minute": "88",
-      "live_status": "2. Yarı",
-      "odds_ms1": null,
-      "odds_msx": null,
-      "odds_ms2": null,
-      "goals": [],
-      "target_market": "-",
-      "target_market_name": "Canlı Skor Takibi",
-      "suggested_odd": "-",
-      "live_prediction_status": "Anlık Canlı Veri",
-      "pools": []
-    },
-    {
-      "code": "CANLI-5351",
-      "match_name": "Crusaders FC Gençler - Cliftonville Gençler",
-      "home": "Crusaders FC Gençler",
-      "away": "Cliftonville Gençler",
-      "league": "Kuzey İrlanda NIFL Development League",
-      "time": "23:00",
-      "day_name": "Bugün",
-      "is_live": true,
-      "in_bulletin": false,
-      "live_score": "? - ?",
-      "live_minute": "90",
-      "live_status": "2. Yarı",
-      "odds_ms1": 11.4,
-      "odds_msx": null,
-      "odds_ms2": 7.79,
-      "goals": [],
-      "target_market": "-",
-      "target_market_name": "Canlı Skor Takibi",
-      "suggested_odd": 11.4,
+      "suggested_odd": 1.12,
       "live_prediction_status": "Anlık Canlı Veri",
       "pools": []
     },
@@ -11871,11 +11805,11 @@
       "is_live": true,
       "in_bulletin": false,
       "live_score": "1 - 1",
-      "live_minute": "63",
+      "live_minute": "77",
       "live_status": "2. Yarı",
-      "odds_ms1": 2.28,
-      "odds_msx": 1.74,
-      "odds_ms2": 4.19,
+      "odds_ms1": 2.76,
+      "odds_msx": 1.44,
+      "odds_ms2": 5.05,
       "goals": [
         {
           "minute": "24'",
@@ -11892,76 +11826,7 @@
       ],
       "target_market": "-",
       "target_market_name": "Canlı Skor Takibi",
-      "suggested_odd": 2.28,
-      "live_prediction_status": "Anlık Canlı Veri",
-      "pools": []
-    },
-    {
-      "code": "CANLI-7645",
-      "match_name": "Cusco FC - Asociacion Deportiva Tarma",
-      "home": "Cusco FC",
-      "away": "Asociacion Deportiva Tarma",
-      "league": "Peru Primera Ligi, Açılış",
-      "time": "23:15",
-      "day_name": "Bugün",
-      "is_live": true,
-      "in_bulletin": false,
-      "live_score": "2 - 1",
-      "live_minute": "69",
-      "live_status": "2. Yarı",
-      "odds_ms1": 1.26,
-      "odds_msx": 2.79,
-      "odds_ms2": 9.48,
-      "goals": [],
-      "target_market": "-",
-      "target_market_name": "Canlı Skor Takibi",
-      "suggested_odd": 1.26,
-      "live_prediction_status": "Anlık Canlı Veri",
-      "pools": []
-    },
-    {
-      "code": "CANLI-5352",
-      "match_name": "Dungannon Swifts Gençler - Coleraine Gençler",
-      "home": "Dungannon Swifts Gençler",
-      "away": "Coleraine Gençler",
-      "league": "Kuzey İrlanda NIFL Development League",
-      "time": "23:00",
-      "day_name": "Bugün",
-      "is_live": true,
-      "in_bulletin": false,
-      "live_score": "? - ?",
-      "live_minute": "91",
-      "live_status": "2. Yarı",
-      "odds_ms1": null,
-      "odds_msx": null,
-      "odds_ms2": null,
-      "goals": [],
-      "target_market": "-",
-      "target_market_name": "Canlı Skor Takibi",
-      "suggested_odd": "-",
-      "live_prediction_status": "Anlık Canlı Veri",
-      "pools": []
-    },
-    {
-      "code": "CANLI-5329",
-      "match_name": "Club Atlético Belgrano (K) - Club Atletico Banfield (K)",
-      "home": "Club Atlético Belgrano (K)",
-      "away": "Club Atletico Banfield (K)",
-      "league": "Argentina Campeonato Femenino",
-      "time": "23:00",
-      "day_name": "Bugün",
-      "is_live": true,
-      "in_bulletin": false,
-      "live_score": "? - ?",
-      "live_minute": "84",
-      "live_status": "2. Yarı",
-      "odds_ms1": 4.44,
-      "odds_msx": 1.11,
-      "odds_ms2": 8.28,
-      "goals": [],
-      "target_market": "-",
-      "target_market_name": "Canlı Skor Takibi",
-      "suggested_odd": 4.44,
+      "suggested_odd": 2.76,
       "live_prediction_status": "Anlık Canlı Veri",
       "pools": []
     }
@@ -12726,12 +12591,12 @@
       "removed_from_bulletin": false
     }
   ],
-  "last_updated": "2026-11-17 00:44:51",
+  "last_updated": "2026-11-17 00:58:37",
   "live_source": "iddaa.com (Canlı Bülten + Skor + A-Q Formül Motoru)",
   "daily_label": "17.11.2026",
   "evet_evet": {
-    "generated_at": "2026-11-17 00:44:54",
-    "cutoff_time": "17.11 00:49",
+    "generated_at": "2026-11-17 00:58:39",
+    "cutoff_time": "17.11 01:03",
     "source": "Nesine Canli Bulten (MTID 801) + Poisson + Arkadas Algoritmasi",
     "stats": {
       "upcoming_football": 117,
@@ -12889,7 +12754,7 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 1,
         "ee_odd": 8.14,
         "fair_ee_pct": 10.06,
@@ -12946,7 +12811,7 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 1,
         "ee_odd": 10.75,
         "fair_ee_pct": 7.63,
@@ -12999,6 +12864,63 @@
         "algo_badge": "[249.0] TIP_3_GOL_SISTEM"
       },
       {
+        "code": "3307683",
+        "match_name": "ST Kitts ve Nevis - Bonaire",
+        "home": "ST Kitts ve Nevis",
+        "away": "Bonaire",
+        "league": "CONCACAF Uluslar Ligi",
+        "date_str": "17.11.2026",
+        "time_str": "17.11 22:00",
+        "hhmm": "22:00",
+        "is_today_session": false,
+        "mins_left": 1261,
+        "mbs": 3,
+        "ee_odd": 6.72,
+        "fair_ee_pct": 11.74,
+        "poisson_ee_pct": 11.56,
+        "edge_vs_odd_pct": -3.32,
+        "xg_home": 2.46,
+        "xg_away": 1.27,
+        "iy_kg_odd": 2.59,
+        "iy_kg_pct": 31.3,
+        "kg_odd": 1.23,
+        "kg_pct": 65.9,
+        "o25_odd": 1.13,
+        "o25_pct": 71.8,
+        "o35_odd": 1.52,
+        "o35_pct": 53.4,
+        "ms1": 1.29,
+        "msx": 4.27,
+        "ms2": 4.41,
+        "score": 14.78,
+        "tier": "TUZAK",
+        "tier_label": "Tuzak Uyarisi",
+        "traps": [
+          "TEK_TARAF_FAVORI"
+        ],
+        "algo_in_list": true,
+        "algo_code": "238.0",
+        "algo_type": "TIP_1_BANKO",
+        "algo_target": "A (MS 1)",
+        "algo_conf": 88.5,
+        "algo_pools": [
+          "B4",
+          "X6"
+        ],
+        "algo_coupons": [
+          "Kupon B4-B8",
+          "Kupon X2-X6",
+          "Kupon X4-B4",
+          "Kupon X6-B6"
+        ],
+        "algo_active_mkts": [
+          "A",
+          "V",
+          "Z"
+        ],
+        "algo_badge": "[238.0] TIP_1_BANKO"
+      },
+      {
         "code": "3307572",
         "match_name": "Fransız Guyanası - Saint Vincent ve G.",
         "home": "Fransız Guyanası",
@@ -13008,7 +12930,7 @@
         "time_str": "18.11 03:00",
         "hhmm": "03:00",
         "is_today_session": false,
-        "mins_left": 1575,
+        "mins_left": 1561,
         "mbs": 3,
         "ee_odd": 11.05,
         "fair_ee_pct": 7.13,
@@ -13068,7 +12990,7 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 3,
         "ee_odd": 8.68,
         "fair_ee_pct": 9.09,
@@ -13111,7 +13033,7 @@
         "time_str": "17.11 05:00",
         "hhmm": "05:00",
         "is_today_session": true,
-        "mins_left": 255,
+        "mins_left": 241,
         "mbs": 3,
         "ee_odd": 12.4,
         "fair_ee_pct": 6.37,
@@ -13196,7 +13118,7 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 3,
         "ee_odd": 9.54,
         "fair_ee_pct": 8.27,
@@ -13239,7 +13161,7 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 3,
         "ee_odd": 9.67,
         "fair_ee_pct": 8.16,
@@ -13282,7 +13204,7 @@
         "time_str": "17.11 20:30",
         "hhmm": "20:30",
         "is_today_session": false,
-        "mins_left": 1185,
+        "mins_left": 1171,
         "mbs": 3,
         "ee_odd": 10.25,
         "fair_ee_pct": 7.69,
@@ -13336,26 +13258,26 @@
         "time_str": "17.11 22:00",
         "hhmm": "22:00",
         "is_today_session": false,
-        "mins_left": 1275,
+        "mins_left": 1261,
         "mbs": 3,
-        "ee_odd": 11.2,
-        "fair_ee_pct": 7.05,
-        "poisson_ee_pct": 7.3,
-        "edge_vs_odd_pct": -1.63,
-        "xg_home": 1.72,
-        "xg_away": 1.22,
-        "iy_kg_odd": 3.3,
-        "iy_kg_pct": 24.7,
+        "ee_odd": 11.3,
+        "fair_ee_pct": 6.98,
+        "poisson_ee_pct": 7.2,
+        "edge_vs_odd_pct": -1.65,
+        "xg_home": 1.75,
+        "xg_away": 1.19,
+        "iy_kg_odd": 3.31,
+        "iy_kg_pct": 24.6,
         "kg_odd": 1.4,
-        "kg_pct": 58.1,
+        "kg_pct": 58.0,
         "o25_odd": 1.44,
         "o25_pct": 56.4,
-        "o35_odd": 2.26,
-        "o35_pct": 36.0,
-        "ms1": 1.67,
-        "msx": 3.17,
-        "ms2": 3.12,
-        "score": 12.54,
+        "o35_odd": 2.25,
+        "o35_pct": 36.1,
+        "ms1": 1.63,
+        "msx": 3.18,
+        "ms2": 3.28,
+        "score": 12.44,
         "tier": "ALTIN_KESISIM",
         "tier_label": "Altin Kesisim (Algo + Piyasa)",
         "traps": [],
@@ -13372,7 +13294,6 @@
           "Kupon X1-B1"
         ],
         "algo_active_mkts": [
-          "D",
           "E",
           "G",
           "H",
@@ -13393,7 +13314,7 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 3,
         "ee_odd": 11.2,
         "fair_ee_pct": 7.05,
@@ -13436,7 +13357,7 @@
         "time_str": "17.11 20:30",
         "hhmm": "20:30",
         "is_today_session": false,
-        "mins_left": 1185,
+        "mins_left": 1171,
         "mbs": 2,
         "ee_odd": 10,
         "fair_ee_pct": 7.88,
@@ -13492,7 +13413,7 @@
         "time_str": "17.11 22:00",
         "hhmm": "22:00",
         "is_today_session": false,
-        "mins_left": 1275,
+        "mins_left": 1261,
         "mbs": 3,
         "ee_odd": 9.37,
         "fair_ee_pct": 8.42,
@@ -13521,13 +13442,13 @@
         "algo_target": "A (MS 1)",
         "algo_conf": 88.5,
         "algo_pools": [
-          "B2",
+          "B3",
           "X5"
         ],
         "algo_coupons": [
-          "Kupon B2-B6",
+          "Kupon B3-B7",
           "Kupon X1-X5",
-          "Kupon X2-B2",
+          "Kupon X3-B3",
           "Kupon X5-B5"
         ],
         "algo_active_mkts": [
@@ -13550,7 +13471,7 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 3,
         "ee_odd": 12.05,
         "fair_ee_pct": 6.54,
@@ -13593,7 +13514,7 @@
         "time_str": "17.11 22:00",
         "hhmm": "22:00",
         "is_today_session": false,
-        "mins_left": 1275,
+        "mins_left": 1261,
         "mbs": 3,
         "ee_odd": 7.62,
         "fair_ee_pct": 10.34,
@@ -13624,13 +13545,13 @@
         "algo_target": "A (MS 1)",
         "algo_conf": 88.5,
         "algo_pools": [
-          "B4",
+          "B5",
           "X8"
         ],
         "algo_coupons": [
-          "Kupon B4-B8",
+          "Kupon B1-B5",
           "Kupon X4-X8",
-          "Kupon X4-B4",
+          "Kupon X5-B5",
           "Kupon X8-B8"
         ],
         "algo_active_mkts": [
@@ -13650,7 +13571,7 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 3,
         "ee_odd": 10,
         "fair_ee_pct": 7.88,
@@ -13693,7 +13614,7 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 1,
         "ee_odd": 14.45,
         "fair_ee_pct": 5.67,
@@ -13744,63 +13665,6 @@
         "algo_badge": "[247.0] TIP_3_GOL_SISTEM"
       },
       {
-        "code": "3307683",
-        "match_name": "ST Kitts ve Nevis - Bonaire",
-        "home": "ST Kitts ve Nevis",
-        "away": "Bonaire",
-        "league": "CONCACAF Uluslar Ligi",
-        "date_str": "17.11.2026",
-        "time_str": "17.11 22:00",
-        "hhmm": "22:00",
-        "is_today_session": false,
-        "mins_left": 1275,
-        "mbs": 3,
-        "ee_odd": 6.83,
-        "fair_ee_pct": 11.55,
-        "poisson_ee_pct": 11.4,
-        "edge_vs_odd_pct": -3.24,
-        "xg_home": 2.47,
-        "xg_away": 1.25,
-        "iy_kg_odd": 2.61,
-        "iy_kg_pct": 31.0,
-        "kg_odd": 1.24,
-        "kg_pct": 65.4,
-        "o25_odd": 1.13,
-        "o25_pct": 71.8,
-        "o35_odd": 1.52,
-        "o35_pct": 53.4,
-        "ms1": 1.28,
-        "msx": 4.33,
-        "ms2": 4.55,
-        "score": 10.02,
-        "tier": "TUZAK",
-        "tier_label": "Tuzak Uyarisi",
-        "traps": [
-          "TEK_TARAF_FAVORI"
-        ],
-        "algo_in_list": true,
-        "algo_code": "238.0",
-        "algo_type": "TIP_1_BANKO",
-        "algo_target": "A (MS 1)",
-        "algo_conf": 92.5,
-        "algo_pools": [
-          "B3",
-          "X6"
-        ],
-        "algo_coupons": [
-          "Kupon B3-B7",
-          "Kupon X2-X6",
-          "Kupon X3-B3",
-          "Kupon X6-B6"
-        ],
-        "algo_active_mkts": [
-          "A",
-          "V",
-          "Z"
-        ],
-        "algo_badge": "[238.0] TIP_1_BANKO"
-      },
-      {
         "code": "3401990",
         "match_name": "Hindistan - Pakistan",
         "home": "Hindistan",
@@ -13810,7 +13674,7 @@
         "time_str": "17.11 17:00",
         "hhmm": "17:00",
         "is_today_session": false,
-        "mins_left": 975,
+        "mins_left": 961,
         "mbs": 3,
         "ee_odd": 15.9,
         "fair_ee_pct": 4.96,
@@ -13841,10 +13705,21 @@
         "algo_target": "U (Toplam 1.5 Üst)",
         "algo_conf": 86.0,
         "algo_pools": [
+          "B4",
+          "B5",
+          "B6",
+          "B7",
+          "B8",
           "X7"
         ],
         "algo_coupons": [
+          "Kupon B1-B5",
+          "Kupon B2-B6",
+          "Kupon B3-B7",
+          "Kupon B4-B8",
           "Kupon X3-X7",
+          "Kupon X4-B4",
+          "Kupon X5-B5",
           "Kupon X7-B7"
         ],
         "algo_active_mkts": [
@@ -13872,7 +13747,7 @@
         "time_str": "17.11 20:45",
         "hhmm": "20:45",
         "is_today_session": false,
-        "mins_left": 1200,
+        "mins_left": 1186,
         "mbs": 2,
         "ee_odd": 16.75,
         "fair_ee_pct": 4.71,
@@ -13928,7 +13803,7 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 3,
         "ee_odd": 13.6,
         "fair_ee_pct": 5.8,
@@ -13971,7 +13846,7 @@
         "time_str": "17.11 16:00",
         "hhmm": "16:00",
         "is_today_session": false,
-        "mins_left": 915,
+        "mins_left": 901,
         "mbs": 3,
         "ee_odd": 26,
         "fair_ee_pct": 3.03,
@@ -14052,7 +13927,7 @@
         "time_str": "17.11 22:00",
         "hhmm": "22:00",
         "is_today_session": false,
-        "mins_left": 1275,
+        "mins_left": 1261,
         "mbs": 3,
         "ee_odd": 27.5,
         "fair_ee_pct": 2.87,
@@ -14113,7 +13988,7 @@
         "time_str": "17.11 19:00",
         "hhmm": "19:00",
         "is_today_session": false,
-        "mins_left": 1095,
+        "mins_left": 1081,
         "mbs": 3,
         "ee_odd": 28,
         "fair_ee_pct": 2.81,
@@ -14174,7 +14049,7 @@
         "time_str": "17.11 16:00",
         "hhmm": "16:00",
         "is_today_session": false,
-        "mins_left": 915,
+        "mins_left": 901,
         "mbs": 3,
         "ee_odd": 30.5,
         "fair_ee_pct": 2.58,
@@ -14206,6 +14081,8 @@
         "algo_target": "U (Toplam 1.5 Üst)",
         "algo_conf": 86.0,
         "algo_pools": [
+          "B1",
+          "B2",
           "B3",
           "B4",
           "B5",
@@ -14220,9 +14097,9 @@
           "Kupon B3-B7",
           "Kupon B4-B8",
           "Kupon X1-X5",
-          "Kupon X3-B3",
           "Kupon X4-B4",
-          "Kupon X5-B5"
+          "Kupon X5-B5",
+          "Kupon X6-B6"
         ],
         "algo_active_mkts": [
           "D",
@@ -14247,7 +14124,7 @@
         "time_str": "17.11 22:00",
         "hhmm": "22:00",
         "is_today_session": false,
-        "mins_left": 1275,
+        "mins_left": 1261,
         "mbs": 3,
         "ee_odd": 31,
         "fair_ee_pct": 2.54,
@@ -14304,7 +14181,7 @@
         "time_str": "17.11 22:00",
         "hhmm": "22:00",
         "is_today_session": false,
-        "mins_left": 1275,
+        "mins_left": 1261,
         "mbs": 3,
         "ee_odd": 31.5,
         "fair_ee_pct": 2.51,
@@ -14365,7 +14242,7 @@
         "time_str": "17.11 19:00",
         "hhmm": "19:00",
         "is_today_session": false,
-        "mins_left": 1095,
+        "mins_left": 1081,
         "mbs": 3,
         "ee_odd": 31.5,
         "fair_ee_pct": 2.51,
@@ -14423,26 +14300,26 @@
         "time_str": "17.11 03:00",
         "hhmm": "03:00",
         "is_today_session": true,
-        "mins_left": 135,
+        "mins_left": 121,
         "mbs": 3,
-        "ee_odd": 10.9,
-        "fair_ee_pct": 7.24,
-        "poisson_ee_pct": 7.14,
-        "edge_vs_odd_pct": -2.04,
-        "xg_home": 0.84,
-        "xg_away": 2.88,
-        "iy_kg_odd": 3.23,
-        "iy_kg_pct": 25.1,
-        "kg_odd": 1.51,
-        "kg_pct": 53.7,
-        "o25_odd": 1.13,
-        "o25_pct": 71.7,
-        "o35_odd": 1.54,
-        "o35_pct": 52.8,
+        "ee_odd": 11.7,
+        "fair_ee_pct": 6.73,
+        "poisson_ee_pct": 6.79,
+        "edge_vs_odd_pct": -1.76,
+        "xg_home": 0.81,
+        "xg_away": 2.87,
+        "iy_kg_odd": 3.33,
+        "iy_kg_pct": 24.5,
+        "kg_odd": 1.55,
+        "kg_pct": 52.3,
+        "o25_odd": 1.14,
+        "o25_pct": 71.2,
+        "o35_odd": 1.56,
+        "o35_pct": 52.0,
         "ms1": 1,
-        "msx": 6.01,
-        "ms2": 9.33,
-        "score": 0.88,
+        "msx": 6.34,
+        "ms2": 9.76,
+        "score": 0.32,
         "tier": "TUZAK",
         "tier_label": "Tuzak Uyarisi",
         "traps": [
@@ -14471,8 +14348,7 @@
           "Kupon B3-B7",
           "Kupon B4-B8",
           "Kupon X1-X5",
-          "Kupon X1-B1",
-          "Kupon X5-B5"
+          "Kupon X1-B1"
         ],
         "algo_active_mkts": [
           "D",
@@ -14491,31 +14367,30 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 1,
-        "ee_odd": 13.15,
-        "fair_ee_pct": 6.21,
-        "poisson_ee_pct": 6.52,
-        "edge_vs_odd_pct": -1.09,
-        "xg_home": 0.91,
-        "xg_away": 2.28,
-        "iy_kg_odd": 3.75,
-        "iy_kg_pct": 22.4,
-        "kg_odd": 1.56,
-        "kg_pct": 54.0,
+        "ee_odd": 12.8,
+        "fair_ee_pct": 6.4,
+        "poisson_ee_pct": 6.78,
+        "edge_vs_odd_pct": -1.04,
+        "xg_home": 0.94,
+        "xg_away": 2.25,
+        "iy_kg_odd": 3.7,
+        "iy_kg_pct": 22.8,
+        "kg_odd": 1.54,
+        "kg_pct": 54.7,
         "o25_odd": 1.36,
         "o25_pct": 61.9,
         "o35_odd": 2.08,
         "o35_pct": 40.4,
-        "ms1": 6.05,
-        "msx": 4.51,
-        "ms2": 1.25,
-        "score": -0.22,
+        "ms1": 5.82,
+        "msx": 4.43,
+        "ms2": 1.27,
+        "score": 0.08,
         "tier": "TUZAK",
         "tier_label": "Tuzak Uyarisi",
         "traps": [
-          "TEK_TARAF_FAVORI",
-          "DUSUK_KG_TEMPO"
+          "TEK_TARAF_FAVORI"
         ],
         "algo_in_list": true,
         "algo_code": "248.0",
@@ -14523,13 +14398,13 @@
         "algo_target": "B (MS 2)",
         "algo_conf": 87.5,
         "algo_pools": [
-          "B6",
+          "B7",
           "X8"
         ],
         "algo_coupons": [
-          "Kupon B2-B6",
+          "Kupon B3-B7",
           "Kupon X4-X8",
-          "Kupon X6-B6",
+          "Kupon X7-B7",
           "Kupon X8-B8"
         ],
         "algo_active_mkts": [
@@ -14538,6 +14413,7 @@
           "R",
           "S",
           "V",
+          "Z",
           "Q"
         ],
         "algo_badge": "[248.0] TIP_2_DEP_FAV"
@@ -14552,7 +14428,7 @@
         "time_str": "17.11 19:00",
         "hhmm": "19:00",
         "is_today_session": false,
-        "mins_left": 1095,
+        "mins_left": 1081,
         "mbs": 3,
         "ee_odd": 27.5,
         "fair_ee_pct": 2.87,
@@ -14584,13 +14460,14 @@
         "algo_target": "B (MS 2)",
         "algo_conf": 87.5,
         "algo_pools": [
-          "B3",
+          "B4",
           "X3"
         ],
         "algo_coupons": [
-          "Kupon B3-B7",
+          "Kupon B4-B8",
           "Kupon X3-X7",
-          "Kupon X3-B3"
+          "Kupon X3-B3",
+          "Kupon X4-B4"
         ],
         "algo_active_mkts": [
           "B",
@@ -14613,7 +14490,7 @@
         "time_str": "17.11 19:00",
         "hhmm": "19:00",
         "is_today_session": false,
-        "mins_left": 1095,
+        "mins_left": 1081,
         "mbs": 3,
         "ee_odd": 31,
         "fair_ee_pct": 2.55,
@@ -14645,13 +14522,14 @@
         "algo_target": "B (MS 2)",
         "algo_conf": 87.5,
         "algo_pools": [
-          "B5",
+          "B6",
           "X5"
         ],
         "algo_coupons": [
-          "Kupon B1-B5",
+          "Kupon B2-B6",
           "Kupon X1-X5",
-          "Kupon X5-B5"
+          "Kupon X5-B5",
+          "Kupon X6-B6"
         ],
         "algo_active_mkts": [
           "B",
@@ -14673,7 +14551,7 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 1,
         "ee_odd": 20.5,
         "fair_ee_pct": 4.0,
@@ -14735,7 +14613,7 @@
         "time_str": "17.11 23:00",
         "hhmm": "23:00",
         "is_today_session": false,
-        "mins_left": 1335,
+        "mins_left": 1321,
         "mbs": 3,
         "ee_odd": 34.5,
         "fair_ee_pct": 2.28,
@@ -14792,26 +14670,26 @@
         "time_str": "18.11 03:00",
         "hhmm": "03:00",
         "is_today_session": false,
-        "mins_left": 1575,
+        "mins_left": 1561,
         "mbs": 1,
-        "ee_odd": 15.55,
-        "fair_ee_pct": 5.08,
+        "ee_odd": 16.05,
+        "fair_ee_pct": 4.92,
         "poisson_ee_pct": 5.03,
-        "edge_vs_odd_pct": -1.4,
-        "xg_home": 0.62,
-        "xg_away": 3.39,
-        "iy_kg_odd": 3.77,
+        "edge_vs_odd_pct": -1.2,
+        "xg_home": 3.39,
+        "xg_away": 0.62,
+        "iy_kg_odd": 3.83,
         "iy_kg_pct": null,
-        "kg_odd": 1.8,
-        "kg_pct": 45.0,
+        "kg_odd": 1.82,
+        "kg_pct": 44.5,
         "o25_odd": 1.06,
         "o25_pct": 76.4,
         "o35_odd": 1.36,
         "o35_pct": 59.5,
         "ms1": 1,
-        "msx": 9.5,
+        "msx": 9.67,
         "ms2": 17.35,
-        "score": -2.45,
+        "score": -2.53,
         "tier": "TUZAK",
         "tier_label": "Tuzak Uyarisi",
         "traps": [
@@ -14838,7 +14716,7 @@
         "time_str": "17.11 04:00",
         "hhmm": "04:00",
         "is_today_session": true,
-        "mins_left": 195,
+        "mins_left": 181,
         "mbs": 1,
         "ee_odd": 17.25,
         "fair_ee_pct": 4.57,
@@ -14884,7 +14762,7 @@
         "time_str": "17.11 03:00",
         "hhmm": "03:00",
         "is_today_session": true,
-        "mins_left": 135,
+        "mins_left": 121,
         "mbs": 3,
         "ee_odd": 13.2,
         "fair_ee_pct": 5.98,
@@ -14929,7 +14807,6 @@
         "algo_coupons": [
           "Kupon B1-B5",
           "Kupon B2-B6",
-          "Kupon B3-B7",
           "Kupon B4-B8",
           "Kupon X2-X6",
           "Kupon X2-B2"
@@ -14952,7 +14829,7 @@
         "time_str": "18.11 05:30",
         "hhmm": "05:30",
         "is_today_session": false,
-        "mins_left": 1725,
+        "mins_left": 1711,
         "mbs": 1,
         "ee_odd": 22.1,
         "fair_ee_pct": 3.56,
@@ -14998,7 +14875,7 @@
         "time_str": "18.11 04:00",
         "hhmm": "04:00",
         "is_today_session": false,
-        "mins_left": 1635,
+        "mins_left": 1621,
         "mbs": 3,
         "ee_odd": 17.7,
         "fair_ee_pct": 4.45,
@@ -15030,14 +14907,14 @@
         "algo_target": "U (Toplam 1.5 Üst)",
         "algo_conf": 92.5,
         "algo_pools": [
-          "B8",
+          "B1",
           "X6"
         ],
         "algo_coupons": [
-          "Kupon B4-B8",
+          "Kupon B1-B5",
           "Kupon X2-X6",
-          "Kupon X6-B6",
-          "Kupon X8-B8"
+          "Kupon X1-B1",
+          "Kupon X6-B6"
         ],
         "algo_active_mkts": [
           "A",
@@ -15058,7 +14935,7 @@
         "time_str": "17.11 22:00",
         "hhmm": "22:00",
         "is_today_session": false,
-        "mins_left": 1275,
+        "mins_left": 1261,
         "mbs": 3,
         "ee_odd": 19.65,
         "fair_ee_pct": 4.01,
@@ -15090,13 +14967,13 @@
         "algo_target": "A (MS 1)",
         "algo_conf": 92.5,
         "algo_pools": [
-          "B1",
+          "B2",
           "X8"
         ],
         "algo_coupons": [
-          "Kupon B1-B5",
+          "Kupon B2-B6",
           "Kupon X4-X8",
-          "Kupon X1-B1",
+          "Kupon X2-B2",
           "Kupon X8-B8"
         ],
         "algo_active_mkts": [
@@ -15119,7 +14996,7 @@
         "time_str": "17.11 22:00",
         "hhmm": "22:00",
         "is_today_session": false,
-        "mins_left": 1275,
+        "mins_left": 1261,
         "mbs": 3,
         "ee_odd": 23,
         "fair_ee_pct": 3.43,
@@ -15180,7 +15057,7 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 1,
         "ee_odd": 27,
         "fair_ee_pct": 3.02,
@@ -15243,7 +15120,7 @@
         "time_str": "17.11 22:00",
         "hhmm": "22:00",
         "is_today_session": false,
-        "mins_left": 1275,
+        "mins_left": 1261,
         "mbs": 3,
         "ee_odd": 27.5,
         "fair_ee_pct": 2.87,
@@ -15304,7 +15181,7 @@
         "time_str": "17.11 22:45",
         "hhmm": "22:45",
         "is_today_session": false,
-        "mins_left": 1320,
+        "mins_left": 1306,
         "mbs": 1,
         "ee_odd": 30,
         "fair_ee_pct": 2.73,
@@ -15366,7 +15243,7 @@
         "time_str": "17.11 19:00",
         "hhmm": "19:00",
         "is_today_session": false,
-        "mins_left": 1095,
+        "mins_left": 1081,
         "mbs": 3,
         "ee_odd": 31,
         "fair_ee_pct": 2.56,
@@ -15398,13 +15275,14 @@
         "algo_target": "A (MS 1)",
         "algo_conf": 92.5,
         "algo_pools": [
-          "B2",
+          "B3",
           "X2"
         ],
         "algo_coupons": [
-          "Kupon B2-B6",
+          "Kupon B3-B7",
           "Kupon X2-X6",
-          "Kupon X2-B2"
+          "Kupon X2-B2",
+          "Kupon X3-B3"
         ],
         "algo_active_mkts": [
           "A",
@@ -15426,7 +15304,7 @@
         "time_str": "17.11 16:00",
         "hhmm": "16:00",
         "is_today_session": false,
-        "mins_left": 915,
+        "mins_left": 901,
         "mbs": 3,
         "ee_odd": 33.5,
         "fair_ee_pct": 2.36,
@@ -15458,7 +15336,7 @@
         "algo_target": "B (MS 2)",
         "algo_conf": 87.5,
         "algo_pools": [
-          "B4",
+          "B5",
           "X1",
           "X5",
           "X6",
@@ -15466,10 +15344,10 @@
           "X8"
         ],
         "algo_coupons": [
-          "Kupon B4-B8",
+          "Kupon B1-B5",
           "Kupon X1-X5",
           "Kupon X1-B1",
-          "Kupon X4-B4"
+          "Kupon X5-B5"
         ],
         "algo_active_mkts": [
           "B",
@@ -15491,7 +15369,7 @@
         "time_str": "17.11 16:00",
         "hhmm": "16:00",
         "is_today_session": false,
-        "mins_left": 915,
+        "mins_left": 901,
         "mbs": 3,
         "ee_odd": 34,
         "fair_ee_pct": 2.33,
@@ -15523,14 +15401,14 @@
         "algo_target": "B (MS 2)",
         "algo_conf": 87.5,
         "algo_pools": [
-          "B5",
+          "B6",
           "X2"
         ],
         "algo_coupons": [
-          "Kupon B1-B5",
+          "Kupon B2-B6",
           "Kupon X2-X6",
           "Kupon X2-B2",
-          "Kupon X5-B5"
+          "Kupon X6-B6"
         ],
         "algo_active_mkts": [
           "B",
@@ -15551,7 +15429,7 @@
         "time_str": "17.11 16:00",
         "hhmm": "16:00",
         "is_today_session": false,
-        "mins_left": 915,
+        "mins_left": 901,
         "mbs": 3,
         "ee_odd": 34.5,
         "fair_ee_pct": 2.29,
@@ -15583,14 +15461,14 @@
         "algo_target": "U (Toplam 1.5 Üst)",
         "algo_conf": 87.5,
         "algo_pools": [
-          "B6",
+          "B7",
           "X3"
         ],
         "algo_coupons": [
-          "Kupon B2-B6",
+          "Kupon B3-B7",
           "Kupon X3-X7",
           "Kupon X3-B3",
-          "Kupon X6-B6"
+          "Kupon X7-B7"
         ],
         "algo_active_mkts": [
           "S",
@@ -15610,7 +15488,7 @@
         "time_str": "17.11 19:00",
         "hhmm": "19:00",
         "is_today_session": false,
-        "mins_left": 1095,
+        "mins_left": 1081,
         "mbs": 3,
         "ee_odd": 34.5,
         "fair_ee_pct": 2.28,
@@ -15642,13 +15520,14 @@
         "algo_target": "U (Toplam 1.5 Üst)",
         "algo_conf": 87.5,
         "algo_pools": [
-          "B4",
+          "B5",
           "X4"
         ],
         "algo_coupons": [
-          "Kupon B4-B8",
+          "Kupon B1-B5",
           "Kupon X4-X8",
-          "Kupon X4-B4"
+          "Kupon X4-B4",
+          "Kupon X5-B5"
         ],
         "algo_active_mkts": [
           "B",
@@ -15670,7 +15549,7 @@
         "time_str": "17.11 16:00",
         "hhmm": "16:00",
         "is_today_session": false,
-        "mins_left": 915,
+        "mins_left": 901,
         "mbs": 3,
         "ee_odd": 34.5,
         "fair_ee_pct": 2.28,
@@ -15702,7 +15581,7 @@
         "algo_target": "U (Toplam 1.5 Üst)",
         "algo_conf": 87.5,
         "algo_pools": [
-          "B3",
+          "B4",
           "X1",
           "X2",
           "X3",
@@ -15713,9 +15592,9 @@
           "X8"
         ],
         "algo_coupons": [
-          "Kupon B3-B7",
+          "Kupon B4-B8",
           "Kupon X4-X8",
-          "Kupon X3-B3",
+          "Kupon X4-B4",
           "Kupon X8-B8"
         ],
         "algo_active_mkts": [
