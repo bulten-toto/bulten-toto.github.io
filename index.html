@@ -20,7 +20,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Fallback local data script -->
-  <script src="data.js?v=20261117_0100"></script>
+  <script src="data.js?v=20261117_0730"></script>
 
   <script>
     tailwind.config = {
@@ -2337,11 +2337,11 @@
         let mk = 'U', mtype = 'TIP_3_GOL_SISTEM', conf = 84.5;
         if (e.o1 && e.o1 <= 1.52) {
           mtype = 'TIP_1_BANKO';
-          mk = (o.D && o.D >= 1.12 && e.o1 > 1.38) ? 'D' : (e.o1 >= 1.20 ? 'A' : (o.U ? 'U' : 'D'));
+          mk = (o.D && o.D >= 1.08 && o.D <= 1.60 && e.o1 > 1.38) ? 'D' : (e.o1 >= 1.15 ? 'A' : (o.U ? 'U' : 'A'));
           conf = e.o1 <= 1.32 ? 92.5 : 88.5;
         } else if (e.o2 && e.o2 <= 1.58) {
           mtype = 'TIP_2_DEP_FAV';
-          mk = (o.F && o.F >= 1.12 && e.o2 > 1.42) ? 'F' : (e.o2 >= 1.22 ? 'B' : (o.U ? 'U' : 'F'));
+          mk = (o.F && o.F >= 1.08 && o.F <= 1.65 && e.o2 > 1.42) ? 'F' : (e.o2 >= 1.15 ? 'B' : (o.U ? 'U' : 'B'));
           conf = 87.5;
         } else if (o.Q && o.Q <= 1.38 && (!o.V || o.V >= 1.85)) {
           mtype = 'TIP_4_DUSME';
@@ -2359,9 +2359,18 @@
           mk = 'E';
           conf = 82.5;
         } else {
-          mk = o.U ? 'U' : (o.D ? 'D' : 'A');
+          if (o.U) mk = 'U';
+          else if (o.D && o.D <= 2.20) mk = 'D';
+          else if (o.F && o.F <= 2.20) mk = 'F';
+          else if (e.o1 && e.o2) mk = (e.o1 <= e.o2) ? 'A' : 'B';
+          else mk = e.o1 ? 'A' : 'B';
         }
-        const suggOdd = +(o[mk] || e.o1 || o.U || 1.28).toFixed(2);
+        if (!o[mk]) {
+          if (o.U) mk = 'U';
+          else if (e.o1 && (!e.o2 || e.o1 <= e.o2)) mk = 'A';
+          else if (e.o2) mk = 'B';
+        }
+        const suggOdd = +(o[mk] || (mk === 'A' ? e.o1 : (mk === 'B' ? e.o2 : (o.U || 1.28)))).toFixed(2);
         const markets = {};
         const marketOdds = {};
         Object.keys(mdefs).forEach(k => {
@@ -2369,6 +2378,16 @@
           markets[k] = k === mk || !!(val && val >= 1.12 && val <= 1.55);
           if (val) marketOdds[k] = val;
         });
+        if (marketOdds.V && marketOdds.U && marketOdds.U >= marketOdds.V) {
+          marketOdds.U = +Math.max(1.04, marketOdds.V * 0.72).toFixed(2);
+        }
+        if (markets.Q && markets.V) {
+          if (mk === 'Q') markets.V = false;
+          else markets.Q = false;
+        }
+        if (markets.S && markets.R && marketOdds.V && marketOdds.V <= 1.85) {
+          markets.S = false;
+        }
         markets[mk] = true;
         marketOdds[mk] = suggOdd;
         const lgLow = (e.league || '').toLowerCase();
@@ -2706,8 +2725,8 @@
         if (err < bestErr) { bestErr = err; bestS = s; }
       }
       const xgH = totXg * bestS, xgA = totXg * (1 - bestS);
-      const p1h = (1 - Math.exp(-xgH * 0.44)) * (1 - Math.exp(-xgA * 0.44));
-      const p2h = (1 - Math.exp(-xgH * 0.56)) * (1 - Math.exp(-xgA * 0.56));
+      const p1h = (1 - Math.exp(-xgH * 0.42)) * (1 - Math.exp(-xgA * 0.42));
+      const p2h = (1 - Math.exp(-xgH * 0.58)) * (1 - Math.exp(-xgA * 0.58));
       return [xgH, xgA, Math.min(0.28, p1h * p2h * 1.08)];
     }
 
@@ -2720,7 +2739,7 @@
         const allEv = (raw && raw.events) || [];
         const nowSec = Date.now() / 1000;
         const cutoffMin = nowSec + 300;
-        const cutoffMax = nowSec + 30 * 3600;
+        const cutoffMax = nowSec + 72 * 3600;
         const algoList = (currentData && Array.isArray(currentData.matches)) ? currentData.matches : [];
         const poolsMap = {}, couponsMap = {};
         if (currentData && currentData.pools) {
@@ -2745,7 +2764,7 @@
           return { e, fm, rank, kgY, o25Y };
         }).filter(c => c.fm || (c.kgY && c.kgY <= 1.75 && (!c.o25Y || c.o25Y <= 1.95)))
           .sort((a, b) => a.rank - b.rank)
-          .slice(0, 48);
+          .slice(0, 80);
 
         if (cands.length === 0) return null;
 
@@ -2801,6 +2820,7 @@
           const [p1, px, p2] = implied3WayJS(ms1, msx, ms2);
           const [xgH, xgA, pEePois] = solveXgAndEEJS(p1, px, p2, pO25, pKg);
           const minXg = (xgH != null && xgA != null) ? Math.min(xgH, xgA) : 0;
+          const xgGap = (xgH != null && xgA != null) ? Math.abs(xgH - xgA) : 0;
           const minMs = (ms1 && ms2) ? Math.min(ms1, ms2) : 9.9;
 
           const fm = c.fm;
@@ -2808,23 +2828,33 @@
           const algoCode = fm ? fm.code : '-';
           const algoType = fm ? fm.match_type : (minMs <= 1.52 ? 'TIP_1_BANKO (Simüle)' : (u35 && u35 <= 1.38 ? 'TIP_4_DUSME (Simüle)' : 'TIP_3_GOL_SISTEM (Simüle)'));
           const algoTarget = fm ? `${fm.target_market} (${fm.target_market_name})` : 'R/U';
+          const leagueName = iddaaCompNames[c.e.ci] || 'Futbol';
+          const isHighVarMeta = /(\bu19\b|\bu20\b|\bu21\b|\bu23\b|hazırlık|hazirlik|amatör|amator|rezerv|genç|\(k\)|kadın|women|dostluk)/i.test(`${leagueName} ${c.e.hn} ${c.e.an}`);
+          const activeMkts = fm && fm.markets ? Object.keys(fm.markets).filter(k => fm.markets[k]) : [];
 
           const traps = [];
-          if (minMs <= 1.35 || (xgH != null && minXg < 1.0)) traps.push('TEK_TARAF_FAVORI');
-          if (fm && algoType === 'TIP_4_DUSME') traps.push('TIP_4_DUSME_ALT');
-          if ((pKg != null && pKg < 0.54) || (pIyKg != null && pIyKg < 0.22)) traps.push('DUSUK_KG_TEMPO');
+          if (minMs <= 1.50 || (xgH != null && (minXg < 1.15 || xgGap >= 0.78)) || ((algoType === 'TIP_1_BANKO' || algoType === 'TIP_2_DEP_FAV') && minMs <= 1.60)) traps.push('TEK_TARAF_FAVORI');
+          if (String(algoType).includes('TIP_4_DUSME')) traps.push('TIP_4_DUSME_ALT');
+          if (
+            (pKg != null && pKg < 0.58)
+            || (pIyKg != null && pIyKg < 0.24)
+            || (pO25 != null && pO25 < 0.57)
+            || (algoInList && ['T', 'Z', 'Q'].some(t => activeMkts.includes(t)) && !['V', 'R', 'W'].some(g => activeMkts.includes(g)))
+          ) traps.push('DUSUK_KG_TEMPO');
+          if (isHighVarMeta) traps.push('YUKSEK_VARYANS_ALT_YAPI');
 
           let score = fairEeP * 100;
           if (pEePois) score = (score + pEePois * 100) / 2;
           if (pIyKg && pKg) score += (pIyKg * pKg) * 20;
-          if (minXg >= 1.25) score += 2; else if (minXg < 1.0) score -= 3.5;
-          if (minMs <= 1.28) score -= 4; else if (minMs <= 1.40) score -= 1.5;
-          if (algoInList && algoType === 'TIP_3_GOL_SISTEM') score += 2.5;
-          else if (algoType === 'TIP_4_DUSME') score -= 5;
-          else if ((algoType === 'TIP_1_BANKO' || algoType === 'TIP_2_DEP_FAV') && minMs <= 1.35) score -= 1.5;
+          else if (pIyKg == null) score -= 1.5;
+          if (minXg >= 1.25) score += 2; else if (xgH != null && minXg < 1.10) score -= 3.5;
+          if (minMs <= 1.28) score -= 4; else if (minMs <= 1.48) score -= 2;
+          if (algoInList && (algoType === 'TIP_3_GOL_SISTEM' || algoType === 'TIP_3_ZIRVE')) score += 2.5;
+          else if (String(algoType).includes('TIP_4_DUSME')) score -= 5;
+          else if ((algoType === 'TIP_1_BANKO' || algoType === 'TIP_2_DEP_FAV') && minMs <= 1.55) score -= 2.0;
 
           const isTrap = traps.length > 0;
-          const tier = isTrap ? 'TUZAK' : (algoInList && algoType === 'TIP_3_GOL_SISTEM' ? 'ALTIN_KESISIM' : (algoInList ? 'ALGO_TEMPOLU' : 'CANLI_DENGELI'));
+          const tier = isTrap ? 'TUZAK' : (algoInList && (algoType === 'TIP_3_GOL_SISTEM' || algoType === 'TIP_3_ZIRVE') ? 'ALTIN_KESISIM' : (algoInList ? 'ALGO_TEMPOLU' : 'CANLI_DENGELI'));
           const dm = trtDayMeta(c.e.d);
           const dTr = new Date(new Date(c.e.d * 1000).toLocaleString('en-US', { timeZone: 'Europe/Istanbul' }));
           const ddmm = `${String(dTr.getDate()).padStart(2, '0')}.${String(dTr.getMonth() + 1).padStart(2, '0')}`;
